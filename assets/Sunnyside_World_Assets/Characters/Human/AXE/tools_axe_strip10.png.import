@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de87a1uwlkhj1"
-path="res://.godot/imported/tools_axe_strip10.png-de08fbeedfbccaad112ffdf25f18d80d.ctex"
+path="res://.godot/imported/tools_axe_strip10.png-1723c8c5382daaa118b18ca7b3bb9085.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/AXE/tools_axe_strip10.png"
-dest_files=["res://.godot/imported/tools_axe_strip10.png-de08fbeedfbccaad112ffdf25f18d80d.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Human/AXE/tools_axe_strip10.png"
+dest_files=["res://.godot/imported/tools_axe_strip10.png-1723c8c5382daaa118b18ca7b3bb9085.ctex"]
 
 [params]
 

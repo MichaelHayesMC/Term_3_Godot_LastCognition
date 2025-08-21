@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cr4hffbo8nsq0"
-path="res://.godot/imported/mophair_casting_strip15.png-6788ed42486276f2ff0f2def5716c519.ctex"
+path="res://.godot/imported/mophair_casting_strip15.png-c69223d1ec0e6c77fd72bcb5c5c9948d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/CASTING/mophair_casting_strip15.png"
-dest_files=["res://.godot/imported/mophair_casting_strip15.png-6788ed42486276f2ff0f2def5716c519.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Human/CASTING/mophair_casting_strip15.png"
+dest_files=["res://.godot/imported/mophair_casting_strip15.png-c69223d1ec0e6c77fd72bcb5c5c9948d.ctex"]
 
 [params]
 

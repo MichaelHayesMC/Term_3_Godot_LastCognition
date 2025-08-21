@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7o6mcpqp4yxg"
-path="res://.godot/imported/wheat_05.png-a9443cd9df40f81f5caa174b67f5155c.ctex"
+path="res://.godot/imported/wheat_05.png-de214238f0b8e31f91ed45cc7d5ea7aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/wheat_05.png"
-dest_files=["res://.godot/imported/wheat_05.png-a9443cd9df40f81f5caa174b67f5155c.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Elements/Crops/wheat_05.png"
+dest_files=["res://.godot/imported/wheat_05.png-de214238f0b8e31f91ed45cc7d5ea7aa.ctex"]
 
 [params]
 

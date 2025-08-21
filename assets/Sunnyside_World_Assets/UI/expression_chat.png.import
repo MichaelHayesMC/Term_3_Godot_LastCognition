@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2wlsbn7tlp3c"
-path="res://.godot/imported/expression_chat.png-734600f605139df7d570568698cc757b.ctex"
+path="res://.godot/imported/expression_chat.png-ec691682a41576e4b3a2f21e0787fe0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/expression_chat.png"
-dest_files=["res://.godot/imported/expression_chat.png-734600f605139df7d570568698cc757b.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/UI/expression_chat.png"
+dest_files=["res://.godot/imported/expression_chat.png-ec691682a41576e4b3a2f21e0787fe0b.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsi3vj18nv8lu"
-path="res://.godot/imported/tools_run_strip8.png-48536f35d2dca13dff200fe73e303663.ctex"
+path="res://.godot/imported/tools_run_strip8.png-8b6f8179e150b64f0c45703b27c57f0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/RUN/tools_run_strip8.png"
-dest_files=["res://.godot/imported/tools_run_strip8.png-48536f35d2dca13dff200fe73e303663.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Human/RUN/tools_run_strip8.png"
+dest_files=["res://.godot/imported/tools_run_strip8.png-8b6f8179e150b64f0c45703b27c57f0c.ctex"]
 
 [params]
 

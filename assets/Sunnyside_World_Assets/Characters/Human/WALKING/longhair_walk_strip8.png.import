@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr2yi05e7gjb2"
-path="res://.godot/imported/longhair_walk_strip8.png-5306f17e36352b641cce62f77c411ab6.ctex"
+path="res://.godot/imported/longhair_walk_strip8.png-fc07c61353d8cd35ac52d6e5b46e48dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/WALKING/longhair_walk_strip8.png"
-dest_files=["res://.godot/imported/longhair_walk_strip8.png-5306f17e36352b641cce62f77c411ab6.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Human/WALKING/longhair_walk_strip8.png"
+dest_files=["res://.godot/imported/longhair_walk_strip8.png-fc07c61353d8cd35ac52d6e5b46e48dc.ctex"]
 
 [params]
 

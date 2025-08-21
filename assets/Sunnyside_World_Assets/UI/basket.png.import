@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnes0j0udgep2"
-path="res://.godot/imported/basket.png-03223b8c398cf1d01786fe9086d62f34.ctex"
+path="res://.godot/imported/basket.png-bb56bec9bbd755879f3afd6991d941af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/basket.png"
-dest_files=["res://.godot/imported/basket.png-03223b8c398cf1d01786fe9086d62f34.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/UI/basket.png"
+dest_files=["res://.godot/imported/basket.png-bb56bec9bbd755879f3afd6991d941af.ctex"]
 
 [params]
 

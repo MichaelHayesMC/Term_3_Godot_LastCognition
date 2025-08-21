@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cl7s1vhntmf5f"
-path="res://.godot/imported/expression_love.png-b560534ce8e0a7b3fceed83b5efbbb87.ctex"
+path="res://.godot/imported/expression_love.png-9c3d49306ab21196a77a18df21702171.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/expression_love.png"
-dest_files=["res://.godot/imported/expression_love.png-b560534ce8e0a7b3fceed83b5efbbb87.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/UI/expression_love.png"
+dest_files=["res://.godot/imported/expression_love.png-9c3d49306ab21196a77a18df21702171.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi8wscc7mnnkf"
-path="res://.godot/imported/tools_reeling_strip13.png-cab45ebf23d9f32202cc849cc20f791c.ctex"
+path="res://.godot/imported/tools_reeling_strip13.png-dd69bdb08123b448e0503e9146b01d0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/REELING/tools_reeling_strip13.png"
-dest_files=["res://.godot/imported/tools_reeling_strip13.png-cab45ebf23d9f32202cc849cc20f791c.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Human/REELING/tools_reeling_strip13.png"
+dest_files=["res://.godot/imported/tools_reeling_strip13.png-dd69bdb08123b448e0503e9146b01d0a.ctex"]
 
 [params]
 

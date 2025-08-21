@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2l55cjcecta7"
-path="res://.godot/imported/skeleton_hurt_strip7.png-3eb236645850bed3cff1b172e1cd5b23.ctex"
+path="res://.godot/imported/skeleton_hurt_strip7.png-db4ff137de197fef7e866c115169a35c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Skeleton/PNG/skeleton_hurt_strip7.png"
-dest_files=["res://.godot/imported/skeleton_hurt_strip7.png-3eb236645850bed3cff1b172e1cd5b23.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Skeleton/PNG/skeleton_hurt_strip7.png"
+dest_files=["res://.godot/imported/skeleton_hurt_strip7.png-db4ff137de197fef7e866c115169a35c.ctex"]
 
 [params]
 

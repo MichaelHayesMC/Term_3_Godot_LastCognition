@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bucqlkavnf7md"
-path="res://.godot/imported/bluebar_00.png-64f2227a372b2db92b88cbd8fdbdfa8d.ctex"
+path="res://.godot/imported/bluebar_00.png-7752f608b975804b02f41386043e8af4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/bluebar_00.png"
-dest_files=["res://.godot/imported/bluebar_00.png-64f2227a372b2db92b88cbd8fdbdfa8d.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/UI/bluebar_00.png"
+dest_files=["res://.godot/imported/bluebar_00.png-7752f608b975804b02f41386043e8af4.ctex"]
 
 [params]
 

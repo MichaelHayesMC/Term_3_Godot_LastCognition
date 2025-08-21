@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drn540hxbbthy"
-path="res://.godot/imported/shorthair_caught_strip10.png-54b5d95e057eaab99142448e8702bd22.ctex"
+path="res://.godot/imported/shorthair_caught_strip10.png-1c0ce461ab2246d007e19ef028076484.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/CAUGHT/shorthair_caught_strip10.png"
-dest_files=["res://.godot/imported/shorthair_caught_strip10.png-54b5d95e057eaab99142448e8702bd22.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Human/CAUGHT/shorthair_caught_strip10.png"
+dest_files=["res://.godot/imported/shorthair_caught_strip10.png-1c0ce461ab2246d007e19ef028076484.ctex"]
 
 [params]
 

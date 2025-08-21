@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://boe147rjoc1xm"
-path="res://.godot/imported/skeleton_walk_strip8.png-65430a7a2d0f2e7961787840791bf309.ctex"
+path="res://.godot/imported/skeleton_walk_strip8.png-8953005a4aa5288d22dfbc862df12fe8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Skeleton/PNG/skeleton_walk_strip8.png"
-dest_files=["res://.godot/imported/skeleton_walk_strip8.png-65430a7a2d0f2e7961787840791bf309.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Skeleton/PNG/skeleton_walk_strip8.png"
+dest_files=["res://.godot/imported/skeleton_walk_strip8.png-8953005a4aa5288d22dfbc862df12fe8.ctex"]
 
 [params]
 

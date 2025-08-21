@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chv625iitrh2f"
-path="res://.godot/imported/curlyhair_axe_strip10.png-c21acbc5f215ebcdec33af88ff23a85e.ctex"
+path="res://.godot/imported/curlyhair_axe_strip10.png-782b60bd8aa5ef12772d1615bfa5c486.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/AXE/curlyhair_axe_strip10.png"
-dest_files=["res://.godot/imported/curlyhair_axe_strip10.png-c21acbc5f215ebcdec33af88ff23a85e.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Human/AXE/curlyhair_axe_strip10.png"
+dest_files=["res://.godot/imported/curlyhair_axe_strip10.png-782b60bd8aa5ef12772d1615bfa5c486.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drr83ikbvjggk"
-path="res://.godot/imported/spr_deco_mushroom_blue_03_strip4.png-2ce05aed32ca5da3d3e564a4da0fbe74.ctex"
+path="res://.godot/imported/spr_deco_mushroom_blue_03_strip4.png-6925779c423710fd99d64ab58ebec78b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Plants/spr_deco_mushroom_blue_03_strip4.png"
-dest_files=["res://.godot/imported/spr_deco_mushroom_blue_03_strip4.png-2ce05aed32ca5da3d3e564a4da0fbe74.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Elements/Plants/spr_deco_mushroom_blue_03_strip4.png"
+dest_files=["res://.godot/imported/spr_deco_mushroom_blue_03_strip4.png-6925779c423710fd99d64ab58ebec78b.ctex"]
 
 [params]
 

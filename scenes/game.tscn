@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://cvamvkb7citlg"]
 
-[ext_resource type="Texture2D" uid="uid://cj683f6dsv366" path="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_p57ef"]
-[ext_resource type="Texture2D" uid="uid://bbw2imbtr1pn5" path="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://cj683f6dsv366" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_p57ef"]
+[ext_resource type="Texture2D" uid="uid://bbw2imbtr1pn5" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://duy8jpg78tkkl" path="res://scenes/player.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/control.tscn" id="7_u5sy4"]
 

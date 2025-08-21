@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c261enh42c2kn"
-path="res://.godot/imported/tools_watering_strip5.png-85bb4ddeea8d22ca8f41cbbce4382f1f.ctex"
+path="res://.godot/imported/tools_watering_strip5.png-8c0c1940e933a70201fb2b698feffe56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/WATERING/tools_watering_strip5.png"
-dest_files=["res://.godot/imported/tools_watering_strip5.png-85bb4ddeea8d22ca8f41cbbce4382f1f.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Human/WATERING/tools_watering_strip5.png"
+dest_files=["res://.godot/imported/tools_watering_strip5.png-8c0c1940e933a70201fb2b698feffe56.ctex"]
 
 [params]
 

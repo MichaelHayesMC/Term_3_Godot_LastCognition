@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db2de4qqj2x23"
-path="res://.godot/imported/spr_casting_strip15.png-0edc77c2adba673f8467a7e6e050c1fc.ctex"
+path="res://.godot/imported/spr_casting_strip15.png-9d7dada64fb00c953b57033809b55c3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Goblin/PNG/spr_casting_strip15.png"
-dest_files=["res://.godot/imported/spr_casting_strip15.png-0edc77c2adba673f8467a7e6e050c1fc.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Goblin/PNG/spr_casting_strip15.png"
+dest_files=["res://.godot/imported/spr_casting_strip15.png-9d7dada64fb00c953b57033809b55c3f.ctex"]
 
 [params]
 

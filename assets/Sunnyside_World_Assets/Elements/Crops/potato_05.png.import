@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba0g5evwuli1g"
-path="res://.godot/imported/potato_05.png-f1c85f36d763350c90770ad169ddf2d0.ctex"
+path="res://.godot/imported/potato_05.png-fcb7ddb42806bfd21fe977a422f9b239.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/potato_05.png"
-dest_files=["res://.godot/imported/potato_05.png-f1c85f36d763350c90770ad169ddf2d0.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Elements/Crops/potato_05.png"
+dest_files=["res://.godot/imported/potato_05.png-fcb7ddb42806bfd21fe977a422f9b239.ctex"]
 
 [params]
 

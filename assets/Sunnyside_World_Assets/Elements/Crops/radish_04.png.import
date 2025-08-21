@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg86cafvte14a"
-path="res://.godot/imported/radish_04.png-bd79284b97d3da46aa37a06452ad46ee.ctex"
+path="res://.godot/imported/radish_04.png-b4523dcf8d01ef8868c07e0b69c0a3cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/radish_04.png"
-dest_files=["res://.godot/imported/radish_04.png-bd79284b97d3da46aa37a06452ad46ee.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Elements/Crops/radish_04.png"
+dest_files=["res://.godot/imported/radish_04.png-b4523dcf8d01ef8868c07e0b69c0a3cd.ctex"]
 
 [params]
 

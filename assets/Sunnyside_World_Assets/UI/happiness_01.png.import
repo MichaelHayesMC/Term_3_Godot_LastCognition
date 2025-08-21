@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6seg31l3uyf1"
-path="res://.godot/imported/happiness_01.png-cc42468e1993803fed74dcbeb237fa7b.ctex"
+path="res://.godot/imported/happiness_01.png-0380a17c707e59df50cc768ed43ee5b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/UI/happiness_01.png"
-dest_files=["res://.godot/imported/happiness_01.png-cc42468e1993803fed74dcbeb237fa7b.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/UI/happiness_01.png"
+dest_files=["res://.godot/imported/happiness_01.png-0380a17c707e59df50cc768ed43ee5b4.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw3cigfdqeeej"
-path="res://.godot/imported/soil_00.png-7d6175ca8f3b9b3e5f061e4a603e7fb6.ctex"
+path="res://.godot/imported/soil_00.png-99572993d9264ac9c33eff372758ce34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Crops/soil_00.png"
-dest_files=["res://.godot/imported/soil_00.png-7d6175ca8f3b9b3e5f061e4a603e7fb6.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Elements/Crops/soil_00.png"
+dest_files=["res://.godot/imported/soil_00.png-99572993d9264ac9c33eff372758ce34.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6r1whdxdbybh"
-path="res://.godot/imported/mophair_dig_strip13.png-28be8fa3e27b723b986ed925de4ecf8d.ctex"
+path="res://.godot/imported/mophair_dig_strip13.png-0eb335c2ed09c79b9074107166528043.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Characters/Human/DIG/mophair_dig_strip13.png"
-dest_files=["res://.godot/imported/mophair_dig_strip13.png-28be8fa3e27b723b986ed925de4ecf8d.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Characters/Human/DIG/mophair_dig_strip13.png"
+dest_files=["res://.godot/imported/mophair_dig_strip13.png-0eb335c2ed09c79b9074107166528043.ctex"]
 
 [params]
 

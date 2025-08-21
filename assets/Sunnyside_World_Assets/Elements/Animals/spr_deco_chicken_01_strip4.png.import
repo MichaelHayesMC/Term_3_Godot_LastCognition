@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi0recqg7go7e"
-path="res://.godot/imported/spr_deco_chicken_01_strip4.png-2701b6a9416d59257280c4b677d8cc44.ctex"
+path="res://.godot/imported/spr_deco_chicken_01_strip4.png-9eef18e15fc794127bda7177ead99329.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/Animals/spr_deco_chicken_01_strip4.png"
-dest_files=["res://.godot/imported/spr_deco_chicken_01_strip4.png-2701b6a9416d59257280c4b677d8cc44.ctex"]
+source_file="res://assets/Sunnyside_World_Assets/Elements/Animals/spr_deco_chicken_01_strip4.png"
+dest_files=["res://.godot/imported/spr_deco_chicken_01_strip4.png-9eef18e15fc794127bda7177ead99329.ctex"]
 
 [params]
 
