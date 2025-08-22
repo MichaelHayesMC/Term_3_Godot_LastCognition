@@ -46,7 +46,7 @@ color = Color(0.0235294, 0.027451, 0.117647, 1)
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = -216.0
-offset_top = -8.0
+offset_top = -4.0
 offset_right = 163.0
 color = Color(0.0235294, 0.027451, 0.117647, 1)
 
@@ -62,5 +62,5 @@ layout_mode = 0
 offset_left = -216.0
 offset_top = -216.0
 offset_right = 168.0
-offset_bottom = -208.0
+offset_bottom = -212.0
 color = Color(0.0216284, 0.0268227, 0.116448, 1)

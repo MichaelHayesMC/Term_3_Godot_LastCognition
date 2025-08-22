@@ -1,3 +1,5 @@
+TileMapLayer
+AnimationTree
 Node
 StaticBody2D
 Area2D
@@ -11,4 +13,3 @@ TextureRect
 TextureButton
 Button
 Container
-TextEdit

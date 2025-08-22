@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://duy8jpg78tkkl"]
+[gd_scene load_steps=64 format=3 uid="uid://duy8jpg78tkkl"]
 
 [ext_resource type="Texture2D" uid="uid://bkrx5q3xril6o" path="res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/idle.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://jc056cm4kp3m" path="res://scripts/player.gd" id="1_qhqgy"]
@@ -463,6 +463,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 7.0
 
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_dqkch"]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_qhqgy")
 
@@ -476,3 +478,7 @@ autoplay = "idle_right"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+tree_root = SubResource("AnimationRootNode_dqkch")

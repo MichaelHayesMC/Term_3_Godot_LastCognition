@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @onready var animated_sprite := $AnimatedSprite2D
-@export var SPEED =	50
+@export var SPEED =	40
 
 var direction := Vector2.ZERO
 
