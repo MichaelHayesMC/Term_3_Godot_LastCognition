@@ -1,9 +1,25 @@
-[gd_scene load_steps=64 format=3 uid="uid://duy8jpg78tkkl"]
+[gd_scene load_steps=68 format=3 uid="uid://duy8jpg78tkkl"]
 
 [ext_resource type="Texture2D" uid="uid://bkrx5q3xril6o" path="res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/idle.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://jc056cm4kp3m" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://baie775p0hhh2" path="res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/run.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://da06yw38nla6t" path="res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/walk.png" id="4_dqkch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a3c5"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42b1b"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(80, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7ic4"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(160, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au7lq"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(240, 80, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -231,7 +247,19 @@ region = Rect2(560, 160, 80, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a3c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42b1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7ic4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au7lq")
+}],
 "loop": true,
 "name": &"idle_down",
 "speed": 8.0
@@ -472,8 +500,8 @@ script = ExtResource("1_qhqgy")
 texture_filter = 1
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_g2els")
-animation = &"idle_right"
-autoplay = "idle_right"
+animation = &"idle_down"
+autoplay = "idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
