@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Term 3 Game Project"
+config/name="Term 3 - Last Cognition"
 run/main_scene="uid://cvamvkb7citlg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
