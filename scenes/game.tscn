@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=12 format=4 uid="uid://cvamvkb7citlg"]
 
 [ext_resource type="Texture2D" uid="uid://cj683f6dsv366" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://bbw2imbtr1pn5" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://duy8jpg78tkkl" path="res://scenes/player.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/control.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bjfagg0ssydtt" path="res://scenes/power_source.tscn" id="5_iywne"]
+[ext_resource type="Script" uid="uid://qvqdb4cj60dq" path="res://scripts/line_2d.gd" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
 texture = ExtResource("1_p57ef")
@@ -218,6 +220,9 @@ sources/1 = SubResource("TileSetAtlasSource_vtaks")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
+size = Vector2(155, 200)
+
 [node name="Game" type="Node2D"]
 texture_filter = 1
 
@@ -246,24 +251,127 @@ offset_top = 216.0
 offset_right = 216.0
 offset_bottom = 216.0
 
-[node name="Detection_Areas2" type="Area2D" parent="."]
+[node name="Detection_Areas" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Areas2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Areas"]
 position = Vector2(112, 16)
 shape = SubResource("RectangleShape2D_p57ef")
 debug_color = Color(0.819608, 0.294118, 0.694118, 0.419608)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Detection_Areas2"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Detection_Areas"]
 position = Vector2(16, 112)
 shape = SubResource("RectangleShape2D_p57ef")
 debug_color = Color(0.819608, 0.294118, 0.694118, 0.419608)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Detection_Areas2"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Detection_Areas"]
 position = Vector2(208, 112)
 shape = SubResource("RectangleShape2D_p57ef")
 debug_color = Color(0.820542, 0.295704, 0.693077, 0.42)
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Detection_Areas2"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Detection_Areas"]
 position = Vector2(112, 208)
 shape = SubResource("RectangleShape2D_p57ef")
 debug_color = Color(0.820542, 0.295704, 0.693077, 0.42)
+
+[node name="Module_Border" type="Area2D" parent="."]
+visible = false
+position = Vector2(224, 9)
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Module_Border"]
+position = Vector2(77.5, 99)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="Power_Source2" parent="." instance=ExtResource("5_iywne")]
+offset_left = 348.0
+offset_top = 39.0
+offset_right = 360.0
+offset_bottom = 51.0
+color = Color(0.87005, 0.742597, 0, 1)
+
+[node name="Power_Source4" parent="." instance=ExtResource("5_iywne")]
+offset_left = 238.0
+offset_top = 28.0
+offset_right = 250.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="Node4" type="Node" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Node4"]
+width = 3.0
+default_color = Color(0, 1, 1, 1)
+script = ExtResource("6_p57ef")
+
+[node name="Power_Source" parent="Node4" instance=ExtResource("5_iywne")]
+offset_left = 266.0
+offset_top = 185.0
+offset_right = 278.0
+offset_bottom = 197.0
+color = Color(1, 1, 1, 0)
+
+[node name="Power_Source3" parent="Node4" instance=ExtResource("5_iywne")]
+offset_left = 284.0
+offset_top = 185.0
+offset_right = 296.0
+offset_bottom = 197.0
+color = Color(1, 1, 1, 0)
+
+[node name="Node5" type="Node" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Node5"]
+width = 3.0
+default_color = Color(0, 1, 1, 1)
+script = ExtResource("6_p57ef")
+
+[node name="Power_Source" parent="Node5" instance=ExtResource("5_iywne")]
+offset_left = 266.0
+offset_top = 168.0
+offset_right = 278.0
+offset_bottom = 180.0
+
+[node name="Power_Source3" parent="Node5" instance=ExtResource("5_iywne")]
+offset_left = 284.0
+offset_top = 168.0
+offset_right = 296.0
+offset_bottom = 180.0
+
+[node name="Node6" type="Node" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Node6"]
+width = 3.0
+default_color = Color(0, 1, 1, 1)
+script = ExtResource("6_p57ef")
+
+[node name="Power_Source" parent="Node6" instance=ExtResource("5_iywne")]
+offset_left = 229.0
+offset_top = 168.0
+offset_right = 241.0
+offset_bottom = 180.0
+
+[node name="Power_Source3" parent="Node6" instance=ExtResource("5_iywne")]
+offset_left = 248.0
+offset_top = 168.0
+offset_right = 260.0
+offset_bottom = 180.0
+
+[node name="Node7" type="Node" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Node7"]
+width = 3.0
+default_color = Color(0, 1, 1, 1)
+script = ExtResource("6_p57ef")
+
+[node name="Power_Source" parent="Node7" instance=ExtResource("5_iywne")]
+offset_left = 229.0
+offset_top = 185.0
+offset_right = 241.0
+offset_bottom = 197.0
+
+[node name="Power_Source3" parent="Node7" instance=ExtResource("5_iywne")]
+offset_left = 248.0
+offset_top = 185.0
+offset_right = 260.0
+offset_bottom = 197.0

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://iywbdf04swk8" path="res://assets/Untitled.png" id="1_5p55f"]
 
-[node name="Control" type="Control"]
+[node name="Frame_Elements" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

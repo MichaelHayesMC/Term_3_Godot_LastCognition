@@ -1,0 +1,7 @@
+res://scenes/game.tscn
+res://scripts/player.gd
+res://scenes/player.tscn
+res://scenes/frame_elements.tscn
+res://scenes/power_source.tscn
+res://scripts/power_source.gd
+res://scenes/wire.tscn
