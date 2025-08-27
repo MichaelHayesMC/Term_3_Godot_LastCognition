@@ -331,12 +331,14 @@ offset_left = 266.0
 offset_top = 168.0
 offset_right = 278.0
 offset_bottom = 180.0
+color = Color(1, 1, 1, 0)
 
 [node name="Power_Source3" parent="Node5" instance=ExtResource("5_iywne")]
 offset_left = 284.0
 offset_top = 168.0
 offset_right = 296.0
 offset_bottom = 180.0
+color = Color(1, 1, 1, 0)
 
 [node name="Node6" type="Node" parent="."]
 
