@@ -1,3 +1,4 @@
+Sprite2D
 CollisionShape2D
 Area2D
 AspectRatioContainer
@@ -8,7 +9,6 @@ Line2D
 Node
 Control
 ColorRect
-Sprite2D
 AnimationPlayer
 StaticBody2D
 CollisionPolygon2D
