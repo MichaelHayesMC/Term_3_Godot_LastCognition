@@ -1,8 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1756333180
+::res://::1756370102
 icon.svg::CompressedTexture2D/CompressedTexture2D::287418197989369207::1755405216::1755405228::1::::<><><>0<>0<>71e7978949635b6a6996b33c85a6a9c4<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile/TextFile::-1::1755812660::0::1::::<><><>0<>0<><>::
-::res://assets/::1755782441
+::res://assets/::1756372970
+character_spritesheet.png::CompressedTexture2D::5729618262062318749::1756372961::1756372972::1::::<><><>0<>0<>f873aed4c5680d8ff489cde6c9967ff2<>res://.godot/imported/character_spritesheet.png-00b8f1c3b0d6591e7a0cbf79fcaa7cbd.ctex::
 Untitled.png::CompressedTexture2D/CompressedTexture2D::612393541305905933::1755694184::1755694186::1::::<><><>0<>0<>cf0b06cab3cad9d5d914ba24cf44bf64<>res://.godot/imported/Untitled.png-f999cbd9ad67ebf939413b3a76841057.ctex::
 ::res://assets/Hana Caraka - Base Character [sample]/::1755406421
 ::res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/::1755406422
@@ -454,12 +455,13 @@ w_box_9slice_rc.png::CompressedTexture2D/CompressedTexture2D::476786700982309047
 w_box_9slice_tc.png::CompressedTexture2D/CompressedTexture2D::609285658794922288::1755465498::1755782562::1::::<><><>0<>0<>2d5fe127e2024bdee0d0325be4e458a3<>res://.godot/imported/w_box_9slice_tc.png-1e8a7ce2c6e8bd1c75a2e594ee4c7856.ctex::
 w_box_9slice_tl.png::CompressedTexture2D/CompressedTexture2D::5122114089282058063::1755465498::1755782562::1::::<><><>0<>0<>4f3fe7b18fdb8de2e32c24a1dcdc01e1<>res://.godot/imported/w_box_9slice_tl.png-f7c9c23e4a82cc13e788ed3f365dbbdf.ctex::
 w_box_9slice_tr.png::CompressedTexture2D/CompressedTexture2D::322464333723678298::1755465498::1755782562::1::::<><><>0<>0<>386fea37ba9bc84cdedbafd303ab0b34<>res://.godot/imported/w_box_9slice_tr.png-4ef267c7f42afe9c754575e341680b09.ctex::
-::res://scenes/::1756328572
-frame_elements.tscn::PackedScene::3018699319414166476::1756328572::0::1::::<><><>0<>0<><>::uid://iywbdf04swk8::::res://assets/Untitled.png
-game.tscn::PackedScene::6247573717605331432::1756328572::0::1::::<><><>0<>0<><>::uid://cj683f6dsv366::::res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png<>uid://bbw2imbtr1pn5::::res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png<>uid://duy8jpg78tkkl::::res://scenes/player.tscn<>uid://bjfagg0ssydtt::::res://scenes/power_source.tscn<>uid://qvqdb4cj60dq::::res://scripts/line_2d.gd<>uid://bjajsiqsyaflc::::res://scenes/frame_elements.tscn
-player.tscn::PackedScene::8614604521461692847::1756328572::0::1::::<><><>0<>0<><>::uid://bkrx5q3xril6o::::res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/idle.png<>uid://jc056cm4kp3m::::res://scripts/player.gd<>uid://baie775p0hhh2::::res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/run.png<>uid://beppofgatb17i::::res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/death.png<>uid://ceb4467msymkh::::res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/hurt.png
-power_source.tscn::PackedScene::3028453234572171141::1756328572::0::1::::<><><>0<>0<><>::uid://b8hhx7xkynd6::::res://scripts/power_source.gd
-::res://scripts/::1756328572
-line_2d.gd::GDScript/GDScript::1167350357736575074::1756160969::0::1::::<>Line2D<><>0<>0<><>::
-player.gd::GDScript::637401478784572960::1756328572::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+::res://scenes/::1756349760
+frame_elements.tscn::PackedScene::3018699319414166476::1756349694::0::1::::<><><>0<>0<><>::uid://iywbdf04swk8::::res://assets/Untitled.png
+game.tscn::PackedScene::6247573717605331432::1756349760::0::1::::<><><>0<>0<><>::uid://cj683f6dsv366::::res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png<>uid://bbw2imbtr1pn5::::res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png<>uid://duy8jpg78tkkl::::res://scenes/player.tscn<>uid://bjfagg0ssydtt::::res://scenes/power_source.tscn<>uid://qvqdb4cj60dq::::res://scripts/line_2d.gd<>uid://cwojt257qqims::::res://scenes/wire_node.tscn<>uid://bjajsiqsyaflc::::res://scenes/frame_elements.tscn
+player.tscn::PackedScene::8614604521461692847::1756349694::0::1::::<><><>0<>0<><>::uid://bkrx5q3xril6o::::res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/idle.png<>uid://jc056cm4kp3m::::res://scripts/player.gd<>uid://baie775p0hhh2::::res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/run.png<>uid://beppofgatb17i::::res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/death.png<>uid://ceb4467msymkh::::res://assets/Hana Caraka - Base Character [sample]/Hana Caraka - Base Character [sample]/hurt.png
+power_source.tscn::PackedScene::3028453234572171141::1756349694::0::1::::<><><>0<>0<><>::uid://b8hhx7xkynd6::::res://scripts/power_source.gd
+wire_node.tscn::PackedScene::6346479064949382474::1756349694::0::1::::<><><>0<>0<><>::uid://b8hhx7xkynd6::::res://scripts/power_source.gd
+::res://scripts/::1756348222
+line_2d.gd::GDScript::1167350357736575074::1756348222::0::1::::<>Line2D<><>0<>0<><>::
+player.gd::GDScript::637401478784572960::1756347991::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
 power_source.gd::GDScript/GDScript::138752087558835705::1756197461::0::1::::<>Control<><>0<>0<><>::
