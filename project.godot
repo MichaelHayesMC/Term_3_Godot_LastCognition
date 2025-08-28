@@ -29,6 +29,14 @@ window/vsync/vsync_mode=3
 
 project/assembly_name="Term 3 Game Project"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "orange",
+"res://scenes/": "green",
+"res://scripts/": "blue"
+}
+
 [input]
 
 move_up={
