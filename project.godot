@@ -23,7 +23,7 @@ window/size/window_width_override=768
 window/size/window_height_override=432
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
-window/vsync/vsync_mode=0
+window/vsync/vsync_mode=3
 
 [dotnet]
 
