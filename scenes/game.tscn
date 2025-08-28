@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=13 format=4 uid="uid://cvamvkb7citlg"]
 
 [ext_resource type="Texture2D" uid="uid://cj683f6dsv366" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://bbw2imbtr1pn5" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://duy8jpg78tkkl" path="res://scenes/player.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bjfagg0ssydtt" path="res://scenes/power_source.tscn" id="5_iywne"]
 [ext_resource type="Script" uid="uid://qvqdb4cj60dq" path="res://scripts/line_2d.gd" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
@@ -298,82 +299,21 @@ offset_right = 250.0
 offset_bottom = 40.0
 color = Color(0, 1, 1, 1)
 
-[node name="Node4" type="Node" parent="."]
-
-[node name="Line2D" type="Line2D" parent="Node4"]
-width = 3.0
-default_color = Color(0, 1, 1, 1)
-script = ExtResource("6_p57ef")
-
-[node name="Power_Source" parent="Node4" instance=ExtResource("5_iywne")]
-offset_left = 266.0
-offset_top = 185.0
-offset_right = 278.0
-offset_bottom = 197.0
-color = Color(1, 1, 1, 0)
-
-[node name="Power_Source3" parent="Node4" instance=ExtResource("5_iywne")]
-offset_left = 284.0
-offset_top = 185.0
-offset_right = 296.0
-offset_bottom = 197.0
-color = Color(1, 1, 1, 0)
-
-[node name="Node5" type="Node" parent="."]
-
-[node name="Line2D" type="Line2D" parent="Node5"]
-width = 3.0
-default_color = Color(0, 1, 1, 1)
-script = ExtResource("6_p57ef")
-
-[node name="Power_Source" parent="Node5" instance=ExtResource("5_iywne")]
-offset_left = 266.0
-offset_top = 168.0
-offset_right = 278.0
-offset_bottom = 180.0
-color = Color(1, 1, 1, 0)
-
-[node name="Power_Source3" parent="Node5" instance=ExtResource("5_iywne")]
-offset_left = 284.0
-offset_top = 168.0
-offset_right = 296.0
-offset_bottom = 180.0
-color = Color(1, 1, 1, 0)
-
-[node name="Node6" type="Node" parent="."]
-
-[node name="Line2D" type="Line2D" parent="Node6"]
-width = 3.0
-default_color = Color(0, 1, 1, 1)
-script = ExtResource("6_p57ef")
-
-[node name="Power_Source" parent="Node6" instance=ExtResource("5_iywne")]
-offset_left = 229.0
-offset_top = 168.0
-offset_right = 241.0
-offset_bottom = 180.0
-
-[node name="Power_Source3" parent="Node6" instance=ExtResource("5_iywne")]
-offset_left = 248.0
-offset_top = 168.0
-offset_right = 260.0
-offset_bottom = 180.0
-
 [node name="Node7" type="Node" parent="."]
 
 [node name="Line2D" type="Line2D" parent="Node7"]
-width = 3.0
+width = 2.0
 default_color = Color(0, 1, 1, 1)
 script = ExtResource("6_p57ef")
 
-[node name="Power_Source" parent="Node7" instance=ExtResource("5_iywne")]
-offset_left = 229.0
-offset_top = 185.0
-offset_right = 241.0
-offset_bottom = 197.0
+[node name="Wire_Node2" parent="Node7" instance=ExtResource("7_gee14")]
+offset_left = 276.0
+offset_top = 143.0
+offset_right = 280.0
+offset_bottom = 147.0
 
-[node name="Power_Source3" parent="Node7" instance=ExtResource("5_iywne")]
-offset_left = 248.0
-offset_top = 185.0
-offset_right = 260.0
-offset_bottom = 197.0
+[node name="Wire_Node" parent="Node7" instance=ExtResource("7_gee14")]
+offset_left = 247.0
+offset_top = 143.0
+offset_right = 251.0
+offset_bottom = 147.0

@@ -3,3 +3,5 @@ res://scripts/player.gd
 res://scenes/player.tscn
 res://scenes/frame_elements.tscn
 res://scenes/power_source.tscn
+res://scenes/wire_node.tscn
+res://scripts/line_2d.gd

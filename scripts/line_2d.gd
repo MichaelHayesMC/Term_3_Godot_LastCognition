@@ -1,19 +1,19 @@
 extends Line2D
 
-@onready var power_source: ColorRect = $"../Power_Source"
-@onready var power_source_3: ColorRect = $"../Power_Source3"
+@onready var wire_node: ColorRect = $"../../Node7/Wire_Node"
+@onready var wire_node_2: ColorRect = $"../../Node7/Wire_Node2"
 
 var left_side := Vector2.ZERO
 var right_side := Vector2.ZERO
 
 func _ready() -> void:
-	left_side = power_source.size
-	right_side = power_source_3.size
+	left_side = wire_node.size
+	right_side = wire_node_2.size
 	add_point(left_side, 0)
 	add_point(right_side, 1)
 
 func _physics_process(delta: float) -> void:
-	left_side = (power_source.size / 2 + power_source.position)
-	right_side = (power_source_3.size / 2 + power_source_3.position)
+	left_side = (wire_node.size / 2 + wire_node.position)
+	right_side = (wire_node_2.size / 2 + wire_node_2.position)
 	set_point_position(0, left_side)
 	set_point_position(1, right_side)

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwojt257qqims"]
+
+[ext_resource type="Script" uid="uid://b8hhx7xkynd6" path="res://scripts/power_source.gd" id="1_r8cwk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00ly7"]
+size = Vector2(6, 6)
+
+[node name="Wire_Node" type="ColorRect"]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+script = ExtResource("1_r8cwk")
+
+[node name="Power_Collision" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Power_Collision"]
+position = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_00ly7")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="Power_Collision" to="." method="_on_power_collision_area_entered"]
+[connection signal="area_exited" from="Power_Collision" to="." method="_on_power_collision_area_exited"]
