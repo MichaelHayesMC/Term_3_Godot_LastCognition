@@ -15,7 +15,6 @@ script = ExtResource("1_00ly7")
 [node name="Power_Collision" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Power_Collision"]
 position = Vector2(6, 6)
@@ -23,5 +22,3 @@ shape = SubResource("RectangleShape2D_00ly7")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="area_entered" from="Power_Collision" to="." method="_on_power_collision_area_entered"]
-[connection signal="area_exited" from="Power_Collision" to="." method="_on_power_collision_area_exited"]

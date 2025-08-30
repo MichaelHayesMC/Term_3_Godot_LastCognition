@@ -1,30 +1,21 @@
-extends Control
+extends Components
 
-@onready var module_border: Area2D = $"../Module_Border"
+@onready var power_collision: Area2D = $Power_Collision
 
-@export var draggable := false
-@export var last_pos : Vector2
-@export var inside : bool
-
-var centre := size / 2
-var mouse_in := false
-
-func _ready() -> void:
-	last_pos = position
-
-func _process(delta: float) -> void:
-	if draggable and inside:
-		position = Vector2(get_global_mouse_position().x - centre.x, get_global_mouse_position().y - centre.y)
-	else:
-		draggable = false
-
-func _physics_process(delta: float) -> void:		
-	if not $Power_Collision.get_overlapping_areas() and not draggable:
+func _physics_process(delta: float) -> void:
+	if not power_collision.get_overlapping_areas() and not draggable:
 		inside = false
 		position = last_pos
-		print($Power_Collision.get_overlapping_areas(),last_pos)
 	else:
 		inside = true
+	
+	for area in power_collision.get_overlapping_areas():
+		if area.name == "Power_Collision":
+			$".".color = Color.RED
+		elif area.name == "Wire_Collision":
+			$".".color = Color.YELLOW_GREEN
+		else:
+			$".".color = Color.ORANGE
 
 func _input(event) -> void:
 	if event is InputEventMouseButton:
@@ -32,13 +23,5 @@ func _input(event) -> void:
 			draggable  = true
 		elif event.is_released() and mouse_in:
 			draggable = false
-			if $Power_Collision.get_overlapping_areas():
+			if power_collision.get_overlapping_areas():
 				last_pos = position
-				print(last_pos, $Power_Collision.get_overlapping_areas())
-
-func _on_mouse_entered():
-	mouse_in = true
-
-func _on_mouse_exited() -> void:
-	mouse_in = false
-	

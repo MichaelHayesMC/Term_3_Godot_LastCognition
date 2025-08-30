@@ -1,7 +1,7 @@
 extends Line2D
 
-@onready var wire_node: ColorRect = $"../../Node7/Wire_Node"
-@onready var wire_node_2: ColorRect = $"../../Node7/Wire_Node2"
+@onready var wire_node: ColorRect = $"../Wire_Node"
+@onready var wire_node_2: ColorRect = $"../Wire_Node2"
 
 var left_side := Vector2.ZERO
 var right_side := Vector2.ZERO
