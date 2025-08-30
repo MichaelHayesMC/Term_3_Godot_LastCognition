@@ -1,3 +1,6 @@
+Node2D
+Line2D
+Node
 AnimatedSprite2D
 Sprite2D
 CollisionShape2D
@@ -6,10 +9,6 @@ AspectRatioContainer
 PanelContainer
 BoxContainer
 Container
-Line2D
-Node
 Control
 ColorRect
 AnimationPlayer
-StaticBody2D
-CollisionPolygon2D

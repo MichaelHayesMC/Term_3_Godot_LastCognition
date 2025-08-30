@@ -1,6 +1,8 @@
-res://scenes/game.tscn
+res://scenes/test.tscn
 res://scripts/player.gd
+res://scenes/game.tscn
 res://scenes/player.tscn
 res://scenes/frame_elements.tscn
 res://scenes/power_source.tscn
 res://scenes/wire_node.tscn
+res://scenes/test.gd
