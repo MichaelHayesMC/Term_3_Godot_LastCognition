@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=14 format=4 uid="uid://cvamvkb7citlg"]
 
 [ext_resource type="Texture2D" uid="uid://cj683f6dsv366" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://bbw2imbtr1pn5" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_u5sy4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://qvqdb4cj60dq" path="res://scripts/line_2d.gd" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bcwfymy1p1f0r" path="res://scenes/test.tscn" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
 texture = ExtResource("1_p57ef")
@@ -299,21 +300,26 @@ offset_right = 250.0
 offset_bottom = 40.0
 color = Color(0, 1, 1, 1)
 
-[node name="Node7" type="Node" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="Line2D" type="Line2D" parent="Node7"]
+[node name="Line2D" type="Line2D" parent="Node2D"]
 width = 2.0
 default_color = Color(0, 1, 1, 1)
 script = ExtResource("6_p57ef")
 
-[node name="Wire_Node2" parent="Node7" instance=ExtResource("7_gee14")]
-offset_left = 242.0
-offset_top = 94.0
-offset_right = 246.0
-offset_bottom = 98.0
+[node name="Wire_Node2" parent="Node2D" instance=ExtResource("7_gee14")]
+offset_left = 240.0
+offset_top = 96.0
+offset_right = 244.0
+offset_bottom = 100.0
 
-[node name="Wire_Node" parent="Node7" instance=ExtResource("7_gee14")]
-offset_left = 242.0
-offset_top = 75.0
-offset_right = 246.0
-offset_bottom = 79.0
+[node name="Wire_Node" parent="Node2D" instance=ExtResource("7_gee14")]
+offset_left = 240.0
+offset_top = 80.0
+offset_right = 244.0
+offset_bottom = 84.0
+
+[node name="Node2D2" parent="." instance=ExtResource("8_gee14")]
+
+[node name="Node2D3" parent="." instance=ExtResource("8_gee14")]
+position = Vector2(32, 51)

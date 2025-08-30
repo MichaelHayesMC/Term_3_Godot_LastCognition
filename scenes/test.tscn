@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcwfymy1p1f0r"]
+
+[ext_resource type="Script" uid="uid://qvqdb4cj60dq" path="res://scripts/line_2d.gd" id="1_bl13t"]
+[ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="2_iyx0m"]
+
+[sub_resource type="GDScript" id="GDScript_bl13t"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	var line = Line2D.new()
+	var script = load(\"res://scripts/line_2d.gd\")
+	
+	line.set_script(script)
+	add_child(line)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_bl13t")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 2.0
+default_color = Color(0, 1, 1, 1)
+script = ExtResource("1_bl13t")
+
+[node name="Wire_Node2" parent="." instance=ExtResource("2_iyx0m")]
+offset_left = 249.0
+offset_top = 83.0
+offset_right = 253.0
+offset_bottom = 87.0
+
+[node name="Wire_Node" parent="." instance=ExtResource("2_iyx0m")]
+offset_left = 249.0
+offset_top = 97.0
+offset_right = 253.0
+offset_bottom = 101.0
