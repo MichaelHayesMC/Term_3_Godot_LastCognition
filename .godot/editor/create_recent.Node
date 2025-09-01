@@ -1,8 +1,9 @@
-Node2D
-Line2D
-Node
-AnimatedSprite2D
 Sprite2D
+CanvasModulate
+Node2D
+Node
+Line2D
+AnimatedSprite2D
 CollisionShape2D
 Area2D
 AspectRatioContainer
@@ -11,4 +12,3 @@ BoxContainer
 Container
 Control
 ColorRect
-AnimationPlayer

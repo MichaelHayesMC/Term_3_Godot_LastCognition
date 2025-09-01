@@ -1,8 +1,13 @@
-res://scenes/test.tscn
-res://scripts/player.gd
 res://scenes/game.tscn
+res://scripts/player.gd
 res://scenes/player.tscn
 res://scenes/frame_elements.tscn
 res://scenes/power_source.tscn
 res://scenes/wire_node.tscn
-res://scenes/test.gd
+res://scenes/test.tscn
+res://scenes/wire.tscn
+res://scripts/line_2d.gd
+res://scripts/creation.gd
+res://scripts/wire_node.gd
+res://scripts/on_new_wrire.gd
+res://scripts/on_new_wire.gd
