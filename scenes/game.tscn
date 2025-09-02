@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=14 format=4 uid="uid://cvamvkb7citlg"]
 
 [ext_resource type="Texture2D" uid="uid://cj683f6dsv366" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://bbw2imbtr1pn5" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_u5sy4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjfagg0ssydtt" path="res://scenes/power_source.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dyj81hojync2q" path="res://scenes/gun.tscn" id="8_0tnpc"]
 [ext_resource type="Script" uid="uid://uox3kdrc1uuk" path="res://scripts/creation.gd" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
@@ -275,7 +276,6 @@ shape = SubResource("RectangleShape2D_p57ef")
 debug_color = Color(0.820542, 0.295704, 0.693077, 0.42)
 
 [node name="Module_Border" type="Area2D" parent="."]
-visible = false
 position = Vector2(224, 9)
 collision_layer = 2
 collision_mask = 2
@@ -286,18 +286,10 @@ position = Vector2(77.5, 99)
 shape = SubResource("RectangleShape2D_u5sy4")
 
 [node name="Power_Source2" parent="." instance=ExtResource("5_iywne")]
-offset_left = 238.0
-offset_top = 51.0
-offset_right = 250.0
-offset_bottom = 63.0
-color = Color(0.87005, 0.742597, 0, 1)
+position = Vector2(243, 52)
 
 [node name="Power_Source4" parent="." instance=ExtResource("5_iywne")]
-offset_left = 238.0
-offset_top = 28.0
-offset_right = 250.0
-offset_bottom = 40.0
-color = Color(0, 1, 1, 1)
+position = Vector2(246, 32)
 
 [node name="Node2D4" type="Node2D" parent="."]
 script = ExtResource("8_gee14")
@@ -358,3 +350,6 @@ offset_left = 253.0
 offset_top = 129.0
 offset_right = 257.0
 offset_bottom = 133.0
+
+[node name="Gun" parent="." instance=ExtResource("8_0tnpc")]
+position = Vector2(111, 106)
