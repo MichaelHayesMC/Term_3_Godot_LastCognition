@@ -19,3 +19,10 @@ position = Vector2(19, 0)
 rotation = 1.5708
 scale = Vector2(2, 9)
 gizmo_extents = 2.7
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

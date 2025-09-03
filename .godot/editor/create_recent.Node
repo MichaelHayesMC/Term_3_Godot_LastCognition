@@ -1,8 +1,9 @@
-Sprite2D
-Timer
-Node2D
 CollisionShape2D
 Area2D
+Timer
+CharacterBody2D
+Sprite2D
+Node2D
 Marker2D
 Control
 ColorRect
@@ -11,4 +12,3 @@ CanvasModulate
 Node
 Line2D
 AspectRatioContainer
-PanelContainer

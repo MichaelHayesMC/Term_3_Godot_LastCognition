@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://n6gllmlwh1xc"]
+[gd_scene load_steps=7 format=3 uid="uid://n6gllmlwh1xc"]
 
 [ext_resource type="Script" uid="uid://dndie06ief0kc" path="res://scripts/enemy_1.gd" id="1_tcmaw"]
 [ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://Blink.gdshader" id="2_a1412"]
@@ -10,16 +10,12 @@ shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/blink_intensity = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ejytf"]
-resource_local_to_scene = true
 shader = ExtResource("2_a1412")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/blink_intensity = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejytf"]
 radius = 0.5
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejytf"]
-size = Vector2(16, 16)
 
 [node name="Enemy1" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_a1412")
@@ -35,10 +31,3 @@ texture = ExtResource("3_ejytf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(16, 16)
 shape = SubResource("CircleShape2D_ejytf")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_ejytf")
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
