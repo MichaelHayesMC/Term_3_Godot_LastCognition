@@ -1,13 +1,14 @@
-[gd_scene load_steps=14 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=15 format=4 uid="uid://cvamvkb7citlg"]
 
 [ext_resource type="Texture2D" uid="uid://cj683f6dsv366" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://bbw2imbtr1pn5" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://duy8jpg78tkkl" path="res://scenes/player.tscn" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://c6d2ax716oqld" path="res://scripts/draggables.gd" id="5_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjfagg0ssydtt" path="res://scenes/power_source.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://dyj81hojync2q" path="res://scenes/gun.tscn" id="8_0tnpc"]
 [ext_resource type="Script" uid="uid://uox3kdrc1uuk" path="res://scripts/creation.gd" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="9_0tnpc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
 texture = ExtResource("1_p57ef")
@@ -228,20 +229,31 @@ size = Vector2(155, 200)
 [node name="Game" type="Node2D"]
 texture_filter = 1
 
-[node name="Grass" type="TileMapLayer" parent="."]
+[node name="Tilemaps" type="Node2D" parent="."]
+
+[node name="Grass" type="TileMapLayer" parent="Tilemaps"]
 position = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAMAAAAAAAEAAAABAAMAAAAAAAIAAAABAAMAAAAAAAMAAAABAAMAAAAAAAQAAAABAAMAAAAAAAUAAAABAAMAAAAAAAYAAAABAAMAAAAAAAcAAAABAAMAAAAAAAgAAAABAAMAAAAAAAkAAAABAAMAAAAAAAoAAAABAAMAAAAAAAsAAAABAAMAAAABAAAAAAABAAMAAAABAAEAAAABAAMAAAABAAIAAAABAAMAAAABAAMAAAABAAMAAAABAAQAAAABAAMAAAABAAUAAAABAAMAAAABAAYAAAABAAMAAAABAAcAAAABAAMAAAABAAgAAAABAAMAAAABAAkAAAABAAMAAAABAAoAAAABAAMAAAABAAsAAAABAAMAAAACAAAAAAABAAMAAAACAAEAAAABAAMAAAACAAIAAAABAAMAAAACAAMAAAABAAMAAAACAAQAAAABAAMAAAACAAUAAAABAAMAAAACAAYAAAABAAMAAAACAAcAAAABAAMAAAACAAgAAAABAAMAAAACAAkAAAABAAMAAAACAAoAAAABAAMAAAACAAsAAAABAAMAAAADAAAAAAABAAMAAAADAAEAAAABAAMAAAADAAIAAAABAAMAAAADAAMAAAABAAMAAAADAAQAAAABAAMAAAADAAUAAAABAAMAAAADAAYAAAABAAMAAAADAAcAAAABAAMAAAADAAgAAAABAAMAAAADAAkAAAABAAMAAAADAAoAAAABAAMAAAADAAsAAAABAAMAAAAEAAAAAAABAAMAAAAEAAEAAAABAAMAAAAEAAIAAAABAAMAAAAEAAMAAAABAAMAAAAEAAQAAAABAAMAAAAEAAUAAAABAAMAAAAEAAYAAAABAAMAAAAEAAcAAAABAAMAAAAEAAgAAAABAAMAAAAEAAkAAAABAAMAAAAEAAoAAAABAAMAAAAEAAsAAAABAAMAAAAFAAAAAAABAAMAAAAFAAEAAAABAAMAAAAFAAIAAAABAAMAAAAFAAMAAAABAAMAAAAFAAQAAAABAAMAAAAFAAUAAAABAAMAAAAFAAYAAAABAAMAAAAFAAcAAAABAAMAAAAFAAgAAAABAAMAAAAFAAkAAAABAAMAAAAFAAoAAAABAAMAAAAFAAsAAAABAAMAAAAGAAAAAAABAAMAAAAGAAEAAAABAAMAAAAGAAIAAAABAAMAAAAGAAMAAAABAAMAAAAGAAQAAAABAAMAAAAGAAUAAAABAAMAAAAGAAYAAAABAAMAAAAGAAcAAAABAAMAAAAGAAgAAAABAAMAAAAGAAkAAAABAAMAAAAGAAoAAAABAAMAAAAGAAsAAAABAAMAAAAHAAAAAAABAAMAAAAHAAEAAAABAAMAAAAHAAIAAAABAAMAAAAHAAMAAAABAAMAAAAHAAQAAAABAAMAAAAHAAUAAAABAAMAAAAHAAYAAAABAAMAAAAHAAcAAAABAAMAAAAHAAgAAAABAAMAAAAHAAkAAAABAAMAAAAHAAoAAAABAAMAAAAHAAsAAAABAAMAAAAIAAAAAAABAAMAAAAIAAEAAAABAAMAAAAIAAIAAAABAAMAAAAIAAMAAAABAAMAAAAIAAQAAAABAAMAAAAIAAUAAAABAAMAAAAIAAYAAAABAAMAAAAIAAcAAAABAAMAAAAIAAgAAAABAAMAAAAIAAkAAAABAAMAAAAIAAoAAAABAAMAAAAIAAsAAAABAAMAAAAJAAAAAAABAAMAAAAJAAEAAAABAAMAAAAJAAIAAAABAAMAAAAJAAMAAAABAAMAAAAJAAQAAAABAAMAAAAJAAUAAAABAAMAAAAJAAYAAAABAAMAAAAJAAcAAAABAAMAAAAJAAgAAAABAAMAAAAJAAkAAAABAAMAAAAKAAAAAAABAAMAAAAKAAEAAAABAAMAAAAKAAIAAAABAAMAAAAKAAMAAAABAAMAAAAKAAQAAAABAAMAAAAKAAUAAAABAAMAAAAKAAYAAAABAAMAAAAKAAcAAAABAAMAAAAKAAgAAAABAAMAAAAKAAkAAAABAAMAAAAKAAoAAAABAAMAAAALAAAAAAABAAMAAAALAAEAAAABAAMAAAALAAIAAAABAAMAAAALAAMAAAABAAMAAAALAAQAAAABAAMAAAALAAUAAAABAAMAAAALAAYAAAABAAMAAAALAAcAAAABAAMAAAALAAgAAAABAAMAAAALAAkAAAABAAMAAAALAAoAAAABAAMAAAALAAsAAAABAAMAAAAMAAAAAAABAAMAAAAMAAEAAAABAAMAAAAMAAIAAAABAAMAAAAMAAMAAAABAAMAAAAMAAQAAAABAAMAAAAMAAUAAAABAAMAAAAMAAYAAAABAAMAAAAMAAcAAAABAAMAAAAMAAgAAAABAAMAAAAMAAkAAAABAAMAAAAMAAoAAAABAAMAAAAMAAsAAAABAAMAAAAJAAoAAAABAAMAAAAJAAsAAAABAAMAAAAKAAsAAAABAAMAAAAMAAwAAAABAAMAAAALAAwAAAABAAMAAAAKAAwAAAABAAMAAAAJAAwAAAABAAMAAAAIAAwAAAABAAMAAAAHAAwAAAABAAMAAAAGAAwAAAABAAMAAAAFAAwAAAABAAMAAAAEAAwAAAABAAMAAAADAAwAAAABAAMAAAACAAwAAAABAAMAAAABAAwAAAABAAMAAAAAAAwAAAABAAMAAAA=")
 tile_set = SubResource("TileSet_kvpfn")
 
-[node name="Border" type="TileMapLayer" parent="."]
+[node name="Border" type="TileMapLayer" parent="Tilemaps"]
 position = Vector2(8, 0)
 tile_map_data = PackedByteArray("AAAAAAIAAAAGAAEAAAAAAAEAAAAGAAEAAAAAAAAAAAAGAAEAAAABAAAAAAAGAAEAAAACAAAAAAAGAAEAAAADAAAAAAAGAAEAAAAEAAAAAAAGAAEAAAAFAAAAAAAGAAEAAAAHAAAAAAAGAAEAAAAIAAAAAAAGAAEAAAAJAAAAAAAGAAEAAAAKAAAAAAAGAAEAAAALAAAAAAAGAAEAAAAMAAAAAAAGAAEAAAAAAAMAAAAGAAEAAAAAAAQAAAAGAAEAAAAAAAUAAAAGAAEAAAAAAAYAAAAGAAEAAAAAAAcAAAAGAAEAAAAAAAgAAAAGAAEAAAAAAAkAAAAGAAEAAAAAAAoAAAAGAAEAAAAAAAsAAAAGAAEAAAAAAAwAAAAGAAEAAAAMAAEAAAAGAAEAAAAMAAIAAAAGAAEAAAAMAAMAAAAGAAEAAAAMAAQAAAAGAAEAAAAMAAUAAAAGAAEAAAAMAAYAAAAGAAEAAAAMAAcAAAAGAAEAAAAMAAgAAAAGAAEAAAAMAAkAAAAGAAEAAAAMAAoAAAAGAAEAAAAMAAsAAAAGAAEAAAAMAAwAAAAGAAEAAAAGAAAAAAAGAAEAAAA=")
 tile_set = SubResource("TileSet_kvpfn")
 
-[node name="Walls" type="TileMapLayer" parent="."]
+[node name="Walls" type="TileMapLayer" parent="Tilemaps"]
 position = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAAAAAAAAAAIAAwAAAAAAAEAAAAGAAwAAAAAAAIAAAAGAAwAAAAAAAMAAAAGAAwAAAAAAAQAAAAGAAwAAAAAAAUAAAAGAAwAAAAAAAYAAAALAAoAAAAAAAcAAAAGAAwAAAAAAAgAAAAGAAwAAAAAAAkAAAAGAAwAAAAAAAoAAAAGAAwAAAAAAAsAAAAGAAwAAAAAAAwAAAAGAA0AAAABAAAAAAAEAAwAAAABAAwAAAAFAA0AAAACAAAAAAAEAAwAAAACAAwAAAAFAA0AAAADAAAAAAAEAAwAAAADAAwAAAAFAA0AAAAEAAAAAAAEAAwAAAAEAAwAAAAFAA0AAAAFAAAAAAAEAAwAAAAFAAwAAAAFAA0AAAAGAAAAAAANAA0AAAAGAAwAAAANAA0AAAAHAAAAAAAEAAwAAAAHAAwAAAAFAA0AAAAIAAAAAAAEAAwAAAAIAAwAAAAFAA0AAAAJAAAAAAAEAAwAAAAJAAwAAAAFAA0AAAAKAAAAAAAEAAwAAAAKAAwAAAAFAA0AAAALAAAAAAAEAAwAAAALAAwAAAAFAA0AAAAMAAAAAAAEAA0AAAAMAAEAAAADAA0AAAAMAAIAAAADAA0AAAAMAAMAAAADAA0AAAAMAAQAAAADAA0AAAAMAAUAAAADAA0AAAAMAAYAAAANAAoAAAAMAAcAAAADAA0AAAAMAAgAAAADAA0AAAAMAAkAAAADAA0AAAAMAAoAAAADAA0AAAAMAAsAAAADAA0AAAAMAAwAAAAHAA0AAAA=")
 tile_set = SubResource("TileSet_kvpfn")
+
+[node name="Enemy1" parent="." instance=ExtResource("9_0tnpc")]
+position = Vector2(83, 67)
+
+[node name="Enemy2" parent="." instance=ExtResource("9_0tnpc")]
+position = Vector2(109, 67)
+
+[node name="Enemy3" parent="." instance=ExtResource("9_0tnpc")]
+position = Vector2(135, 67)
 
 [node name="Player" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(110, 117)
@@ -285,71 +297,30 @@ monitoring = false
 position = Vector2(77.5, 99)
 shape = SubResource("RectangleShape2D_u5sy4")
 
-[node name="Power_Source2" parent="." instance=ExtResource("5_iywne")]
+[node name="Draggables" type="Node2D" parent="."]
+script = ExtResource("5_gee14")
+
+[node name="Power_Start" parent="Draggables" instance=ExtResource("5_iywne")]
 position = Vector2(243, 52)
 
-[node name="Power_Source4" parent="." instance=ExtResource("5_iywne")]
+[node name="Power_End" parent="Draggables" instance=ExtResource("5_iywne")]
 position = Vector2(246, 32)
 
 [node name="Node2D4" type="Node2D" parent="."]
 script = ExtResource("8_gee14")
 
 [node name="Wire_Node" parent="Node2D4" instance=ExtResource("7_gee14")]
+top_level = true
 offset_left = 323.0
 offset_top = 76.0
 offset_right = 327.0
 offset_bottom = 80.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Wire_Node2" parent="Node2D4" instance=ExtResource("7_gee14")]
+top_level = true
 offset_left = 323.0
 offset_top = 92.0
 offset_right = 327.0
 offset_bottom = 96.0
-
-[node name="Node2D5" type="Node2D" parent="."]
-script = ExtResource("8_gee14")
-
-[node name="Wire_Node" parent="Node2D5" instance=ExtResource("7_gee14")]
-offset_left = 325.0
-offset_top = 122.0
-offset_right = 329.0
-offset_bottom = 126.0
-
-[node name="Wire_Node2" parent="Node2D5" instance=ExtResource("7_gee14")]
-offset_left = 325.0
-offset_top = 138.0
-offset_right = 329.0
-offset_bottom = 142.0
-
-[node name="Node2D6" type="Node2D" parent="."]
-script = ExtResource("8_gee14")
-
-[node name="Wire_Node" parent="Node2D6" instance=ExtResource("7_gee14")]
-offset_left = 289.0
-offset_top = 116.0
-offset_right = 293.0
-offset_bottom = 120.0
-
-[node name="Wire_Node2" parent="Node2D6" instance=ExtResource("7_gee14")]
-offset_left = 289.0
-offset_top = 132.0
-offset_right = 293.0
-offset_bottom = 136.0
-
-[node name="Node2D7" type="Node2D" parent="."]
-script = ExtResource("8_gee14")
-
-[node name="Wire_Node" parent="Node2D7" instance=ExtResource("7_gee14")]
-offset_left = 253.0
-offset_top = 113.0
-offset_right = 257.0
-offset_bottom = 117.0
-
-[node name="Wire_Node2" parent="Node2D7" instance=ExtResource("7_gee14")]
-offset_left = 253.0
-offset_top = 129.0
-offset_right = 257.0
-offset_bottom = 133.0
-
-[node name="Gun" parent="." instance=ExtResource("8_0tnpc")]
-position = Vector2(111, 106)
+metadata/_edit_use_anchors_ = true
