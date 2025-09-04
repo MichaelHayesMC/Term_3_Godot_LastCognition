@@ -13,7 +13,7 @@ func _ready() -> void:
 	last_pos = global_position
 	player = get_parent()
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not power_collision.get_overlapping_areas() and not draggable:
 		global_position = last_pos
 		inside = false
@@ -43,5 +43,5 @@ func _on_power_collision_area_entered(area: Area2D) -> void:
 	elif area.name == "Wire_Collision":
 		modulate = Color.YELLOW_GREEN
 
-func _on_power_collision_area_exited(area: Area2D) -> void:
+func _on_power_collision_area_exited(_area: Area2D) -> void:
 	modulate = Color.WHITE

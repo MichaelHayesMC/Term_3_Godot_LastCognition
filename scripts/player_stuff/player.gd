@@ -45,6 +45,6 @@ func get_input():
 	elif not velocity:
 		state_machine(states.IDLE)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	get_input()
 	move_and_slide()

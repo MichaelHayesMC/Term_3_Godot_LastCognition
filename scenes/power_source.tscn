@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjfagg0ssydtt"]
 
-[ext_resource type="Script" uid="uid://b8hhx7xkynd6" path="res://scripts/power_source.gd" id="1_00ly7"]
+[ext_resource type="Script" uid="uid://b8hhx7xkynd6" path="res://scripts/draggables/power_source.gd" id="1_00ly7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_00ly7"]
 
@@ -8,7 +8,6 @@
 size = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="Sprite2D"]
-top_level = true
 scale = Vector2(10, 10)
 texture = SubResource("CanvasTexture_00ly7")
 script = ExtResource("1_00ly7")
@@ -22,16 +21,7 @@ collision_mask = 2
 position = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_00ly7")
 
-[node name="Power_Source" type="ColorRect" parent="."]
-visible = false
-offset_left = -6.0
-offset_top = -6.0
-offset_right = 6.0
-offset_bottom = 6.0
-
 [connection signal="area_entered" from="Power_Collision" to="." method="_on_power_collision_area_entered"]
 [connection signal="area_exited" from="Power_Collision" to="." method="_on_power_collision_area_exited"]
 [connection signal="mouse_entered" from="Power_Collision" to="." method="_on_power_collision_mouse_entered"]
 [connection signal="mouse_exited" from="Power_Collision" to="." method="_on_power_collision_mouse_exited"]
-[connection signal="mouse_entered" from="Power_Source" to="Power_Source" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Power_Source" to="Power_Source" method="_on_mouse_exited"]

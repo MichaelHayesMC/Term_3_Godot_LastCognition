@@ -13,6 +13,7 @@ config_version=5
 config/name="Term 3 - Last Cognition"
 run/main_scene="uid://cvamvkb7citlg"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [display]

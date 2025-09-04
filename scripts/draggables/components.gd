@@ -9,7 +9,7 @@ var mouse_in := false
 
 var carrying : bool = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if draggable and inside and not carrying:
 		global_position = get_global_mouse_position()
 	else:

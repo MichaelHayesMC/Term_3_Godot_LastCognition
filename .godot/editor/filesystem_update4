@@ -1,5 +1,4 @@
 res://scenes/game.tscn
-res://scripts/player.gd
 res://Blink.gdshader
 res://scenes/player.tscn
 res://scenes/gun.tscn
@@ -8,7 +7,5 @@ res://scenes/frame_elements.tscn
 res://scenes/power_source.tscn
 res://scenes/wire_node.tscn
 res://scenes/test.tscn
-res://scenes/wire.tscn
 res://scenes/enemy_1.tscn
-res://scripts/enemy_1.gd
-res://scripts/bullet.gd
+res://scripts/draggables/creation.gd

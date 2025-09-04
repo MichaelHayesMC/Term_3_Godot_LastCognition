@@ -12,7 +12,7 @@ func fire():
 	bullet.direction = $Marker2D.global_position - global_position
 	get_tree().get_root().add_child(bullet)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	mouse_pos = get_global_mouse_position()
 	look_at(Vector2(mouse_pos.x, mouse_pos.y))
 	
