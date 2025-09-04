@@ -294,19 +294,46 @@ shape = SubResource("RectangleShape2D_u5sy4")
 script = ExtResource("5_gee14")
 
 [node name="Power_Start" parent="Draggables" instance=ExtResource("5_iywne")]
-position = Vector2(243, 52)
+position = Vector2(243, 189)
 
 [node name="Power_End" parent="Draggables" instance=ExtResource("5_iywne")]
-position = Vector2(246, 32)
+position = Vector2(243, 27)
 
-[node name="Connection" type="Node2D" parent="Draggables"]
-position = Vector2(1.52588e-05, 1.90735e-06)
+[node name="Node2D" type="Node2D" parent="Draggables"]
 script = ExtResource("8_gee14")
 
-[node name="Wire_Node" parent="Draggables/Connection" instance=ExtResource("7_gee14")]
-position = Vector2(304, 131)
+[node name="Wire_Node" parent="Draggables/Node2D" instance=ExtResource("7_gee14")]
+top_level = false
+position = Vector2(336, 178)
 metadata/_edit_use_anchors_ = true
 
-[node name="Wire_Node2" parent="Draggables/Connection" instance=ExtResource("7_gee14")]
-position = Vector2(271, 133)
+[node name="Wire_Node2" parent="Draggables/Node2D" instance=ExtResource("7_gee14")]
+top_level = false
+position = Vector2(265, 154)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D2" type="Node2D" parent="Draggables"]
+script = ExtResource("8_gee14")
+
+[node name="Wire_Node" parent="Draggables/Node2D2" instance=ExtResource("7_gee14")]
+top_level = false
+position = Vector2(248, 135)
+metadata/_edit_use_anchors_ = true
+
+[node name="Wire_Node2" parent="Draggables/Node2D2" instance=ExtResource("7_gee14")]
+top_level = false
+position = Vector2(271, 117)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D3" type="Node2D" parent="Draggables"]
+script = ExtResource("8_gee14")
+
+[node name="Wire_Node" parent="Draggables/Node2D3" instance=ExtResource("7_gee14")]
+top_level = false
+position = Vector2(304, 99)
+metadata/_edit_use_anchors_ = true
+
+[node name="Wire_Node2" parent="Draggables/Node2D3" instance=ExtResource("7_gee14")]
+top_level = false
+position = Vector2(287, 48)
 metadata/_edit_use_anchors_ = true

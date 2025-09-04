@@ -9,6 +9,9 @@ size = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D"]
 top_level = true
+light_mask = 2
+visibility_layer = 2
+z_index = 1
 scale = Vector2(4, 4)
 texture = SubResource("CanvasTexture_w6x61")
 script = ExtResource("1_r8cwk")

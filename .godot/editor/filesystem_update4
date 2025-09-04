@@ -9,3 +9,6 @@ res://scenes/wire_node.tscn
 res://scenes/test.tscn
 res://scenes/enemy_1.tscn
 res://scripts/draggables/creation.gd
+res://scripts/draggables/line_2d.gd
+res://scripts/draggables/wire_node.gd
+res://scripts/draggables/power_source.gd

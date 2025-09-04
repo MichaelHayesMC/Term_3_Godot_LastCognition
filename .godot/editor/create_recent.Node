@@ -1,4 +1,5 @@
 Node2D
+Node
 Sprite2D
 CollisionShape2D
 Area2D
@@ -9,6 +10,5 @@ Control
 ColorRect
 AnimatedSprite2D
 CanvasModulate
-Node
 Line2D
 AspectRatioContainer

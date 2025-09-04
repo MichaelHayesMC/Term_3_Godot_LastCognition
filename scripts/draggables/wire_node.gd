@@ -21,6 +21,14 @@ func _physics_process(_delta: float) -> void:
 	else:
 		inside = true
 		
+	for area in wire_collision.get_overlapping_areas():
+		if area.name == "Power_Collision":
+			modulate = Color.BLUE
+		elif area.name == "Wire_Collision":
+			modulate = Color.YELLOW_GREEN
+		else:
+			modulate = Color.WHITE
+		
 func _input(event) -> void:
 	if event is InputEventMouseButton:
 		if mouse_in and event.is_pressed() and inside and !player.carrying:
@@ -39,10 +47,12 @@ func _on_wire_collision_mouse_exited() -> void:
 	mouse_in = false
 	
 func _on_wire_collision_area_entered(area: Area2D) -> void:
-	if area.name == "Power_Collision":
-		modulate = Color.BLUE
-	elif area.name == "Wire_Collision":
-		modulate = Color.YELLOW_GREEN
+	pass
+	#if area.name == "Power_Collision":
+		#modulate = Color.BLUE
+	#elif area.name == "Wire_Collision":
+		#modulate = Color.YELLOW_GREEN
 
 func _on_wire_collision_area_exited(_area: Area2D) -> void:
-	modulate = Color.WHITE
+	pass
+	#modulate = Color.WHITE
