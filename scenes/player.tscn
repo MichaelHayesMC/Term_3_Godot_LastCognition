@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://duy8jpg78tkkl"]
+[gd_scene load_steps=17 format=3 uid="uid://duy8jpg78tkkl"]
 
 [ext_resource type="Script" uid="uid://jc056cm4kp3m" path="res://scripts/player_stuff/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cnvp8f4w5iquv" path="res://assets/character_spritesheet.png" id="2_g2els"]
@@ -175,7 +175,12 @@ _data = {
 &"run_up": SubResource("Animation_y4r1p")
 }
 
-[sub_resource type="AnimationRootNode" id="AnimationRootNode_dqkch"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqkch"]
+bg_color = Color(0.160393, 1, 0, 1)
+border_color = Color(1, 1, 1, 1)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_qhqgy")
@@ -199,6 +204,16 @@ libraries = {
 }
 autoplay = "idle_down"
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-root_node = NodePath("")
-tree_root = SubResource("AnimationRootNode_dqkch")
+[node name="Health" type="ProgressBar" parent="."]
+texture_filter = 1
+texture_repeat = 1
+offset_left = -8.0
+offset_top = -19.0
+offset_right = 7.0
+offset_bottom = -17.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qhqgy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dqkch")
+step = 10.0
+value = 100.0
+rounded = true
+show_percentage = false

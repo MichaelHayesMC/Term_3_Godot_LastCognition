@@ -8,3 +8,6 @@ res://scenes/power_source.tscn
 res://scenes/wire_node.tscn
 res://scenes/test.tscn
 res://scenes/enemy_1.tscn
+res://scenes/campfire.tscn
+res://scenes/bird_npc.tscn
+res://scenes/tent.tscn

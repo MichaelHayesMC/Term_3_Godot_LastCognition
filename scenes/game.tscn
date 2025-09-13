@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=19 format=4 uid="uid://cvamvkb7citlg"]
 
-[ext_resource type="Texture2D" uid="uid://cj683f6dsv366" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://c4qj0f5oue72y" path="res://assets/Unti111tled.png" id="1_vtaks"]
-[ext_resource type="Texture2D" uid="uid://bbw2imbtr1pn5" path="res://assets/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://s617p21avgyy" path="res://scenes/campfire.tscn" id="2_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://bm6k25sqimdfc" path="res://scenes/bird_npc.tscn" id="2_vtaks"]
 [ext_resource type="PackedScene" uid="uid://duy8jpg78tkkl" path="res://scenes/player.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://c6d2ax716oqld" path="res://scripts/draggables/draggables.gd" id="5_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjfagg0ssydtt" path="res://scenes/power_source.tscn" id="5_iywne"]
@@ -10,9 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://uox3kdrc1uuk" path="res://scripts/draggables/creation.gd" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="9_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://dwx7e4d6c3v2c" path="res://scenes/tent.tscn" id="11_kvpfn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gee14"]
+load_path = "res://.godot/imported/spr_tileset_sunnysideworld_16px.png-d8b7971311bcab7a836aec3397b25e97.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tnpc"]
-texture = ExtResource("1_p57ef")
+texture = SubResource("CompressedTexture2D_gee14")
 0:1/0 = 0
 0:2/0 = 0
 0:3/0 = 0
@@ -213,8 +217,11 @@ texture = ExtResource("1_p57ef")
 13:10/0 = 0
 13:9/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0tnpc"]
+load_path = "res://.godot/imported/spr_tileset_sunnysideworld_forest_32px.png-949553e127a57e1a4e135aede95b8a71.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtaks"]
-texture = ExtResource("2_u5sy4")
+texture = SubResource("CompressedTexture2D_0tnpc")
 
 [sub_resource type="TileSet" id="TileSet_kvpfn"]
 physics_layer_0/collision_layer = 3
@@ -238,7 +245,7 @@ offset_left = 8.0
 offset_top = 8.0
 offset_right = 216.0
 offset_bottom = 208.0
-color = Color(0.0950671, 0.134835, 0.160567, 1)
+color = Color(0.0615145, 0.0886801, 0.106258, 1)
 
 [node name="Walls" type="Sprite2D" parent="Tilemap"]
 position = Vector2(112, 112)
@@ -250,14 +257,23 @@ position = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAAAAAAAAAAIAAwAAAAAAAEAAAAGAAwAAAAAAAIAAAAGAAwAAAAAAAMAAAAGAAwAAAAAAAQAAAAGAAwAAAAAAAUAAAAGAAwAAAAAAAYAAAAGAAwAAAAAAAcAAAAGAAwAAAAAAAgAAAAGAAwAAAAAAAkAAAAGAAwAAAAAAAoAAAAGAAwAAAAAAAsAAAAGAAwAAAAAAAwAAAAGAA0AAAABAAAAAAAEAAwAAAABAAwAAAAFAA0AAAACAAAAAAAEAAwAAAACAAwAAAAFAA0AAAADAAAAAAAEAAwAAAADAAwAAAAFAA0AAAAEAAAAAAAEAAwAAAAEAAwAAAAFAA0AAAAFAAAAAAAEAAwAAAAFAAwAAAAFAA0AAAAGAAAAAAANAA0AAAAGAAwAAAANAA0AAAAHAAAAAAAEAAwAAAAHAAwAAAAFAA0AAAAIAAAAAAAEAAwAAAAIAAwAAAAFAA0AAAAJAAAAAAAEAAwAAAAJAAwAAAAFAA0AAAAKAAAAAAAEAAwAAAAKAAwAAAAFAA0AAAALAAAAAAAEAAwAAAALAAwAAAAFAA0AAAAMAAAAAAAEAA0AAAAMAAEAAAADAA0AAAAMAAIAAAADAA0AAAAMAAMAAAADAA0AAAAMAAQAAAADAA0AAAAMAAUAAAADAA0AAAAMAAYAAAADAA0AAAAMAAcAAAADAA0AAAAMAAgAAAADAA0AAAAMAAkAAAADAA0AAAAMAAoAAAADAA0AAAAMAAsAAAADAA0AAAAMAAwAAAAHAA0AAAA=")
 tile_set = SubResource("TileSet_kvpfn")
 
+[node name="Campfire" parent="." instance=ExtResource("2_0tnpc")]
+position = Vector2(104, 73)
+
 [node name="Enemy1" parent="." instance=ExtResource("9_0tnpc")]
-position = Vector2(159, 122)
+position = Vector2(179, 120)
 
 [node name="Enemy2" parent="." instance=ExtResource("9_0tnpc")]
-position = Vector2(159, 147)
+position = Vector2(179, 146)
 
 [node name="Enemy3" parent="." instance=ExtResource("9_0tnpc")]
-position = Vector2(159, 173)
+position = Vector2(179, 174)
+
+[node name="Bird_NPC" parent="." instance=ExtResource("2_vtaks")]
+position = Vector2(79, 68)
+
+[node name="Tent" parent="." instance=ExtResource("11_kvpfn")]
+position = Vector2(52, 60)
 
 [node name="Player" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(110, 117)
