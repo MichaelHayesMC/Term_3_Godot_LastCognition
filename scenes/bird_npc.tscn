@@ -1,7 +1,45 @@
-[gd_scene load_steps=9 format=3 uid="uid://bm6k25sqimdfc"]
+[gd_scene load_steps=18 format=3 uid="uid://bm6k25sqimdfc"]
 
 [ext_resource type="Texture2D" uid="uid://c1arwu0w5lbr6" path="res://assets/birb.png" id="1_eugwk"]
+[ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/m_shadow.png" id="1_ky2u8"]
 [ext_resource type="Texture2D" uid="uid://bumwg17lvmygl" path="res://assets/stick.png" id="2_v7twi"]
+[ext_resource type="Texture2D" uid="uid://bac6a012pavbq" path="res://assets/dialogue_prompt.png" id="4_2gsek"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06ctt"]
+atlas = ExtResource("4_2gsek")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmpsx"]
+atlas = ExtResource("4_2gsek")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkgqk"]
+atlas = ExtResource("4_2gsek")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02eap"]
+atlas = ExtResource("4_2gsek")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqw3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06ctt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmpsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkgqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02eap")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v7twi"]
 radius = 2.0
@@ -43,7 +81,26 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_v7twi"]
+offsets = PackedFloat32Array(0.23301, 0.325243, 0.621359)
+colors = PackedColorArray(0.328972, 0.429854, 0.581464, 1, 0.221948, 0.327865, 0.442296, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v7twi"]
+gradient = SubResource("Gradient_v7twi")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Bird_NPC" type="CharacterBody2D"]
+
+[node name="DialoguePrompt" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -13)
+sprite_frames = SubResource("SpriteFrames_qqw3h")
+autoplay = "default"
+frame_progress = 0.528196
+
+[node name="MShadow" type="Sprite2D" parent="."]
+position = Vector2(-1, 3)
+texture = ExtResource("1_ky2u8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
@@ -54,8 +111,13 @@ shape = SubResource("CapsuleShape2D_v7twi")
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_pkgqk")
 autoplay = "default"
-frame_progress = 0.500476
+frame = 1
+frame_progress = 0.0470907
 
 [node name="Stick" type="Sprite2D" parent="."]
 position = Vector2(-5, 9)
 texture = ExtResource("2_v7twi")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.625, 0.625)
+texture = SubResource("GradientTexture2D_v7twi")

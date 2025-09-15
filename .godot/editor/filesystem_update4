@@ -11,3 +11,10 @@ res://scenes/enemy_1.tscn
 res://scenes/campfire.tscn
 res://scenes/bird_npc.tscn
 res://scenes/tent.tscn
+res://scenes/stasis_tube.tscn
+res://scenes/lantern.tscn
+res://scripts/draggables/power_source.gd
+res://scripts/draggables/line_2d.gd
+res://scenes/lightning.tscn
+res://scenes/lightning.gd
+res://scripts/draggables/wire_node.gd

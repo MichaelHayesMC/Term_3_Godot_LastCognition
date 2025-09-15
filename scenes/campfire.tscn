@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://s617p21avgyy"]
+[gd_scene load_steps=16 format=3 uid="uid://s617p21avgyy"]
 
 [ext_resource type="Texture2D" uid="uid://dt7pghuklx1g" path="res://assets/cc.png" id="1_54scn"]
 [ext_resource type="Texture2D" uid="uid://cc2xlca7wik70" path="res://assets/FireTest.png" id="1_m47ar"]
+[ext_resource type="Texture2D" uid="uid://bitlhgggyibxn" path="res://assets/l_shadow.png" id="1_yfrnb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_54scn"]
 radius = 4.0
@@ -71,7 +72,24 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_54scn"]
+offsets = PackedFloat32Array(0.092233, 0.199029, 0.601942)
+colors = PackedColorArray(1, 0.435294, 0.411765, 1, 0.781081, 0.424386, 0.205616, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_54scn"]
+gradient = SubResource("Gradient_54scn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Campfire" type="CharacterBody2D"]
+
+[node name="LShadow" type="Sprite2D" parent="."]
+position = Vector2(0, 3)
+texture = ExtResource("1_yfrnb")
+
+[node name="LShadow2" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_yfrnb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
@@ -86,4 +104,9 @@ texture = ExtResource("1_54scn")
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_0f1eb")
 autoplay = "default"
-frame_progress = 0.901833
+frame_progress = 0.290933
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(3, 3)
+texture = SubResource("GradientTexture2D_54scn")

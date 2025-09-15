@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://n6gllmlwh1xc"]
+[gd_scene load_steps=10 format=3 uid="uid://n6gllmlwh1xc"]
 
 [ext_resource type="Script" uid="uid://dndie06ief0kc" path="res://scripts/enemy_1.gd" id="1_tcmaw"]
 [ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://Blink.gdshader" id="2_a1412"]
@@ -21,6 +21,15 @@ radius = 0.4375
 [sub_resource type="CircleShape2D" id="CircleShape2D_dq62l"]
 radius = 8.0
 
+[sub_resource type="Gradient" id="Gradient_ejytf"]
+offsets = PackedFloat32Array(0, 0.184466, 0.194175, 0.368932, 1)
+colors = PackedColorArray(1, 0.453964, 0.453964, 1, 1, 0.104782, 0, 1, 1, 0.0880207, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ejytf"]
+gradient = SubResource("Gradient_ejytf")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Enemy1" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_dq62l")
 collision_layer = 2
@@ -40,5 +49,9 @@ shape = SubResource("CircleShape2D_ejytf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_dq62l")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1.375, 1.375)
+texture = SubResource("GradientTexture2D_ejytf")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

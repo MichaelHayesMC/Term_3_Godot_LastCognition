@@ -1,25 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjfagg0ssydtt"]
+[gd_scene load_steps=6 format=3 uid="uid://bjfagg0ssydtt"]
 
 [ext_resource type="Script" uid="uid://b8hhx7xkynd6" path="res://scripts/draggables/power_source.gd" id="1_00ly7"]
+[ext_resource type="Texture2D" uid="uid://pt7j2n477i7q" path="res://assets/power_start.png" id="2_5kvrx"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_00ly7"]
+[sub_resource type="Gradient" id="Gradient_5kvrx"]
+offsets = PackedFloat32Array(0, 0.23301, 0.281553, 0.635922)
+colors = PackedColorArray(1, 1, 1, 1, 0.3359, 0.375085, 0.561098, 1, 0.221948, 0.261666, 0.442296, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5kvrx"]
+gradient = SubResource("Gradient_5kvrx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00ly7"]
-size = Vector2(1.2, 1.2)
+size = Vector2(2.5, 2.6)
 
-[node name="Sprite2D" type="Sprite2D"]
-visibility_layer = 2
-scale = Vector2(10, 10)
-texture = SubResource("CanvasTexture_00ly7")
+[node name="PowerStart" type="Sprite2D"]
+texture = ExtResource("2_5kvrx")
 script = ExtResource("1_00ly7")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1.09375, 1.09375)
+texture = SubResource("GradientTexture2D_5kvrx")
+
 [node name="Power_Collision" type="Area2D" parent="."]
-position = Vector2(-6, -6)
+position = Vector2(-60, -60)
+scale = Vector2(10, 10)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Power_Collision"]
-position = Vector2(6, 6)
+position = Vector2(5.95, 6)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_00ly7")
 
 [connection signal="area_entered" from="Power_Collision" to="." method="_on_power_collision_area_entered"]

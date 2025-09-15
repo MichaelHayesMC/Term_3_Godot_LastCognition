@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcwfymy1p1f0r"]
+[gd_scene load_steps=3 format=3 uid="uid://bcwfymy1p1f0r"]
 
 [ext_resource type="Script" uid="uid://qvqdb4cj60dq" path="res://scripts/draggables/line_2d.gd" id="1_bl13t"]
+[ext_resource type="Texture2D" uid="uid://ctu7k2jo4l104" path="res://assets/wire.png" id="1_iyx0m"]
 
 [node name="Line2D" type="Line2D"]
 top_level = true
-width = 2.0
-default_color = Color(1, 0, 0.03409, 1)
+light_mask = 2
+width = 4.0
+default_color = Color(0, 0.32549, 1, 1)
+texture = ExtResource("1_iyx0m")
+texture_mode = 1
 script = ExtResource("1_bl13t")

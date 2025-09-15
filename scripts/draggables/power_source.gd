@@ -20,13 +20,13 @@ func _physics_process(_delta: float) -> void:
 	else:
 		inside = true
 		
-	for area in power_collision.get_overlapping_areas():
-		if area.name == "Power_Collision":
-			modulate = Color.BLUE
-		elif area.name == "Wire_Collision":
-			modulate = Color.YELLOW_GREEN
-		else:
-			modulate = Color.WHITE
+	#for area in power_collision.get_overlapping_areas():
+		#if area.name == "Power_Collision":
+			#modulate = Color.BLUE
+		#elif area.name == "Wire_Collision":
+			#modulate = Color.YELLOW_GREEN
+		#else:
+			#modulate = Color.WHITE
 
 func _input(event) -> void:
 	if event is InputEventMouseButton:

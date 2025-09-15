@@ -10,6 +10,8 @@ signal drop
 var player
 var dragging = false
 
+var powered : bool = false
+
 func _ready() -> void:
 	last_pos = global_position
 	player = get_parent().get_parent()
@@ -23,11 +25,17 @@ func _physics_process(_delta: float) -> void:
 		
 	for area in wire_collision.get_overlapping_areas():
 		if area.name == "Power_Collision":
+			powered = true
 			modulate = Color.BLUE
 		elif area.name == "Wire_Collision":
 			modulate = Color.YELLOW_GREEN
+			powered = true
+		elif area.name == "Lightning_Collision":
+			modulate = Color.ORANGE
+			powered = true
 		else:
 			modulate = Color.WHITE
+			powered = false
 		
 func _input(event) -> void:
 	if event is InputEventMouseButton:

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgixkp7xwwikq"]
+
+[ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/m_shadow.png" id="1_bkfv2"]
+[ext_resource type="Texture2D" uid="uid://bn1qpsxhgdcs8" path="res://assets/lantern.png" id="2_04ydc"]
+
+[sub_resource type="Gradient" id="Gradient_54scn"]
+offsets = PackedFloat32Array(0.092233, 0.199029, 0.601942)
+colors = PackedColorArray(1, 0.435294, 0.411765, 1, 0.781081, 0.424386, 0.205616, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uxgnm"]
+gradient = SubResource("Gradient_54scn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Node2D2" type="Node2D"]
+
+[node name="MShadow" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+texture = ExtResource("1_bkfv2")
+
+[node name="Lantern" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_04ydc")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.5625, 0.5625)
+texture = SubResource("GradientTexture2D_uxgnm")

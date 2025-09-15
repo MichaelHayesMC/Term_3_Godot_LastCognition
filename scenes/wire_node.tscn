@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwojt257qqims"]
+[gd_scene load_steps=6 format=3 uid="uid://cwojt257qqims"]
 
 [ext_resource type="Script" uid="uid://dgyjnstdpfl84" path="res://scripts/draggables/wire_node.gd" id="1_r8cwk"]
 
@@ -7,9 +7,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00ly7"]
 size = Vector2(1.5, 1.5)
 
+[sub_resource type="Gradient" id="Gradient_r8cwk"]
+offsets = PackedFloat32Array(0, 0.23301, 0.281553, 0.635922)
+colors = PackedColorArray(1, 1, 1, 1, 0.3359, 0.375085, 0.561098, 1, 0.221948, 0.261666, 0.442296, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r8cwk"]
+gradient = SubResource("Gradient_r8cwk")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Sprite2D" type="Sprite2D"]
 top_level = true
-light_mask = 2
 visibility_layer = 2
 z_index = 1
 scale = Vector2(4, 4)
@@ -22,6 +30,10 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wire_Collision"]
 shape = SubResource("RectangleShape2D_00ly7")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.0546875, 0.0546874)
+texture = SubResource("GradientTexture2D_r8cwk")
 
 [connection signal="area_entered" from="Wire_Collision" to="." method="_on_wire_collision_area_entered"]
 [connection signal="area_exited" from="Wire_Collision" to="." method="_on_wire_collision_area_exited"]
