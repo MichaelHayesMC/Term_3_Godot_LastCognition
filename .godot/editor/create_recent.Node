@@ -1,4 +1,5 @@
 Node2D
+ColorRect
 Node
 DirectionalLight2D
 AnimatedSprite2D
@@ -10,5 +11,4 @@ Sprite2D
 TextureProgressBar
 ProgressBar
 CanvasModulate
-ColorRect
 Area2D

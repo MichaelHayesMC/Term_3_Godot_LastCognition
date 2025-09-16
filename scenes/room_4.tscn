@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfe1g5w21cky5"]
+
+[ext_resource type="Texture2D" uid="uid://pfs1xpnumkua" path="res://assets/level_4.png" id="1_dbpl5"]
+[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="2_ccapj"]
+
+[node name="Room_4" type="Node2D"]
+
+[node name="Level4" type="Sprite2D" parent="."]
+position = Vector2(112, 112)
+texture = ExtResource("1_dbpl5")
+
+[node name="Stasis_Tube" parent="." instance=ExtResource("2_ccapj")]
+position = Vector2(77, 180)
+
+[node name="Stasis_Tube2" parent="." instance=ExtResource("2_ccapj")]
+position = Vector2(35, 63)
+
+[node name="Stasis_Tube3" parent="." instance=ExtResource("2_ccapj")]
+position = Vector2(35, 82)

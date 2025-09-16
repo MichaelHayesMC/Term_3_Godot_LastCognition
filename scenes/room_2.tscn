@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn74uep6qwgpj"]
+
+[ext_resource type="Texture2D" uid="uid://crxfppg6ox4n6" path="res://assets/level_2.png" id="1_w0ydv"]
+[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="2_4et86"]
+[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="3_4et86"]
+
+[node name="Room_2" type="Node2D"]
+
+[node name="Level2" type="Sprite2D" parent="."]
+position = Vector2(112, 112)
+texture = ExtResource("1_w0ydv")
+
+[node name="Stasis_Tube" parent="." instance=ExtResource("2_4et86")]
+position = Vector2(143, 180)
+
+[node name="Stasis_Tube2" parent="." instance=ExtResource("2_4et86")]
+position = Vector2(165, 180)
+
+[node name="Stasis_Tube3" parent="." instance=ExtResource("2_4et86")]
+position = Vector2(187, 180)
+
+[node name="Stasis_Tube4" parent="." instance=ExtResource("2_4et86")]
+position = Vector2(134, 27)
+
+[node name="Stasis_Tube5" parent="." instance=ExtResource("2_4et86")]
+position = Vector2(156, 27)
+
+[node name="Stasis_Tube6" parent="." instance=ExtResource("2_4et86")]
+position = Vector2(178, 27)
+
+[node name="Enemy1" parent="." instance=ExtResource("3_4et86")]
+position = Vector2(112, 116)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_4et86")]
+position = Vector2(136, 116)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_4et86")]
+position = Vector2(87, 116)

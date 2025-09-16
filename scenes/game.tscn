@@ -1,19 +1,14 @@
-[gd_scene load_steps=25 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=20 format=4 uid="uid://cvamvkb7citlg"]
 
-[ext_resource type="Texture2D" uid="uid://c4qj0f5oue72y" path="res://assets/Unti111tled.png" id="1_vtaks"]
-[ext_resource type="PackedScene" uid="uid://s617p21avgyy" path="res://scenes/campfire.tscn" id="2_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://bm6k25sqimdfc" path="res://scenes/bird_npc.tscn" id="2_vtaks"]
+[ext_resource type="Script" uid="uid://bqigh6qehchht" path="res://scripts/detection_areas.gd" id="1_5newe"]
+[ext_resource type="Script" uid="uid://hti4atq0rgw4" path="res://scripts/global.gd" id="1_37s47"]
+[ext_resource type="PackedScene" uid="uid://duy01gi0bwih2" path="res://scenes/lobby.tscn" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://duy8jpg78tkkl" path="res://scenes/player.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://c6d2ax716oqld" path="res://scripts/draggables/draggables.gd" id="5_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjfagg0ssydtt" path="res://scenes/power_source.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://uox3kdrc1uuk" path="res://scripts/draggables/creation.gd" id="8_gee14"]
-[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="9_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://dwx7e4d6c3v2c" path="res://scenes/tent.tscn" id="11_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="13_kvuet"]
-[ext_resource type="PackedScene" uid="uid://cgixkp7xwwikq" path="res://scenes/lantern.tscn" id="13_trtic"]
-[ext_resource type="Texture2D" uid="uid://bpx2n8jhmm5j" path="res://assets/purchase_menu.png" id="14_trtic"]
 [ext_resource type="PackedScene" uid="uid://db5ccklw88mq0" path="res://scenes/lightning.tscn" id="15_ir15t"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gee14"]
@@ -250,45 +245,24 @@ size = Vector2(155, 200)
 
 [node name="Game" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_37s47")
 
-[node name="Background Components" type="Node2D" parent="."]
+[node name="Background_Components" type="Node2D" parent="."]
 
-[node name="Background" type="ColorRect" parent="Background Components"]
+[node name="Background" type="ColorRect" parent="Background_Components"]
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 216.0
 offset_bottom = 208.0
 color = Color(0.113888, 0.166959, 0.201299, 1)
 
-[node name="Walls" type="Sprite2D" parent="Background Components"]
-position = Vector2(112, 112)
-texture = ExtResource("1_vtaks")
-
-[node name="Wall_Collisions" type="TileMapLayer" parent="Background Components"]
+[node name="Wall_Collisions" type="TileMapLayer" parent="Background_Components"]
 visible = false
 position = Vector2(8, 8)
 tile_map_data = PackedByteArray("AAAAAAAAAAAIAAwAAAAAAAEAAAAGAAwAAAAAAAIAAAAGAAwAAAAAAAMAAAAGAAwAAAAAAAQAAAAGAAwAAAAAAAUAAAAGAAwAAAAAAAYAAAAGAAwAAAAAAAcAAAAGAAwAAAAAAAgAAAAGAAwAAAAAAAkAAAAGAAwAAAAAAAoAAAAGAAwAAAAAAAsAAAAGAAwAAAAAAAwAAAAGAA0AAAABAAAAAAAEAAwAAAABAAwAAAAFAA0AAAACAAAAAAAEAAwAAAACAAwAAAAFAA0AAAADAAAAAAAEAAwAAAADAAwAAAAFAA0AAAAEAAAAAAAEAAwAAAAEAAwAAAAFAA0AAAAFAAAAAAAEAAwAAAAFAAwAAAAFAA0AAAAGAAAAAAANAA0AAAAGAAwAAAANAA0AAAAHAAAAAAAEAAwAAAAHAAwAAAAFAA0AAAAIAAAAAAAEAAwAAAAIAAwAAAAFAA0AAAAJAAAAAAAEAAwAAAAJAAwAAAAFAA0AAAAKAAAAAAAEAAwAAAAKAAwAAAAFAA0AAAALAAAAAAAEAAwAAAALAAwAAAAFAA0AAAAMAAAAAAAEAA0AAAAMAAEAAAADAA0AAAAMAAIAAAADAA0AAAAMAAMAAAADAA0AAAAMAAQAAAADAA0AAAAMAAUAAAADAA0AAAAMAAYAAAADAA0AAAAMAAcAAAADAA0AAAAMAAgAAAADAA0AAAAMAAkAAAADAA0AAAAMAAoAAAADAA0AAAAMAAsAAAADAA0AAAAMAAwAAAAHAA0AAAA=")
 tile_set = SubResource("TileSet_kvpfn")
 
-[node name="Campfire" parent="Background Components" instance=ExtResource("2_0tnpc")]
-position = Vector2(104, 75)
-
-[node name="Tent" parent="Background Components" instance=ExtResource("11_kvpfn")]
-position = Vector2(52, 60)
-
-[node name="Stasis_Tube" parent="Background Components" instance=ExtResource("13_kvuet")]
-position = Vector2(143, 180)
-
-[node name="Stasis_Tube2" parent="Background Components" instance=ExtResource("13_kvuet")]
-position = Vector2(165, 180)
-
-[node name="Stasis_Tube3" parent="Background Components" instance=ExtResource("13_kvuet")]
-position = Vector2(187, 180)
-
-[node name="Lantern" parent="Background Components" instance=ExtResource("13_trtic")]
-position = Vector2(44, 59)
-
-[node name="Darkness_layer" type="PointLight2D" parent="Background Components"]
+[node name="Darkness_layer" type="PointLight2D" parent="Background_Components"]
 position = Vector2(192, 108)
 scale = Vector2(2.06186, 1.15979)
 energy = 0.6
@@ -296,41 +270,39 @@ blend_mode = 1
 texture = SubResource("GradientTexture2D_dinhu")
 texture_scale = 2.91
 
-[node name="Detection_Areas" type="Area2D" parent="Background Components"]
-visible = false
+[node name="Detection_Areas" type="Area2D" parent="Background_Components"]
+script = ExtResource("1_5newe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background Components/Detection_Areas"]
-position = Vector2(112, 16)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background_Components/Detection_Areas"]
+position = Vector2(112, -8)
 shape = SubResource("RectangleShape2D_p57ef")
 debug_color = Color(0.819608, 0.294118, 0.694118, 0.419608)
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Background Components/Detection_Areas"]
-position = Vector2(112, 208)
-shape = SubResource("RectangleShape2D_p57ef")
-debug_color = Color(0.820542, 0.295704, 0.693077, 0.42)
-
-[node name="Module_Border" type="Area2D" parent="Background Components"]
+[node name="Module_Border" type="Area2D" parent="Background_Components"]
 visible = false
 position = Vector2(224, 9)
 collision_layer = 2
 collision_mask = 2
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background Components/Module_Border"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background_Components/Module_Border"]
 position = Vector2(77.5, 99)
 shape = SubResource("RectangleShape2D_u5sy4")
 
-[node name="Enemy1" parent="." instance=ExtResource("9_0tnpc")]
-position = Vector2(179, 120)
+[node name="Transition" type="ColorRect" parent="Background_Components"]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+light_mask = 2
+z_index = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 216.0
+offset_bottom = 208.0
+color = Color(0, 0, 0, 1)
 
-[node name="Enemy2" parent="." instance=ExtResource("9_0tnpc")]
-position = Vector2(179, 146)
+[node name="Rooms" type="Node2D" parent="."]
 
-[node name="Enemy3" parent="." instance=ExtResource("9_0tnpc")]
-position = Vector2(179, 93)
-
-[node name="Bird_NPC" parent="." instance=ExtResource("2_vtaks")]
-position = Vector2(79, 68)
+[node name="Lobby" parent="Rooms" instance=ExtResource("3_rysoc")]
 
 [node name="Player" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(112, 193)
@@ -394,11 +366,4 @@ top_level = false
 position = Vector2(287, 48)
 metadata/_edit_use_anchors_ = true
 
-[node name="PurchaseMenu" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.960784)
-light_mask = 2
-visibility_layer = 2
-z_index = 1
-position = Vector2(114, 105)
-texture = ExtResource("14_trtic")
+[connection signal="body_entered" from="Background_Components/Detection_Areas" to="Background_Components/Detection_Areas" method="_on_body_entered"]

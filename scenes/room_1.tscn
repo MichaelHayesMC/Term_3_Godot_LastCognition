@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv4elsby6u6k"]
+
+[ext_resource type="Texture2D" uid="uid://cmvaaiikpigj2" path="res://assets/level_1.png" id="1_0tsjr"]
+
+[node name="Room_1" type="Node2D"]
+
+[node name="Level1_Tilemap" type="Sprite2D" parent="."]
+position = Vector2(112, 112)
+texture = ExtResource("1_0tsjr")

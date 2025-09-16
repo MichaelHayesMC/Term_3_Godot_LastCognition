@@ -27,7 +27,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lightning_Collision"]
 position = Vector2(0.00300204, -0.0111939)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k2dum")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

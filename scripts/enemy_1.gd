@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+var health = 20
 
 func apply():
 	var tween = get_tree().create_tween()
@@ -13,3 +14,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "Bullet":
 		print(sprite_2d.global_position)
 		apply()
+		health -= 10
+		
+func _process(delta: float) -> void:
+	if health <= 0:
+		queue_free()
