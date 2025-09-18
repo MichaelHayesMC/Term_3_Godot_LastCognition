@@ -1,10 +1,83 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn74uep6qwgpj"]
+[gd_scene load_steps=11 format=3 uid="uid://cn74uep6qwgpj"]
 
+[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scenes/room.gd" id="1_ktm03"]
 [ext_resource type="Texture2D" uid="uid://crxfppg6ox4n6" path="res://assets/level_2.png" id="1_w0ydv"]
 [ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="2_4et86"]
-[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="3_4et86"]
+[ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="4_ktm03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4et86"]
+size = Vector2(16, 7)
+
+[sub_resource type="Animation" id="Animation_irjyx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_xhekj"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.966667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(112, 16), Vector2(128, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0akh5"]
+_data = {
+&"RESET": SubResource("Animation_irjyx"),
+&"new_animation": SubResource("Animation_xhekj")
+}
+
+[sub_resource type="Gradient" id="Gradient_xhekj"]
+offsets = PackedFloat32Array(0.0873786, 0.325243, 0.490291, 0.621359)
+colors = PackedColorArray(0.812278, 0.812278, 0.812278, 1, 0.221948, 0.442296, 0.247924, 1, 0.0254693, 0.0507551, 0.0284501, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ktm03"]
+gradient = SubResource("Gradient_xhekj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Room_2" type="Node2D"]
+script = ExtResource("1_ktm03")
+
+[node name="Door_Top" type="Sprite2D" parent="."]
+position = Vector2(112, 16)
+texture = ExtResource("4_ktm03")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Door_Top"]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Top/StaticBody2D"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_4et86")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door_Top"]
+libraries = {
+&"": SubResource("AnimationLibrary_0akh5")
+}
+movie_quit_on_finish = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(112, 17)
+color = Color(1, 1, 1, 0)
+texture = SubResource("GradientTexture2D_ktm03")
 
 [node name="Level2" type="Sprite2D" parent="."]
 position = Vector2(112, 112)
@@ -28,11 +101,4 @@ position = Vector2(156, 27)
 [node name="Stasis_Tube6" parent="." instance=ExtResource("2_4et86")]
 position = Vector2(178, 27)
 
-[node name="Enemy1" parent="." instance=ExtResource("3_4et86")]
-position = Vector2(112, 116)
-
-[node name="Enemy2" parent="." instance=ExtResource("3_4et86")]
-position = Vector2(136, 116)
-
-[node name="Enemy3" parent="." instance=ExtResource("3_4et86")]
-position = Vector2(87, 116)
+[node name="Enemies" type="Node2D" parent="."]

@@ -1,0 +1,237 @@
+[gd_scene load_steps=15 format=3 uid="uid://d25kmqbtnjdkn"]
+
+[ext_resource type="Texture2D" uid="uid://cvjblhxhcy5fu" path="res://assets/purchase_menu.png" id="1_7f217"]
+[ext_resource type="Script" uid="uid://cvn8sdv8iwjbe" path="res://scenes/items.gd" id="2_0sfp3"]
+[ext_resource type="PackedScene" uid="uid://vrxqbxwsphfq" path="res://scenes/lightning_cell.tscn" id="2_skav3"]
+[ext_resource type="PackedScene" uid="uid://du2sitxwywyeh" path="res://scenes/attack_cell.tscn" id="3_l86cs"]
+[ext_resource type="PackedScene" uid="uid://buppi36krqdjp" path="res://scenes/defense_cell.tscn" id="4_7ahii"]
+[ext_resource type="PackedScene" uid="uid://g0ohm2loox71" path="res://scenes/wire_cell.tscn" id="5_ig0qd"]
+[ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="6_x2o3h"]
+[ext_resource type="Script" uid="uid://bi8kwqe34a43" path="res://scripts/purchase.gd" id="7_ghj3b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ghj3b"]
+font = ExtResource("6_x2o3h")
+font_size = 4
+font_color = Color(0.286275, 0.117647, 0.0823529, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g180p"]
+font = ExtResource("6_x2o3h")
+font_size = 8
+font_color = Color(0.301961, 0.133333, 0.0941176, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qn88i"]
+font = ExtResource("6_x2o3h")
+font_size = 8
+font_color = Color(1, 0.654902, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x2o3h"]
+font = ExtResource("6_x2o3h")
+font_size = 8
+font_color = Color(1, 0.192157, 0.376471, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0sfp3"]
+font = ExtResource("6_x2o3h")
+font_size = 8
+font_color = Color(0, 0.752941, 0.94902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ldoe1"]
+font = ExtResource("6_x2o3h")
+font_size = 4
+
+[node name="Node2D" type="Node2D"]
+modulate = Color(1, 1, 1, 0.941176)
+
+[node name="PurchaseMenu" type="Sprite2D" parent="."]
+light_mask = 2
+z_index = 1
+position = Vector2(112, 105)
+texture = ExtResource("1_7f217")
+
+[node name="Items" type="Node2D" parent="."]
+script = ExtResource("2_0sfp3")
+
+[node name="LightningCell" parent="Items" instance=ExtResource("2_skav3")]
+z_index = 2
+position = Vector2(102, 76)
+
+[node name="AttackCell" parent="Items" instance=ExtResource("3_l86cs")]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+position = Vector2(128, 76)
+
+[node name="DefenseCell" parent="Items" instance=ExtResource("4_7ahii")]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+position = Vector2(153, 76)
+
+[node name="WireCell" parent="Items" instance=ExtResource("5_ig0qd")]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+position = Vector2(178, 132)
+
+[node name="Place_Holder" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Description" type="Label" parent="Place_Holder"]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = 92.0
+offset_right = 80.0
+offset_bottom = 146.0
+text = "Ability Description"
+label_settings = SubResource("LabelSettings_ghj3b")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Title" type="Label" parent="Place_Holder"]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+layout_mode = 0
+offset_left = 35.0
+offset_top = 71.0
+offset_right = 80.0
+offset_bottom = 94.0
+text = "Name"
+label_settings = SubResource("LabelSettings_g180p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Description" type="Label" parent="Speed"]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = 95.0
+offset_right = 80.0
+offset_bottom = 149.0
+text = "Increase Player Speed"
+label_settings = SubResource("LabelSettings_ghj3b")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Title" type="Label" parent="Speed"]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+layout_mode = 0
+offset_left = 35.0
+offset_top = 71.0
+offset_right = 80.0
+offset_bottom = 94.0
+text = "Speed"
+label_settings = SubResource("LabelSettings_qn88i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Description" type="Label" parent="Attack"]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = 95.0
+offset_right = 80.0
+offset_bottom = 149.0
+text = "Increase attack damage"
+label_settings = SubResource("LabelSettings_ghj3b")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Title" type="Label" parent="Attack"]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+layout_mode = 0
+offset_left = 34.0
+offset_top = 71.0
+offset_right = 82.0
+offset_bottom = 94.0
+text = "Attack"
+label_settings = SubResource("LabelSettings_x2o3h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Defense" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Description" type="Label" parent="Defense"]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+layout_mode = 0
+offset_left = 35.0
+offset_top = 95.0
+offset_right = 80.0
+offset_bottom = 149.0
+text = "Increase Player Defense"
+label_settings = SubResource("LabelSettings_ghj3b")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Title" type="Label" parent="Defense"]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+layout_mode = 0
+offset_left = 34.0
+offset_top = 71.0
+offset_right = 82.0
+offset_bottom = 94.0
+text = "Shield"
+label_settings = SubResource("LabelSettings_0sfp3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Purchase" type="Label" parent="."]
+visible = false
+modulate = Color(0.227451, 0.0784314, 0.0901961, 1)
+top_level = true
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+offset_left = 37.0
+offset_top = 90.0
+offset_right = 77.0
+offset_bottom = 113.0
+mouse_filter = 0
+text = "Purchase"
+label_settings = SubResource("LabelSettings_ldoe1")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_ghj3b")
+
+[connection signal="mouse_entered" from="Purchase" to="Purchase" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Purchase" to="Purchase" method="_on_mouse_exited"]

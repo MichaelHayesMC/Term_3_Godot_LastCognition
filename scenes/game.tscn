@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=22 format=4 uid="uid://cvamvkb7citlg"]
 
 [ext_resource type="Script" uid="uid://bqigh6qehchht" path="res://scripts/detection_areas.gd" id="1_5newe"]
 [ext_resource type="Script" uid="uid://hti4atq0rgw4" path="res://scripts/global.gd" id="1_37s47"]
+[ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="3_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://duy01gi0bwih2" path="res://scenes/lobby.tscn" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://duy8jpg78tkkl" path="res://scenes/player.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://c6d2ax716oqld" path="res://scripts/draggables/draggables.gd" id="5_gee14"]
@@ -243,6 +244,9 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
 size = Vector2(155, 200)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpfn"]
+size = Vector2(16, 7)
+
 [node name="Game" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_37s47")
@@ -299,6 +303,17 @@ offset_top = 8.0
 offset_right = 216.0
 offset_bottom = 208.0
 color = Color(0, 0, 0, 1)
+
+[node name="Doop_Bottom" type="Sprite2D" parent="Background_Components"]
+position = Vector2(112, 208)
+texture = ExtResource("3_kvpfn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background_Components/Doop_Bottom"]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background_Components/Doop_Bottom/StaticBody2D"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_kvpfn")
 
 [node name="Rooms" type="Node2D" parent="."]
 
