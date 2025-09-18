@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=25 format=4 uid="uid://cvamvkb7citlg"]
 
 [ext_resource type="Script" uid="uid://bqigh6qehchht" path="res://scripts/detection_areas.gd" id="1_5newe"]
 [ext_resource type="Script" uid="uid://hti4atq0rgw4" path="res://scripts/global.gd" id="1_37s47"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://uox3kdrc1uuk" path="res://scripts/draggables/creation.gd" id="8_gee14"]
+[ext_resource type="Texture2D" uid="uid://ir6vjndl1scy" path="res://assets/currency.png" id="12_dinhu"]
+[ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="13_kvuet"]
 [ext_resource type="PackedScene" uid="uid://db5ccklw88mq0" path="res://scenes/lightning.tscn" id="15_ir15t"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gee14"]
@@ -247,6 +249,10 @@ size = Vector2(155, 200)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpfn"]
 size = Vector2(16, 7)
 
+[sub_resource type="LabelSettings" id="LabelSettings_trtic"]
+font = ExtResource("13_kvuet")
+font_size = 8
+
 [node name="Game" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_37s47")
@@ -380,5 +386,63 @@ metadata/_edit_use_anchors_ = true
 top_level = false
 position = Vector2(287, 48)
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1.0
+offset_top = 184.0
+offset_right = 92.0
+offset_bottom = 208.0
+color = Color(0, 0, 0, 0.239216)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 130.0
+offset_top = -40.0
+offset_right = 214.0
+offset_bottom = -16.0
+color = Color(0, 0, 0, 0.239216)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 70.0
+offset_top = 16.0
+offset_right = 154.0
+offset_bottom = 32.0
+color = Color(0, 0, 0, 0.239216)
+
+[node name="Currency" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(30, 196)
+texture = ExtResource("12_dinhu")
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+offset_left = 51.0
+offset_top = 185.0
+offset_right = 96.0
+offset_bottom = 208.0
+text = "6"
+label_settings = SubResource("LabelSettings_trtic")
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+offset_left = 88.0
+offset_top = 13.0
+offset_right = 136.0
+offset_bottom = 36.0
+text = "Wave 0"
+label_settings = SubResource("LabelSettings_trtic")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Door_Top" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(187, -28)
+texture = ExtResource("3_kvpfn")
 
 [connection signal="body_entered" from="Background_Components/Detection_Areas" to="Background_Components/Detection_Areas" method="_on_body_entered"]

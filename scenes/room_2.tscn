@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cn74uep6qwgpj"]
+[gd_scene load_steps=12 format=3 uid="uid://cn74uep6qwgpj"]
 
-[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scenes/room.gd" id="1_ktm03"]
+[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_ktm03"]
 [ext_resource type="Texture2D" uid="uid://crxfppg6ox4n6" path="res://assets/level_2.png" id="1_w0ydv"]
 [ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="2_4et86"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="4_ktm03"]
+[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="5_lsxps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4et86"]
 size = Vector2(16, 7)
@@ -102,3 +103,12 @@ position = Vector2(156, 27)
 position = Vector2(178, 27)
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource("5_lsxps")]
+position = Vector2(145, 146)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("5_lsxps")]
+position = Vector2(171, 87)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("5_lsxps")]
+position = Vector2(68, 138)

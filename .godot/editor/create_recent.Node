@@ -1,3 +1,4 @@
+ColorRect
 AnimationPlayer
 Node2D
 StaticBody2D
@@ -10,5 +11,4 @@ Label
 Button
 Node
 Sprite2D
-ColorRect
 DirectionalLight2D

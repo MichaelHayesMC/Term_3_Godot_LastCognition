@@ -48,4 +48,3 @@ position = Vector2(168, 95)
 texture = ExtResource("9_oipnb")
 
 [node name="PurchaseMenu" parent="." instance=ExtResource("9_07nfq")]
-visible = false

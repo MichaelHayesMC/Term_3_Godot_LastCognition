@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dfe1g5w21cky5"]
 
-[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scenes/room.gd" id="1_5d4n5"]
+[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_5d4n5"]
 [ext_resource type="Texture2D" uid="uid://pfs1xpnumkua" path="res://assets/level_4.png" id="1_dbpl5"]
 [ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="2_ccapj"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="3_ccapj"]

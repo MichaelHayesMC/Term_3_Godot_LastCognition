@@ -1,13 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://d25kmqbtnjdkn"]
+[gd_scene load_steps=16 format=3 uid="uid://d25kmqbtnjdkn"]
 
 [ext_resource type="Texture2D" uid="uid://cvjblhxhcy5fu" path="res://assets/purchase_menu.png" id="1_7f217"]
-[ext_resource type="Script" uid="uid://cvn8sdv8iwjbe" path="res://scenes/items.gd" id="2_0sfp3"]
+[ext_resource type="Script" uid="uid://cvn8sdv8iwjbe" path="res://scripts/items.gd" id="2_0sfp3"]
 [ext_resource type="PackedScene" uid="uid://vrxqbxwsphfq" path="res://scenes/lightning_cell.tscn" id="2_skav3"]
 [ext_resource type="PackedScene" uid="uid://du2sitxwywyeh" path="res://scenes/attack_cell.tscn" id="3_l86cs"]
 [ext_resource type="PackedScene" uid="uid://buppi36krqdjp" path="res://scenes/defense_cell.tscn" id="4_7ahii"]
 [ext_resource type="PackedScene" uid="uid://g0ohm2loox71" path="res://scenes/wire_cell.tscn" id="5_ig0qd"]
 [ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="6_x2o3h"]
 [ext_resource type="Script" uid="uid://bi8kwqe34a43" path="res://scripts/purchase.gd" id="7_ghj3b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kg4wm"]
+font = ExtResource("6_x2o3h")
+font_size = 4
 
 [sub_resource type="LabelSettings" id="LabelSettings_ghj3b"]
 font = ExtResource("6_x2o3h")
@@ -71,6 +75,48 @@ light_mask = 2
 visibility_layer = 2
 z_index = 2
 position = Vector2(178, 132)
+
+[node name="Description" type="Label" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+offset_left = 81.0
+offset_top = 61.0
+offset_right = 126.0
+offset_bottom = 115.0
+text = "10"
+label_settings = SubResource("LabelSettings_kg4wm")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Description2" type="Label" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+offset_left = 107.0
+offset_top = 61.0
+offset_right = 152.0
+offset_bottom = 115.0
+text = "20"
+label_settings = SubResource("LabelSettings_kg4wm")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Description3" type="Label" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+offset_left = 132.0
+offset_top = 61.0
+offset_right = 177.0
+offset_bottom = 115.0
+text = "30"
+label_settings = SubResource("LabelSettings_kg4wm")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Place_Holder" type="Control" parent="."]
 layout_mode = 3

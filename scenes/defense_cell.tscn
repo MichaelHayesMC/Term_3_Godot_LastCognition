@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://buppi36krqdjp"]
 
 [ext_resource type="Texture2D" uid="uid://u1srwta40kht" path="res://assets/defense_cell.png" id="1_6cdxv"]
-[ext_resource type="Script" uid="uid://do1dfqxl4weae" path="res://scenes/defense_cell.gd" id="2_b76jc"]
+[ext_resource type="Script" uid="uid://do1dfqxl4weae" path="res://scripts/defense_cell.gd" id="2_b76jc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l16yi"]
 size = Vector2(22, 22)
