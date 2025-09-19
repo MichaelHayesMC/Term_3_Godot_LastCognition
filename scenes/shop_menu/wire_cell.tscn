@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://buppi36krqdjp"]
+[gd_scene load_steps=4 format=3 uid="uid://g0ohm2loox71"]
 
-[ext_resource type="Texture2D" uid="uid://u1srwta40kht" path="res://assets/defense_cell.png" id="1_6cdxv"]
-[ext_resource type="Script" uid="uid://do1dfqxl4weae" path="res://scripts/defense_cell.gd" id="2_b76jc"]
+[ext_resource type="Texture2D" uid="uid://blejan2tkpyrs" path="res://assets/wire_cell.png" id="1_obbnl"]
+[ext_resource type="Script" uid="uid://duubwrupwydnd" path="res://scripts/wire_cell.gd" id="2_yvrea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l16yi"]
 size = Vector2(22, 22)
 
 [node name="LightningCell" type="Sprite2D"]
-texture = ExtResource("1_6cdxv")
-script = ExtResource("2_b76jc")
+texture = ExtResource("1_obbnl")
+script = ExtResource("2_yvrea")
 
 [node name="Area2D" type="Area2D" parent="."]
 light_mask = 2

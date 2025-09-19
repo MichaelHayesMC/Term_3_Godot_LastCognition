@@ -1,0 +1,211 @@
+[gd_scene load_steps=24 format=3 uid="uid://blv60b6g0tme4"]
+
+[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_hnu1l"]
+[ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_l7ksh"]
+[ext_resource type="Texture2D" uid="uid://dq5cbpwmqbca6" path="res://assets/checkpoint.png" id="3_c6tov"]
+[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="4_wdpoa"]
+[ext_resource type="Texture2D" uid="uid://bys1aaljc6bvh" path="res://assets/vent.png" id="5_hnu1l"]
+[ext_resource type="Texture2D" uid="uid://bac6a012pavbq" path="res://assets/dialogue_prompt.png" id="6_vsn7m"]
+[ext_resource type="Script" uid="uid://js1jmx3562dq" path="res://scripts/vent.gd" id="6_wdpoa"]
+[ext_resource type="Texture2D" uid="uid://crvm1ljqgl3k1" path="res://assets/e.png" id="7_wdpoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnd4n"]
+size = Vector2(16, 7)
+
+[sub_resource type="Animation" id="Animation_irjyx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_xhekj"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.966667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(112, 16), Vector2(128, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0akh5"]
+_data = {
+&"RESET": SubResource("Animation_irjyx"),
+&"new_animation": SubResource("Animation_xhekj")
+}
+
+[sub_resource type="Gradient" id="Gradient_1bs8n"]
+offsets = PackedFloat32Array(0.0873786, 0.325243, 0.490291, 0.621359)
+colors = PackedColorArray(0.812278, 0.812278, 0.812278, 1, 0.27316, 0.68295, 0.70366, 1, 0.0254693, 0.0507551, 0.0284501, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sn1g8"]
+gradient = SubResource("Gradient_1bs8n")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06ctt"]
+atlas = ExtResource("6_vsn7m")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmpsx"]
+atlas = ExtResource("6_vsn7m")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkgqk"]
+atlas = ExtResource("6_vsn7m")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02eap"]
+atlas = ExtResource("6_vsn7m")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iiqs0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06ctt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmpsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkgqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02eap")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_kmpsx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -13)]
+}
+
+[sub_resource type="Animation" id="Animation_06ctt"]
+resource_name = "new_animation"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(1, -13), Vector2(1, -14)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pkgqk"]
+_data = {
+&"RESET": SubResource("Animation_kmpsx"),
+&"new_animation": SubResource("Animation_06ctt")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8130p"]
+size = Vector2(28, 28)
+
+[node name="Checkpoint" type="Node2D"]
+script = ExtResource("1_hnu1l")
+
+[node name="Door_Top" type="Sprite2D" parent="."]
+position = Vector2(112, 16)
+texture = ExtResource("2_l7ksh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Door_Top"]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Top/StaticBody2D"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_xnd4n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door_Top"]
+libraries = {
+&"": SubResource("AnimationLibrary_0akh5")
+}
+movie_quit_on_finish = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(112, 17)
+color = Color(1, 1, 1, 0)
+texture = SubResource("GradientTexture2D_sn1g8")
+
+[node name="Room_Tile" type="Sprite2D" parent="."]
+position = Vector2(112, 112)
+texture = ExtResource("3_c6tov")
+
+[node name="Stasis_Tube" parent="." instance=ExtResource("4_wdpoa")]
+position = Vector2(157, 28)
+
+[node name="Stasis_Tube2" parent="." instance=ExtResource("4_wdpoa")]
+position = Vector2(59, 180)
+
+[node name="Stasis_Tube3" parent="." instance=ExtResource("4_wdpoa")]
+position = Vector2(83, 180)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Vent" type="Sprite2D" parent="."]
+position = Vector2(112, 113)
+texture = ExtResource("5_hnu1l")
+script = ExtResource("6_wdpoa")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Vent"]
+color = Color(1, 1, 1, 0)
+texture = SubResource("GradientTexture2D_sn1g8")
+
+[node name="DialoguePrompt" type="AnimatedSprite2D" parent="Vent/PointLight2D2"]
+position = Vector2(1, -13)
+sprite_frames = SubResource("SpriteFrames_iiqs0")
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="Vent/PointLight2D2"]
+visible = false
+position = Vector2(1, -13)
+texture = ExtResource("7_wdpoa")
+offset = Vector2(-1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Vent/PointLight2D2/Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_pkgqk")
+}
+autoplay = "new_animation"
+
+[node name="Area2D" type="Area2D" parent="Vent/PointLight2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vent/PointLight2D2/Area2D"]
+shape = SubResource("RectangleShape2D_8130p")
+
+[connection signal="body_entered" from="Vent/PointLight2D2/Area2D" to="Vent" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Vent/PointLight2D2/Area2D" to="Vent" method="_on_area_2d_body_exited"]

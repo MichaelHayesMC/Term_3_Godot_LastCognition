@@ -1,6 +1,11 @@
 extends Node2D
 
 @onready var place_holder: Control = $"../Place_Holder"
+@onready var speed: Control = $"../Speed"
+@onready var attack: Control = $"../Attack"
+@onready var defense: Control = $"../Defense"
+@onready var wire: Control = $"../Wire"
+@onready var purchase: Label = $"../Purchase"
 
 var current
 
@@ -19,20 +24,20 @@ func current_description(cell):
 		Defense()
 	if cell == "Wire":
 		Wire()
-	$"../Purchase".visible = true
+	purchase.visible = true
 
 func lightning():
-	$"../Speed".visible = true
-	current = $"../Speed"
+	speed.visible = true
+	current = speed
 
 func Attack():
-	$"../Attack".visible = true
-	current = $"../Attack"
+	attack.visible = true
+	current = attack
 	
 func Defense():
-	$"../Defense".visible = true
-	current = $"../Defense"
+	defense.visible = true
+	current = defense
 
 func Wire():
-	#$"../Speed".visible = true
-	pass
+	wire.visible = true
+	current = wire

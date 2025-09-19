@@ -1,6 +1,6 @@
 extends Node2D
 
-var _bullet_scene = preload("res://scenes/bullet.tscn")
+var _bullet_scene = preload("res://scenes/player/bullet.tscn")
 
 var mouse_pos : Vector2
 var idk : int

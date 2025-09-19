@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cw7e2alto0bfj"]
+[gd_scene load_steps=11 format=3 uid="uid://ctff6fvx3faq4"]
 
-[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_1bs8n"]
-[ext_resource type="Texture2D" uid="uid://catl016wgb5py" path="res://assets/level_5.png" id="1_2whii"]
-[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="2_xnd4n"]
-[ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="3_xnd4n"]
-[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="5_sn1g8"]
+[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_ahsqd"]
+[ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_hfp1j"]
+[ext_resource type="Texture2D" uid="uid://neb06kpgf3cm" path="res://assets/level_3.png" id="3_d8ufh"]
+[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="4_5bkl7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnd4n"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjoje"]
 size = Vector2(16, 7)
 
 [sub_resource type="Animation" id="Animation_irjyx"]
@@ -46,28 +45,28 @@ _data = {
 &"new_animation": SubResource("Animation_xhekj")
 }
 
-[sub_resource type="Gradient" id="Gradient_1bs8n"]
+[sub_resource type="Gradient" id="Gradient_bg4i0"]
 offsets = PackedFloat32Array(0.0873786, 0.325243, 0.490291, 0.621359)
 colors = PackedColorArray(0.812278, 0.812278, 0.812278, 1, 0.221948, 0.442296, 0.247924, 1, 0.0254693, 0.0507551, 0.0284501, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_sn1g8"]
-gradient = SubResource("Gradient_1bs8n")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6w2ej"]
+gradient = SubResource("Gradient_bg4i0")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Room_5" type="Node2D"]
-script = ExtResource("1_1bs8n")
+[node name="Room_3" type="Node2D"]
+script = ExtResource("1_ahsqd")
 
 [node name="Door_Top" type="Sprite2D" parent="."]
 position = Vector2(112, 16)
-texture = ExtResource("3_xnd4n")
+texture = ExtResource("2_hfp1j")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Door_Top"]
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Top/StaticBody2D"]
 position = Vector2(0, -6.5)
-shape = SubResource("RectangleShape2D_xnd4n")
+shape = SubResource("RectangleShape2D_rjoje")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door_Top"]
 libraries = {
@@ -78,25 +77,19 @@ movie_quit_on_finish = true
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(112, 17)
 color = Color(1, 1, 1, 0)
-texture = SubResource("GradientTexture2D_sn1g8")
+texture = SubResource("GradientTexture2D_6w2ej")
 
-[node name="Level5" type="Sprite2D" parent="."]
+[node name="Level3" type="Sprite2D" parent="."]
 position = Vector2(112, 112)
-texture = ExtResource("1_2whii")
-
-[node name="Stasis_Tube" parent="." instance=ExtResource("2_xnd4n")]
-position = Vector2(189, 28)
-
-[node name="Stasis_Tube2" parent="." instance=ExtResource("2_xnd4n")]
-position = Vector2(162, 28)
+texture = ExtResource("3_d8ufh")
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy1" parent="Enemies" instance=ExtResource("5_sn1g8")]
-position = Vector2(69, 121)
+[node name="Enemy1" parent="Enemies" instance=ExtResource("4_5bkl7")]
+position = Vector2(113, 142)
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("5_sn1g8")]
-position = Vector2(164, 84)
+[node name="Enemy2" parent="Enemies" instance=ExtResource("4_5bkl7")]
+position = Vector2(150, 61)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("5_sn1g8")]
-position = Vector2(88, 55)
+[node name="Enemy3" parent="Enemies" instance=ExtResource("4_5bkl7")]
+position = Vector2(64, 132)

@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 var health = 20
 
+#var score = 0
+
 func apply():
 	var tween = get_tree().create_tween()
 	tween.tween_method(set_shader, 1.0, 0.0, 0.5)
@@ -12,10 +14,13 @@ func set_shader(new_Value: float):
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "Bullet":
-		print(sprite_2d.global_position)
 		apply()
 		health -= 10
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if health <= 0:
 		queue_free()
+		if randi_range(1, 5) == 1:
+			Global.score += 1
+			#score += 1
+			#print(score)

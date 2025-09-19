@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://duy01gi0bwih2"]
+
+[ext_resource type="Texture2D" uid="uid://c4qj0f5oue72y" path="res://assets/lobby.png" id="1_kn58n"]
+[ext_resource type="PackedScene" uid="uid://s617p21avgyy" path="res://scenes/rooms/lobby/campfire.tscn" id="2_m6wsn"]
+[ext_resource type="PackedScene" uid="uid://dwx7e4d6c3v2c" path="res://scenes/rooms/lobby/tent.tscn" id="3_0bcik"]
+[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="4_lcod2"]
+[ext_resource type="PackedScene" uid="uid://cgixkp7xwwikq" path="res://scenes/rooms/lobby/lantern.tscn" id="5_qx57j"]
+[ext_resource type="PackedScene" uid="uid://bm6k25sqimdfc" path="res://scenes/rooms/lobby/bird_npc.tscn" id="6_mjhe8"]
+[ext_resource type="Texture2D" uid="uid://fu3y0xl7n331" path="res://assets/move_text.png" id="7_5urum"]
+[ext_resource type="Texture2D" uid="uid://bwfnpm62n21ea" path="res://assets/fire_text.png" id="8_8dskr"]
+[ext_resource type="PackedScene" uid="uid://d25kmqbtnjdkn" path="res://scenes/shop_menu/purchase_menu.tscn" id="9_rfcmn"]
+
+[node name="Lobby" type="Node2D"]
+
+[node name="Lobby_Tilemap" type="Sprite2D" parent="."]
+position = Vector2(112, 112)
+texture = ExtResource("1_kn58n")
+
+[node name="Campfire" parent="." instance=ExtResource("2_m6wsn")]
+position = Vector2(104, 75)
+
+[node name="Tent" parent="." instance=ExtResource("3_0bcik")]
+position = Vector2(52, 60)
+
+[node name="Stasis_Tube" parent="." instance=ExtResource("4_lcod2")]
+position = Vector2(143, 180)
+
+[node name="Stasis_Tube2" parent="." instance=ExtResource("4_lcod2")]
+position = Vector2(165, 180)
+
+[node name="Stasis_Tube3" parent="." instance=ExtResource("4_lcod2")]
+position = Vector2(187, 180)
+
+[node name="Lantern" parent="." instance=ExtResource("5_qx57j")]
+position = Vector2(44, 59)
+
+[node name="Bird_NPC" parent="." instance=ExtResource("6_mjhe8")]
+position = Vector2(79, 68)
+
+[node name="MoveText" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(72, 137)
+texture = ExtResource("7_5urum")
+
+[node name="FireText" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(168, 95)
+texture = ExtResource("8_8dskr")
+
+[node name="PurchaseMenu" parent="." instance=ExtResource("9_rfcmn")]
+visible = false

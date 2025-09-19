@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv4elsby6u6k"]
+[gd_scene load_steps=12 format=3 uid="uid://cn74uep6qwgpj"]
 
-[ext_resource type="Texture2D" uid="uid://cmvaaiikpigj2" path="res://assets/level_1.png" id="1_0tsjr"]
-[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_8oql1"]
-[ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_vu5en"]
-[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="4_xhekj"]
+[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_km8ef"]
+[ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_0hwry"]
+[ext_resource type="Texture2D" uid="uid://crxfppg6ox4n6" path="res://assets/level_2.png" id="3_nu3hr"]
+[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="4_tjvhs"]
+[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="5_np14n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8oql1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4et86"]
 size = Vector2(16, 7)
 
 [sub_resource type="Animation" id="Animation_irjyx"]
@@ -49,24 +50,24 @@ _data = {
 offsets = PackedFloat32Array(0.0873786, 0.325243, 0.490291, 0.621359)
 colors = PackedColorArray(0.812278, 0.812278, 0.812278, 1, 0.221948, 0.442296, 0.247924, 1, 0.0254693, 0.0507551, 0.0284501, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_irjyx"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ktm03"]
 gradient = SubResource("Gradient_xhekj")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Room_1" type="Node2D"]
-script = ExtResource("1_8oql1")
+[node name="Room_2" type="Node2D"]
+script = ExtResource("1_km8ef")
 
 [node name="Door_Top" type="Sprite2D" parent="."]
 position = Vector2(112, 16)
-texture = ExtResource("2_vu5en")
+texture = ExtResource("2_0hwry")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Door_Top"]
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_Top/StaticBody2D"]
 position = Vector2(0, -6.5)
-shape = SubResource("RectangleShape2D_8oql1")
+shape = SubResource("RectangleShape2D_4et86")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door_Top"]
 libraries = {
@@ -77,19 +78,37 @@ movie_quit_on_finish = true
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(112, 17)
 color = Color(1, 1, 1, 0)
-texture = SubResource("GradientTexture2D_irjyx")
+texture = SubResource("GradientTexture2D_ktm03")
 
-[node name="Level1_Tilemap" type="Sprite2D" parent="."]
+[node name="Level2" type="Sprite2D" parent="."]
 position = Vector2(112, 112)
-texture = ExtResource("1_0tsjr")
+texture = ExtResource("3_nu3hr")
+
+[node name="Stasis_Tube" parent="." instance=ExtResource("4_tjvhs")]
+position = Vector2(143, 180)
+
+[node name="Stasis_Tube2" parent="." instance=ExtResource("4_tjvhs")]
+position = Vector2(165, 180)
+
+[node name="Stasis_Tube3" parent="." instance=ExtResource("4_tjvhs")]
+position = Vector2(187, 180)
+
+[node name="Stasis_Tube4" parent="." instance=ExtResource("4_tjvhs")]
+position = Vector2(134, 27)
+
+[node name="Stasis_Tube5" parent="." instance=ExtResource("4_tjvhs")]
+position = Vector2(156, 27)
+
+[node name="Stasis_Tube6" parent="." instance=ExtResource("4_tjvhs")]
+position = Vector2(178, 27)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy1" parent="Enemies" instance=ExtResource("4_xhekj")]
-position = Vector2(112, 116)
+[node name="Enemy1" parent="Enemies" instance=ExtResource("5_np14n")]
+position = Vector2(145, 146)
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("4_xhekj")]
-position = Vector2(136, 116)
+[node name="Enemy2" parent="Enemies" instance=ExtResource("5_np14n")]
+position = Vector2(171, 87)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("4_xhekj")]
-position = Vector2(87, 116)
+[node name="Enemy3" parent="Enemies" instance=ExtResource("5_np14n")]
+position = Vector2(68, 138)

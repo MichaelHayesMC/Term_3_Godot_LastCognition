@@ -15,7 +15,7 @@ func _ready() -> void: ## IDEK anymore
 	#left_side = wire_node.position
 	#right_side = wire_node_2.position
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#left_side = (wire_node.position + wire_node.position)
 	#right_side = (wire_node_2.position + wire_node_2.position)
 	set_point_position(0, wire_node.position)
