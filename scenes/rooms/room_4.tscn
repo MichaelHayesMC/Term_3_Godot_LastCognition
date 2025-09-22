@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfe1g5w21cky5"]
+[gd_scene load_steps=12 format=3 uid="uid://dfe1g5w21cky5"]
 
 [ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_u8vhm"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_4ssin"]
 [ext_resource type="Texture2D" uid="uid://pfs1xpnumkua" path="res://assets/level_4.png" id="3_nvm38"]
 [ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="4_tfhis"]
+[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="5_4ssin"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccapj"]
 size = Vector2(16, 7)
@@ -79,7 +80,7 @@ position = Vector2(112, 17)
 color = Color(1, 1, 1, 0)
 texture = SubResource("GradientTexture2D_6eqho")
 
-[node name="Level4" type="Sprite2D" parent="."]
+[node name="Room_Tilemap" type="Sprite2D" parent="."]
 position = Vector2(112, 112)
 texture = ExtResource("3_nvm38")
 
@@ -93,3 +94,12 @@ position = Vector2(35, 63)
 position = Vector2(35, 82)
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("5_4ssin")]
+position = Vector2(68, 138)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("5_4ssin")]
+position = Vector2(72, 53)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("5_4ssin")]
+position = Vector2(178, 184)

@@ -14,3 +14,7 @@ func apply():
 	var tween = get_tree().create_tween()
 	tween.tween_property($PointLight2D, "color", Color(1,1,1,1), 0.7)
 	tween.tween_property($Vent/PointLight2D2, "color", Color(1,1,1,1), 0.7)
+
+
+func _on_return_button_mouse_entered() -> void:
+	pass # Replace with function body.

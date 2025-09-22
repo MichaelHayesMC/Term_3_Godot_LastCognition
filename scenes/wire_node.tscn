@@ -16,7 +16,7 @@ gradient = SubResource("Gradient_r8cwk")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Sprite2D" type="Sprite2D"]
+[node name="Wire_Node" type="Sprite2D"]
 top_level = true
 visibility_layer = 2
 z_index = 1

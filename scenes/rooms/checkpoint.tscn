@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://blv60b6g0tme4"]
+[gd_scene load_steps=28 format=3 uid="uid://blv60b6g0tme4"]
 
 [ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_hnu1l"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_l7ksh"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bac6a012pavbq" path="res://assets/dialogue_prompt.png" id="6_vsn7m"]
 [ext_resource type="Script" uid="uid://js1jmx3562dq" path="res://scripts/vent.gd" id="6_wdpoa"]
 [ext_resource type="Texture2D" uid="uid://crvm1ljqgl3k1" path="res://assets/e.png" id="7_wdpoa"]
+[ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="9_iiqs0"]
+[ext_resource type="Script" uid="uid://ckg2b5xqs2jom" path="res://scripts/continue.gd" id="10_8130p"]
+[ext_resource type="Script" uid="uid://c7x3m06c07242" path="res://scripts/return.gd" id="11_d6c3c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnd4n"]
 size = Vector2(16, 7)
@@ -135,6 +138,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8130p"]
 size = Vector2(28, 28)
 
+[sub_resource type="LabelSettings" id="LabelSettings_iiqs0"]
+font = ExtResource("9_iiqs0")
+font_size = 4
+
 [node name="Checkpoint" type="Node2D"]
 script = ExtResource("1_hnu1l")
 
@@ -160,7 +167,7 @@ position = Vector2(112, 17)
 color = Color(1, 1, 1, 0)
 texture = SubResource("GradientTexture2D_sn1g8")
 
-[node name="Room_Tile" type="Sprite2D" parent="."]
+[node name="Room_Tilemap" type="Sprite2D" parent="."]
 position = Vector2(112, 112)
 texture = ExtResource("3_c6tov")
 
@@ -207,5 +214,62 @@ autoplay = "new_animation"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vent/PointLight2D2/Area2D"]
 shape = SubResource("RectangleShape2D_8130p")
 
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Black_Fade" type="ColorRect" parent="Control"]
+light_mask = 2
+visibility_layer = 2
+z_index = 3
+layout_mode = 0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 217.0
+offset_bottom = 208.0
+color = Color(0, 0, 0, 0.862745)
+
+[node name="Continue_Button" type="Label" parent="Control"]
+light_mask = 2
+visibility_layer = 2
+z_index = 4
+layout_mode = 0
+offset_left = 43.0
+offset_top = 105.0
+offset_right = 88.0
+offset_bottom = 119.0
+mouse_filter = 0
+text = "Continue?"
+label_settings = SubResource("LabelSettings_iiqs0")
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("10_8130p")
+
+[node name="Return_Button" type="Label" parent="Control"]
+light_mask = 2
+visibility_layer = 2
+z_index = 4
+layout_mode = 0
+offset_left = 137.0
+offset_top = 105.0
+offset_right = 182.0
+offset_bottom = 119.0
+mouse_filter = 0
+text = "Return?"
+label_settings = SubResource("LabelSettings_iiqs0")
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("11_d6c3c")
+
 [connection signal="body_entered" from="Vent/PointLight2D2/Area2D" to="Vent" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Vent/PointLight2D2/Area2D" to="Vent" method="_on_area_2d_body_exited"]
+[connection signal="gui_input" from="Control/Continue_Button" to="Control/Continue_Button" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Control/Continue_Button" to="Control/Continue_Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Continue_Button" to="Control/Continue_Button" method="_on_mouse_exited"]
+[connection signal="gui_input" from="Control/Return_Button" to="Control/Return_Button" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Control/Return_Button" to="Control/Return_Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Return_Button" to="Control/Return_Button" method="_on_mouse_exited"]

@@ -80,7 +80,7 @@ position = Vector2(112, 17)
 color = Color(1, 1, 1, 0)
 texture = SubResource("GradientTexture2D_sn1g8")
 
-[node name="Level5" type="Sprite2D" parent="."]
+[node name="Room_Tilemap" type="Sprite2D" parent="."]
 position = Vector2(112, 112)
 texture = ExtResource("3_lesdd")
 

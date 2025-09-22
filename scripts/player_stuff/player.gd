@@ -46,5 +46,6 @@ func get_input():
 		state_machine(states.IDLE)
 
 func _physics_process(_delta: float) -> void:
-	get_input()
-	move_and_slide()
+	if Global.player_moveable:
+		get_input()
+		move_and_slide()

@@ -1,6 +1,5 @@
 extends Area2D
 
-@onready var player: Player = $"../../Player"
 @onready var transition: ColorRect = $"../Transition"
 
 signal next_room
@@ -8,7 +7,6 @@ var player1
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		player.position = Vector2(112.0,193.0)
 		apply()
 		next_room.emit()
 		

@@ -12,8 +12,11 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		$Sprite2D.visible = false
 
 func _physics_process(_delta: float) -> void:
-	if $Sprite2D.visible and Input.is_action_pressed("interact"):
+	if $Sprite2D.visible and Input.is_action_just_pressed("interact"):
 		$"../PurchaseMenu".visible = true
 	
-	if Input.is_action_pressed("move_down") or Input.is_action_pressed("move_up") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
-		$"../PurchaseMenu".visible = false
+	var inputs = ["down", "up", "left", "right"]
+	
+	for input in inputs:
+		if Input.is_action_pressed("move_" + input):
+			$"../PurchaseMenu".visible = false

@@ -45,12 +45,12 @@ _data = {
 &"new_animation": SubResource("Animation_xhekj")
 }
 
-[sub_resource type="Gradient" id="Gradient_xhekj"]
+[sub_resource type="Gradient" id="Gradient_wodat"]
 offsets = PackedFloat32Array(0.0873786, 0.325243, 0.490291, 0.621359)
 colors = PackedColorArray(0.812278, 0.812278, 0.812278, 1, 0.221948, 0.442296, 0.247924, 1, 0.0254693, 0.0507551, 0.0284501, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_irjyx"]
-gradient = SubResource("Gradient_xhekj")
+gradient = SubResource("Gradient_wodat")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -79,7 +79,7 @@ position = Vector2(112, 17)
 color = Color(1, 1, 1, 0)
 texture = SubResource("GradientTexture2D_irjyx")
 
-[node name="Level1_Tilemap" type="Sprite2D" parent="."]
+[node name="Room_Tilemap" type="Sprite2D" parent="."]
 position = Vector2(112, 112)
 texture = ExtResource("3_v1x83")
 

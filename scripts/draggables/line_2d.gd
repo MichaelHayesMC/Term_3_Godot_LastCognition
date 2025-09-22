@@ -21,8 +21,14 @@ func _process(_delta: float) -> void:
 	set_point_position(0, wire_node.position)
 	set_point_position(1, wire_node_2.position)
 	
-	if (wire_node.modulate == Color.BLUE or wire_node.modulate == Color.YELLOW_GREEN) and (wire_node_2.modulate == Color.YELLOW_GREEN or wire_node_2.modulate == Color.BLUE):
+	#if wire_node.modulate == Color.BLUE or wire_node_2.modulate == Color.BLUE:
+		#color_change()
+	
+	if get_parent().powered:
 		color_change()
+	
+	#if (wire_node.modulate == Color.BLUE or wire_node.modulate == Color.YELLOW_GREEN) and (wire_node_2.modulate == Color.YELLOW_GREEN or wire_node_2.modulate == Color.BLUE):
+		#color_change()
 	else:
 		default_color = Color(0.412,0.412,0.412,0.3)
 			

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjfagg0ssydtt"]
 
-[ext_resource type="Script" uid="uid://b8hhx7xkynd6" path="res://scripts/draggables/power_source.gd" id="1_00ly7"]
+[ext_resource type="Script" uid="uid://b8hhx7xkynd6" path="res://scripts/draggables/power_start.gd" id="1_00ly7"]
 [ext_resource type="Texture2D" uid="uid://pt7j2n477i7q" path="res://assets/power_start.png" id="2_5kvrx"]
 
 [sub_resource type="Gradient" id="Gradient_5kvrx"]
@@ -23,17 +23,17 @@ script = ExtResource("1_00ly7")
 scale = Vector2(1.09375, 1.09375)
 texture = SubResource("GradientTexture2D_5kvrx")
 
-[node name="Power_Collision" type="Area2D" parent="."]
+[node name="PowerStart_Collision" type="Area2D" parent="."]
 position = Vector2(-60, -60)
 scale = Vector2(10, 10)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Power_Collision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerStart_Collision"]
 position = Vector2(5.95, 6)
 shape = SubResource("RectangleShape2D_00ly7")
 
-[connection signal="area_entered" from="Power_Collision" to="." method="_on_power_collision_area_entered"]
-[connection signal="area_exited" from="Power_Collision" to="." method="_on_power_collision_area_exited"]
-[connection signal="mouse_entered" from="Power_Collision" to="." method="_on_power_collision_mouse_entered"]
-[connection signal="mouse_exited" from="Power_Collision" to="." method="_on_power_collision_mouse_exited"]
+[connection signal="area_entered" from="PowerStart_Collision" to="." method="_on_power_collision_area_entered"]
+[connection signal="area_exited" from="PowerStart_Collision" to="." method="_on_power_collision_area_exited"]
+[connection signal="mouse_entered" from="PowerStart_Collision" to="." method="_on_power_collision_mouse_entered"]
+[connection signal="mouse_exited" from="PowerStart_Collision" to="." method="_on_power_collision_mouse_exited"]

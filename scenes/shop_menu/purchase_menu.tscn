@@ -9,6 +9,10 @@
 [ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="7_uivpl"]
 [ext_resource type="Script" uid="uid://bi8kwqe34a43" path="res://scripts/purchase.gd" id="8_gsnct"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ldoe1"]
+font = ExtResource("7_uivpl")
+font_size = 4
+
 [sub_resource type="LabelSettings" id="LabelSettings_kg4wm"]
 font = ExtResource("7_uivpl")
 font_size = 4
@@ -42,10 +46,6 @@ font_color = Color(0, 0.752941, 0.94902, 1)
 font = ExtResource("7_uivpl")
 font_size = 8
 
-[sub_resource type="LabelSettings" id="LabelSettings_ldoe1"]
-font = ExtResource("7_uivpl")
-font_size = 4
-
 [node name="Node2D" type="Node2D"]
 modulate = Color(1, 1, 1, 0.941176)
 
@@ -57,6 +57,24 @@ texture = ExtResource("1_yf43s")
 
 [node name="Items" type="Node2D" parent="."]
 script = ExtResource("2_x40em")
+
+[node name="Purchase" type="Label" parent="Items"]
+visible = false
+modulate = Color(0.227451, 0.0784314, 0.0901961, 1)
+top_level = true
+light_mask = 2
+visibility_layer = 2
+z_index = 2
+offset_left = 37.0
+offset_top = 90.0
+offset_right = 77.0
+offset_bottom = 113.0
+mouse_filter = 0
+text = "Purchase"
+label_settings = SubResource("LabelSettings_ldoe1")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_gsnct")
 
 [node name="LightningCell" parent="Items" instance=ExtResource("3_u7btq")]
 z_index = 2
@@ -315,23 +333,6 @@ label_settings = SubResource("LabelSettings_0sfp3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Purchase" type="Label" parent="."]
-visible = false
-modulate = Color(0.227451, 0.0784314, 0.0901961, 1)
-top_level = true
-light_mask = 2
-visibility_layer = 2
-z_index = 2
-offset_left = 37.0
-offset_top = 90.0
-offset_right = 77.0
-offset_bottom = 113.0
-mouse_filter = 0
-text = "Purchase"
-label_settings = SubResource("LabelSettings_ldoe1")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_gsnct")
-
-[connection signal="mouse_entered" from="Purchase" to="Purchase" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Purchase" to="Purchase" method="_on_mouse_exited"]
+[connection signal="gui_input" from="Items/Purchase" to="Items/Purchase" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Items/Purchase" to="Items/Purchase" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Items/Purchase" to="Items/Purchase" method="_on_mouse_exited"]

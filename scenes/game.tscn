@@ -1,18 +1,22 @@
-[gd_scene load_steps=25 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=30 format=4 uid="uid://cvamvkb7citlg"]
 
 [ext_resource type="Script" uid="uid://bqigh6qehchht" path="res://scripts/detection_areas.gd" id="1_5newe"]
 [ext_resource type="Script" uid="uid://hti4atq0rgw4" path="res://scripts/game.gd" id="1_37s47"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="3_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://duy01gi0bwih2" path="res://scenes/rooms/lobby/lobby.tscn" id="3_rysoc"]
 [ext_resource type="PackedScene" uid="uid://duy8jpg78tkkl" path="res://scenes/player/player.tscn" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://dfjnjvw22y0q4" path="res://assets/door_floor.png" id="4_trtic"]
 [ext_resource type="Script" uid="uid://c6d2ax716oqld" path="res://scripts/draggables/draggables.gd" id="5_gee14"]
-[ext_resource type="PackedScene" uid="uid://bjfagg0ssydtt" path="res://scenes/power_source.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://bjfagg0ssydtt" path="res://scenes/power_start.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://uox3kdrc1uuk" path="res://scripts/draggables/creation.gd" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://beihl3si44muj" path="res://scenes/power_end.tscn" id="11_rysoc"]
 [ext_resource type="Texture2D" uid="uid://ir6vjndl1scy" path="res://assets/currency.png" id="12_dinhu"]
 [ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="13_kvuet"]
+[ext_resource type="PackedScene" uid="uid://uynyhn1aqqix" path="res://scenes/attack.tscn" id="15_ca42v"]
 [ext_resource type="PackedScene" uid="uid://db5ccklw88mq0" path="res://scenes/lightning.tscn" id="15_ir15t"]
+[ext_resource type="PackedScene" uid="uid://c3ewglibf1005" path="res://scenes/defense.tscn" id="16_ca42v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gee14"]
 load_path = "res://.godot/imported/spr_tileset_sunnysideworld_16px.png-d8b7971311bcab7a836aec3397b25e97.ctex"
@@ -253,6 +257,11 @@ size = Vector2(16, 7)
 font = ExtResource("13_kvuet")
 font_size = 8
 
+[sub_resource type="LabelSettings" id="LabelSettings_ir15t"]
+font = ExtResource("13_kvuet")
+font_size = 4
+font_color = Color(0, 0.69486, 0.886954, 1)
+
 [node name="Game" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_37s47")
@@ -310,16 +319,67 @@ offset_right = 216.0
 offset_bottom = 208.0
 color = Color(0, 0, 0, 1)
 
-[node name="Doop_Bottom" type="Sprite2D" parent="Background_Components"]
+[node name="Door_Bottom" type="Sprite2D" parent="Background_Components"]
 position = Vector2(112, 208)
 texture = ExtResource("3_kvpfn")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Background_Components/Doop_Bottom"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Background_Components/Door_Bottom"]
 position = Vector2(0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background_Components/Doop_Bottom/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background_Components/Door_Bottom/StaticBody2D"]
 position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_kvpfn")
+
+[node name="Door_Floor" type="Sprite2D" parent="Background_Components"]
+position = Vector2(112, 16)
+texture = ExtResource("4_trtic")
+
+[node name="Door_Shadow" type="Control" parent="Background_Components"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 120.0
+offset_bottom = 24.0
+
+[node name="ColorRect" type="ColorRect" parent="Background_Components/Door_Shadow"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 6.0
+color = Color(0, 0, 0, 0.407843)
+
+[node name="ColorRect2" type="ColorRect" parent="Background_Components/Door_Shadow"]
+layout_mode = 0
+offset_top = 6.0
+offset_right = 16.0
+offset_bottom = 12.0
+color = Color(0, 0, 0, 0.407843)
+
+[node name="ColorRect3" type="ColorRect" parent="Background_Components/Door_Shadow"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 6.0
+color = Color(0, 0, 0, 0.407843)
+
+[node name="ColorRect4" type="ColorRect" parent="Background_Components/Door_Shadow"]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 16.0
+offset_bottom = 18.0
+color = Color(0, 0, 0, 0.407843)
+
+[node name="ColorRect5" type="ColorRect" parent="Background_Components/Door_Shadow"]
+layout_mode = 0
+offset_top = 6.0
+offset_right = 16.0
+offset_bottom = 12.0
+color = Color(0, 0, 0, 0.407843)
+
+[node name="ColorRect6" type="ColorRect" parent="Background_Components/Door_Shadow"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 6.0
+color = Color(0, 0, 0, 0.407843)
 
 [node name="Rooms" type="Node2D" parent="."]
 
@@ -340,6 +400,73 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Scrap_Widgets" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 51.0
+offset_top = 183.0
+offset_right = 91.0
+offset_bottom = 223.0
+
+[node name="Currency_Text" type="Label" parent="HUD/Scrap_Widgets"]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 43.0
+offset_bottom = 22.0
+text = "+99"
+label_settings = SubResource("LabelSettings_trtic")
+vertical_alignment = 1
+
+[node name="Currency_Text_Unsaved" type="Label" parent="HUD/Scrap_Widgets"]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+layout_mode = 0
+offset_left = 25.0
+offset_top = -1.0
+offset_right = 70.0
+offset_bottom = 22.0
+text = "++99"
+label_settings = SubResource("LabelSettings_ir15t")
+vertical_alignment = 1
+
+[node name="Currency_Logo" type="TextureRect" parent="HUD/Scrap_Widgets"]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 0
+offset_left = -36.0
+offset_top = 2.0
+offset_right = -6.0
+offset_bottom = 22.0
+texture = ExtResource("12_dinhu")
+stretch_mode = 2
+
+[node name="Currency_Background" type="ColorRect" parent="HUD/Scrap_Widgets"]
+layout_mode = 0
+offset_left = -41.0
+offset_right = 45.0
+offset_bottom = 22.0
+color = Color(0, 0, 0, 0.239216)
+
+[node name="Currency_Background2" type="ColorRect" parent="HUD/Scrap_Widgets"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -1.0
+offset_right = 44.0
+color = Color(0, 0, 0, 0.239216)
+
+[node name="Currency_Background3" type="ColorRect" parent="HUD/Scrap_Widgets"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 22.0
+offset_right = 44.0
+offset_bottom = 23.0
+color = Color(0, 0, 0, 0.239216)
 
 [node name="Room_Widgets" type="Control" parent="HUD"]
 layout_mode = 3
@@ -382,84 +509,51 @@ offset_left = 5.0
 offset_top = -1.0
 offset_right = 79.0
 offset_bottom = 22.0
-text = "Room 0"
+text = "Room +99"
 label_settings = SubResource("LabelSettings_trtic")
 vertical_alignment = 1
-
-[node name="Scrap_Widgets" type="Control" parent="HUD"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 51.0
-offset_top = 183.0
-offset_right = 91.0
-offset_bottom = 223.0
-
-[node name="Currency_Text" type="Label" parent="HUD/Scrap_Widgets"]
-light_mask = 2
-visibility_layer = 2
-z_index = 1
-layout_mode = 0
-offset_right = 45.0
-offset_bottom = 23.0
-text = "0"
-label_settings = SubResource("LabelSettings_trtic")
-vertical_alignment = 1
-
-[node name="Currency_Logo" type="TextureRect" parent="HUD/Scrap_Widgets"]
-light_mask = 2
-visibility_layer = 2
-layout_mode = 0
-offset_left = -36.0
-offset_top = 2.0
-offset_right = -6.0
-offset_bottom = 22.0
-texture = ExtResource("12_dinhu")
-stretch_mode = 2
-
-[node name="Currency_Background" type="ColorRect" parent="HUD/Scrap_Widgets"]
-layout_mode = 0
-offset_left = -41.0
-offset_right = 40.0
-offset_bottom = 22.0
-color = Color(0, 0, 0, 0.239216)
-
-[node name="Currency_Background2" type="ColorRect" parent="HUD/Scrap_Widgets"]
-layout_mode = 0
-offset_left = -40.0
-offset_top = -1.0
-offset_right = 39.0
-color = Color(0, 0, 0, 0.239216)
-
-[node name="Currency_Background3" type="ColorRect" parent="HUD/Scrap_Widgets"]
-layout_mode = 0
-offset_left = -40.0
-offset_top = 22.0
-offset_right = 39.0
-offset_bottom = 23.0
-color = Color(0, 0, 0, 0.239216)
 
 [node name="Draggables" type="Node2D" parent="."]
 light_mask = 2
 script = ExtResource("5_gee14")
 
-[node name="Power_Start" parent="Draggables" instance=ExtResource("5_iywne")]
-position = Vector2(249, 185)
+[node name="PowerEnd" parent="Draggables" groups=["End"] instance=ExtResource("11_rysoc")]
+position = Vector2(355, 183)
 
-[node name="Power_End" parent="Draggables" instance=ExtResource("5_iywne")]
+[node name="PowerStart" parent="Draggables" groups=["Powered"] instance=ExtResource("5_iywne")]
 position = Vector2(248, 32)
 
 [node name="Lightning" parent="Draggables" instance=ExtResource("15_ir15t")]
-position = Vector2(304, 45)
+position = Vector2(300, 108)
+
+[node name="Attack" parent="Draggables" instance=ExtResource("15_ca42v")]
+position = Vector2(268, 92)
+
+[node name="Defense" parent="Draggables" instance=ExtResource("16_ca42v")]
+position = Vector2(291, 161)
 
 [node name="Node2D" type="Node2D" parent="Draggables"]
 script = ExtResource("8_gee14")
 
 [node name="Wire_Node" parent="Draggables/Node2D" instance=ExtResource("7_gee14")]
 top_level = false
-position = Vector2(336, 178)
+position = Vector2(329, 175)
 metadata/_edit_use_anchors_ = true
 
 [node name="Wire_Node2" parent="Draggables/Node2D" instance=ExtResource("7_gee14")]
+top_level = false
+position = Vector2(265, 154)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D4" type="Node2D" parent="Draggables"]
+script = ExtResource("8_gee14")
+
+[node name="Wire_Node" parent="Draggables/Node2D4" instance=ExtResource("7_gee14")]
+top_level = false
+position = Vector2(329, 175)
+metadata/_edit_use_anchors_ = true
+
+[node name="Wire_Node2" parent="Draggables/Node2D4" instance=ExtResource("7_gee14")]
 top_level = false
 position = Vector2(265, 154)
 metadata/_edit_use_anchors_ = true
@@ -482,7 +576,7 @@ script = ExtResource("8_gee14")
 
 [node name="Wire_Node" parent="Draggables/Node2D3" instance=ExtResource("7_gee14")]
 top_level = false
-position = Vector2(304, 99)
+position = Vector2(311, 71)
 metadata/_edit_use_anchors_ = true
 
 [node name="Wire_Node2" parent="Draggables/Node2D3" instance=ExtResource("7_gee14")]

@@ -18,14 +18,6 @@ func _physics_process(_delta: float) -> void:
 		inside = false
 	else:
 		inside = true
-		
-	#for area in lightning_collision.get_overlapping_areas():
-		#if area.name == "Power_Collision":
-			#modulate = Color.BLUE
-		#elif area.name == "Wire_Collision":
-			#modulate = Color.YELLOW_GREEN
-		#else:
-			#modulate = Color.WHITE
 
 func _input(event) -> void:
 	if event is InputEventMouseButton:
@@ -45,12 +37,7 @@ func _on_lightning_collision_mouse_exited() -> void:
 	mouse_in = false
 
 func _on_lightning_collision_area_entered(area: Area2D) -> void:
-	#if area.name == "Power_Collision":
-		#modulate = Color.BLUE
-	#elif area.name == "Wire_Collision":
-		#modulate = Color.YELLOW_GREEN
 	pass
 
 func _on_lightning_collision_area_exited(area: Area2D) -> void:
-	#modulate = Color.WHITE
 	pass
