@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctff6fvx3faq4"]
+[gd_scene load_steps=12 format=3 uid="uid://ctff6fvx3faq4"]
 
 [ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_ahsqd"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_hfp1j"]
 [ext_resource type="Texture2D" uid="uid://neb06kpgf3cm" path="res://assets/level_3.png" id="3_d8ufh"]
 [ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="4_5bkl7"]
+[ext_resource type="Script" uid="uid://b33k2ixwau235" path="res://scripts/enemy_count_random.gd" id="4_hfp1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjoje"]
 size = Vector2(16, 7)
@@ -84,6 +85,7 @@ position = Vector2(112, 112)
 texture = ExtResource("3_d8ufh")
 
 [node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("4_hfp1j")
 
 [node name="Enemy1" parent="Enemies" instance=ExtResource("4_5bkl7")]
 position = Vector2(113, 142)

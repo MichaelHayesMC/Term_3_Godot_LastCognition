@@ -44,8 +44,7 @@ folder_colors={
 
 [global_group]
 
-Powered=""
-End=""
+Module_Border=""
 
 [input]
 

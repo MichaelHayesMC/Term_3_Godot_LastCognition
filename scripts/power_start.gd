@@ -1,0 +1,2 @@
+extends CircuitComponent
+class_name PowerSource

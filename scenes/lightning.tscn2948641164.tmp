@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://db5ccklw88mq0"]
+
+[ext_resource type="Shader" uid="uid://bnendtxyc1abq" path="res://greyscale.gdshader" id="1_gpx16"]
+[ext_resource type="Texture2D" uid="uid://b5sk5kkxoj1cr" path="res://assets/lightning.png" id="1_k2dum"]
+[ext_resource type="Script" uid="uid://boa4m0jsn8vqu" path="res://scripts/lightning.gd" id="2_n7g4i"]
+[ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="3_gpx16"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ybhjs"]
+shader = ExtResource("1_gpx16")
+shader_parameter/shader_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_5kvrx"]
+offsets = PackedFloat32Array(0, 0.199029, 0.23301, 0.635922)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.587717, 0, 1, 1, 0.675318, 0.0593736, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k2dum"]
+gradient = SubResource("Gradient_5kvrx")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Lightning" type="Node2D"]
+script = ExtResource("2_n7g4i")
+
+[node name="Wire_Collision" parent="." instance=ExtResource("3_gpx16")]
+
+[node name="Lightning" type="Sprite2D" parent="Wire_Collision"]
+material = SubResource("ShaderMaterial_ybhjs")
+texture = ExtResource("1_k2dum")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Wire_Collision"]
+visible = false
+position = Vector2(0, -9)
+texture = SubResource("GradientTexture2D_k2dum")
+
+[connection signal="component_connected" from="Wire_Collision" to="." method="connect_to"]
+[connection signal="component_disconnected" from="Wire_Collision" to="." method="disconnect_from"]

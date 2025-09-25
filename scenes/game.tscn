@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=26 format=4 uid="uid://cvamvkb7citlg"]
 
 [ext_resource type="Script" uid="uid://bqigh6qehchht" path="res://scripts/detection_areas.gd" id="1_5newe"]
 [ext_resource type="Script" uid="uid://hti4atq0rgw4" path="res://scripts/game.gd" id="1_37s47"]
@@ -8,15 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://dfjnjvw22y0q4" path="res://assets/door_floor.png" id="4_trtic"]
 [ext_resource type="Script" uid="uid://c6d2ax716oqld" path="res://scripts/draggables/draggables.gd" id="5_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjfagg0ssydtt" path="res://scenes/power_start.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
-[ext_resource type="Script" uid="uid://uox3kdrc1uuk" path="res://scripts/draggables/creation.gd" id="8_gee14"]
-[ext_resource type="PackedScene" uid="uid://beihl3si44muj" path="res://scenes/power_end.tscn" id="11_rysoc"]
+[ext_resource type="PackedScene" uid="uid://1mhwksbum2wa" path="res://scenes/wire.tscn" id="11_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://ir6vjndl1scy" path="res://assets/currency.png" id="12_dinhu"]
 [ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="13_kvuet"]
-[ext_resource type="PackedScene" uid="uid://uynyhn1aqqix" path="res://scenes/attack.tscn" id="15_ca42v"]
-[ext_resource type="PackedScene" uid="uid://db5ccklw88mq0" path="res://scenes/lightning.tscn" id="15_ir15t"]
-[ext_resource type="PackedScene" uid="uid://c3ewglibf1005" path="res://scenes/defense.tscn" id="16_ca42v"]
+[ext_resource type="PackedScene" uid="uid://beihl3si44muj" path="res://scenes/power_end.tscn" id="14_ir15t"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gee14"]
 load_path = "res://.godot/imported/spr_tileset_sunnysideworld_16px.png-d8b7971311bcab7a836aec3397b25e97.ctex"
@@ -297,14 +293,15 @@ position = Vector2(112, -8)
 shape = SubResource("RectangleShape2D_p57ef")
 debug_color = Color(0.819608, 0.294118, 0.694118, 0.419608)
 
-[node name="Module_Border" type="Area2D" parent="Background_Components"]
-visible = false
+[node name="Module_Border" type="Area2D" parent="Background_Components" groups=["Module_Border"]]
+modulate = Color(1, 1, 1, 0.176471)
 position = Vector2(224, 9)
 collision_layer = 2
 collision_mask = 2
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background_Components/Module_Border"]
+z_index = 1
 position = Vector2(77.5, 99)
 shape = SubResource("RectangleShape2D_u5sy4")
 
@@ -513,75 +510,33 @@ text = "Room +99"
 label_settings = SubResource("LabelSettings_trtic")
 vertical_alignment = 1
 
-[node name="Draggables" type="Node2D" parent="."]
+[node name="Components" type="Node2D" parent="."]
 light_mask = 2
 script = ExtResource("5_gee14")
 
-[node name="PowerEnd" parent="Draggables" groups=["End"] instance=ExtResource("11_rysoc")]
-position = Vector2(355, 183)
+[node name="Timer" type="Timer" parent="Components"]
+wait_time = 0.05
+autostart = true
 
-[node name="PowerStart" parent="Draggables" groups=["Powered"] instance=ExtResource("5_iywne")]
-position = Vector2(248, 32)
+[node name="Wires" type="Node2D" parent="Components"]
+z_index = 2
 
-[node name="Lightning" parent="Draggables" instance=ExtResource("15_ir15t")]
-position = Vector2(300, 108)
+[node name="Wire" parent="Components/Wires" instance=ExtResource("11_kvpfn")]
+position = Vector2(247, 59)
 
-[node name="Attack" parent="Draggables" instance=ExtResource("15_ca42v")]
-position = Vector2(268, 92)
+[node name="Wire2" parent="Components/Wires" instance=ExtResource("11_kvpfn")]
+position = Vector2(247, 77)
 
-[node name="Defense" parent="Draggables" instance=ExtResource("16_ca42v")]
-position = Vector2(291, 161)
+[node name="Bulbs" type="Node2D" parent="Components"]
+z_index = 1
 
-[node name="Node2D" type="Node2D" parent="Draggables"]
-script = ExtResource("8_gee14")
+[node name="Power" type="Node2D" parent="Components"]
 
-[node name="Wire_Node" parent="Draggables/Node2D" instance=ExtResource("7_gee14")]
-top_level = false
-position = Vector2(329, 175)
-metadata/_edit_use_anchors_ = true
+[node name="PowerStart" parent="Components/Power" instance=ExtResource("5_iywne")]
+position = Vector2(247, 31)
 
-[node name="Wire_Node2" parent="Draggables/Node2D" instance=ExtResource("7_gee14")]
-top_level = false
-position = Vector2(265, 154)
-metadata/_edit_use_anchors_ = true
-
-[node name="Node2D4" type="Node2D" parent="Draggables"]
-script = ExtResource("8_gee14")
-
-[node name="Wire_Node" parent="Draggables/Node2D4" instance=ExtResource("7_gee14")]
-top_level = false
-position = Vector2(329, 175)
-metadata/_edit_use_anchors_ = true
-
-[node name="Wire_Node2" parent="Draggables/Node2D4" instance=ExtResource("7_gee14")]
-top_level = false
-position = Vector2(265, 154)
-metadata/_edit_use_anchors_ = true
-
-[node name="Node2D2" type="Node2D" parent="Draggables"]
-script = ExtResource("8_gee14")
-
-[node name="Wire_Node" parent="Draggables/Node2D2" instance=ExtResource("7_gee14")]
-top_level = false
-position = Vector2(248, 135)
-metadata/_edit_use_anchors_ = true
-
-[node name="Wire_Node2" parent="Draggables/Node2D2" instance=ExtResource("7_gee14")]
-top_level = false
-position = Vector2(271, 117)
-metadata/_edit_use_anchors_ = true
-
-[node name="Node2D3" type="Node2D" parent="Draggables"]
-script = ExtResource("8_gee14")
-
-[node name="Wire_Node" parent="Draggables/Node2D3" instance=ExtResource("7_gee14")]
-top_level = false
-position = Vector2(311, 71)
-metadata/_edit_use_anchors_ = true
-
-[node name="Wire_Node2" parent="Draggables/Node2D3" instance=ExtResource("7_gee14")]
-top_level = false
-position = Vector2(287, 48)
-metadata/_edit_use_anchors_ = true
+[node name="PowerEnd" parent="Components/Power" instance=ExtResource("14_ir15t")]
+position = Vector2(352, 185)
 
 [connection signal="body_entered" from="Background_Components/Detection_Areas" to="Background_Components/Detection_Areas" method="_on_body_entered"]
+[connection signal="timeout" from="Components/Timer" to="Components" method="_on_timer_timeout"]

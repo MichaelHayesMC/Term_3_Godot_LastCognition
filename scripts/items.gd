@@ -3,6 +3,7 @@ extends Node2D
 const LIGHTNING = preload("res://scenes/lightning.tscn")
 const ATTACK = preload("res://scenes/attack.tscn")
 const DEFENSE = preload("res://scenes/defense.tscn")
+const WIRE = preload("res://scenes/wire.tscn")
 
 @onready var place_holder: Control = $"../Place_Holder"
 @onready var speed: Control = $"../Speed"
@@ -12,6 +13,8 @@ const DEFENSE = preload("res://scenes/defense.tscn")
 @onready var purchase: Label = $Purchase
 
 var current
+
+var middle_point = Vector2(300.0, 108.0)
 
 @export var prices = {
 	"Lightning" : 10,
@@ -60,8 +63,8 @@ func purchase_confirm():
 		
 		var _lightning_scene = LIGHTNING.instantiate()
 		var world = get_parent().get_parent().get_parent().get_parent()
-		var container = world.get_node("Draggables")
-		_lightning_scene.global_position = Vector2(300.0, 108.0)
+		var container = world.get_node("Components").get_node("Bulbs")
+		_lightning_scene.global_position = middle_point
 		container.add_child(_lightning_scene)
 	
 	if current == attack and Global.score >= prices["Attack"]:
@@ -70,8 +73,8 @@ func purchase_confirm():
 		
 		var _attack_scene = ATTACK.instantiate()
 		var world = get_parent().get_parent().get_parent().get_parent()
-		var container = world.get_node("Draggables")
-		_attack_scene.global_position = Vector2(300.0, 108.0)
+		var container = world.get_node("Components").get_node("Bulbs")
+		_attack_scene.global_position = middle_point
 		container.add_child(_attack_scene)
 		
 	if current == defense and Global.score >= prices["Defense"]:
@@ -80,16 +83,16 @@ func purchase_confirm():
 		
 		var _defense_scene = DEFENSE.instantiate()
 		var world = get_parent().get_parent().get_parent().get_parent()
-		var container = world.get_node("Draggables")
-		_defense_scene.global_position = Vector2(300.0, 108.0)
+		var container = world.get_node("Components").get_node("Bulbs")
+		_defense_scene.global_position = middle_point
 		container.add_child(_defense_scene)
 		
 	if current == wire and Global.score >= prices["Wire"]:
 		
 		Global.score -= prices["Wire"]
 		
-		#var _lightning_scene = LIGHTNING.instantiate()
-		#var world = get_parent().get_parent().get_parent().get_parent()
-		#var container = world.get_node("Draggables")
-		#_lightning_scene.global_position = Vector2(300.0, 108.0)
-		#container.add_child(_lightning_scene)
+		var _wire_scene = WIRE.instantiate()
+		var world = get_parent().get_parent().get_parent().get_parent()
+		var container = world.get_node("Components").get_node("Wires")
+		_wire_scene.global_position = middle_point
+		container.add_child(_wire_scene)

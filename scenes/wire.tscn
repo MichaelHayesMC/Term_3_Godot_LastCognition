@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://1mhwksbum2wa"]
+
+[ext_resource type="Script" uid="uid://bhp5o4nmwraup" path="res://scripts/draggables/wire.gd" id="1_a3040"]
+[ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="1_oh5q0"]
+[ext_resource type="PackedScene" uid="uid://bcwfymy1p1f0r" path="res://scenes/test.tscn" id="2_5mfbr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_a3040"]
+
+[sub_resource type="Gradient" id="Gradient_r8cwk"]
+offsets = PackedFloat32Array(0, 0.23301, 0.281553, 0.635922)
+colors = PackedColorArray(1, 1, 1, 1, 0.3359, 0.375085, 0.561098, 1, 0.221948, 0.261666, 0.442296, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a3040"]
+gradient = SubResource("Gradient_r8cwk")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Wire" type="Node2D"]
+z_index = 2
+script = ExtResource("1_a3040")
+
+[node name="Wire_Collision" parent="." instance=ExtResource("1_oh5q0")]
+z_index = 1
+position = Vector2(-7, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wire_Collision"]
+visibility_layer = 2
+scale = Vector2(4, 4)
+texture = SubResource("CanvasTexture_a3040")
+
+[node name="PointLight2D" type="PointLight2D" parent="Wire_Collision"]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.21875, 0.21875)
+texture = SubResource("GradientTexture2D_a3040")
+
+[node name="Wire_Collision2" parent="." instance=ExtResource("1_oh5q0")]
+z_index = 1
+position = Vector2(7, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wire_Collision2"]
+visibility_layer = 2
+z_index = 1
+scale = Vector2(4, 4)
+texture = SubResource("CanvasTexture_a3040")
+
+[node name="PointLight2D" type="PointLight2D" parent="Wire_Collision2"]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(0.21875, 0.21875)
+texture = SubResource("GradientTexture2D_a3040")
+
+[node name="Line2D" parent="." instance=ExtResource("2_5mfbr")]
+top_level = false
+visibility_layer = 2
+default_color = Color(1, 1, 1, 1)
+script = null
+
+[connection signal="component_connected" from="Wire_Collision" to="." method="connect_to"]
+[connection signal="component_disconnected" from="Wire_Collision" to="." method="disconnect_from"]
+[connection signal="component_connected" from="Wire_Collision2" to="." method="connect_to"]
+[connection signal="component_disconnected" from="Wire_Collision2" to="." method="disconnect_from"]

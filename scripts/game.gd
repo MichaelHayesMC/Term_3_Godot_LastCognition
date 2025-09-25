@@ -19,6 +19,8 @@ var room_pool = [ROOM_1, ROOM_2, ROOM_3, ROOM_4, ROOM_5]
 
 var room : int
 
+var difficulty_increase = 0
+
 func _ready() -> void:
 	$HUD/Room_Widgets.visible = false
 	$Background_Components/Detection_Areas.next_room.connect(next_room)
@@ -38,13 +40,22 @@ func _physics_process(_delta: float) -> void:
 func next_room():
 	level_change()
 	
+	difficulty_increase += 1
+	
 	room = room + 1
 	room_text.text = "Room " + str(room)
 	var randi_room = room_pool.pick_random()
 	
 	if room != 0:
 		$HUD/Room_Widgets.visible = true
-
+		
+	var room_y = (room-1)/10
+	
+	if difficulty_increase == 11:
+		Global.enemy_num = randi_range(2,4)
+		Global.enemy_health += 10
+		difficulty_increase = 1
+	
 	if room % 10 == 0:
 		boss_level()
 	elif room % 5 == 0:

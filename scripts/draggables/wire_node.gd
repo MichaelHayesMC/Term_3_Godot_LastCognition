@@ -1,69 +1,54 @@
-extends Components
+extends Area2D
+class_name ConnectionPoint
 
-@onready var wire_collision: Area2D = $Wire_Collision
-@onready var _line_scene = preload("res://scenes/test.tscn")
-#@onready var line_2d: Line2D = $Line2D
+signal component_connected(component : CircuitComponent)
+signal component_disconnected(component : CircuitComponent)
 
-signal drag
-signal drop
+@export var draggable : bool = true
 
-var player
-var dragging = false
-
-@export var powered = false
-var directly_powered = false
+var hovering : bool = false
+var dragging : bool = false
+@export var previous_pos : Vector2
+var inside : bool = true
 
 func _ready() -> void:
-	last_pos = global_position
-	player = get_parent().get_parent()
+	previous_pos = global_position
 
-func _physics_process(_delta: float) -> void:
-	if not wire_collision.get_overlapping_areas() and not draggable:
-		global_position = last_pos
-		inside = false
-	else:
+func _process(delta):		
+	if dragging and draggable:
+		global_position = get_global_mouse_position()
+	elif inside == false:
+		global_position = previous_pos
+	elif inside == true:
+		previous_pos = global_position
+
+	if Input.is_action_just_pressed("click_left") and hovering and not Global.block_dragging:
+		dragging = true
+		Global.block_dragging = true
+
+	if Input.is_action_just_released("click_left"):
+		dragging = false
+		Global.block_dragging = false
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Module_Border"):
 		inside = true
 	
-	for area in wire_collision.get_overlapping_areas():
-		if area.name == "PowerStart_Collision" and area.get_parent().is_in_group("Powered"):
-				modulate = Color.BLUE
-				powered = true
-				directly_powered = true
-		elif area.name == "Wire_Collision" and area.get_parent().get_parent().is_in_group("Powered") and !area.get_parent().powered:
-				modulate = Color.YELLOW_GREEN
-				powered = true
-		#elif area.name == "Lightning_Collision":
-			#modulate = Color.ORANGE
-			#powered = true
-		else:
-			modulate = Color.WHITE
-			powered = false
-			directly_powered = false
-		
-func _input(event) -> void:
-	if event is InputEventMouseButton:
-		if mouse_in and event.is_pressed() and inside and !player.carrying:
-			draggable = true
-			drag.emit()
-		elif event.is_released() and mouse_in:
-			draggable = false
-			drop.emit()
-			if wire_collision.get_overlapping_areas():
-				last_pos = position
-
-func _on_wire_collision_mouse_entered() -> void:
-	mouse_in = true
-
-func _on_wire_collision_mouse_exited() -> void:
-	mouse_in = false
+	if area is ConnectionPoint:
+		if area.get_parent() is CircuitComponent:
+			component_connected.emit(area.get_parent())
 	
-func _on_wire_collision_area_entered(area: Area2D) -> void:
-	pass
-	#if area.name == "Power_Collision":
-		#modulate = Color.BLUE
-	#elif area.name == "Wire_Collision":
-		#modulate = Color.YELLOW_GREEN
+func _on_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Module_Border"):
+		inside = false
+	
+	if area is ConnectionPoint:
+		if area.get_parent() is CircuitComponent:
+			component_disconnected.emit(area.get_parent())
 
-func _on_wire_collision_area_exited(_area: Area2D) -> void:
-	pass
-	#modulate = Color.WHITE
+func _on_mouse_entered() -> void:
+	hovering = true
+
+
+func _on_mouse_exited() -> void:
+	hovering = false
