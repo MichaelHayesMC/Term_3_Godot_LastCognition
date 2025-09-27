@@ -50,6 +50,7 @@ func get_input():
 		state_machine(states.IDLE)
 		
 	if Input.is_action_pressed("dodge") and finish_cooldown:
+		Global.player_dodging = true
 		finish_cooldown = false
 		$Dash_CoolDown.start()
 		previous_speed = Global.player_speed
@@ -67,6 +68,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_dash_timer_timeout() -> void:
 	Global.player_speed = previous_speed
+	Global.player_dodging = false
 
 func set_shader(new_Value: float):
 	Global.player_speed = new_Value

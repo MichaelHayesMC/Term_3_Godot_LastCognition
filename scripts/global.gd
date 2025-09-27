@@ -9,9 +9,14 @@ var player_attack : int = 5
 var player_hp : int = 100
 
 var go_back = false
+var died := false
 
 var block_dragging := false
 var circuit_complete := false
 
-var enemy_num = randi_range(0,1)
+var enemy_num = randi_range(2,4)
 var enemy_health := 10
+
+var room_completable := false
+
+var player_dodging := false

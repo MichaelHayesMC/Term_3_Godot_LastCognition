@@ -4,8 +4,15 @@ var looking = true
 
 signal level_complete
 
+func _ready() -> void:
+	Global.room_completable = false
+	print(self.name)
+
 func _process(_delta: float) -> void:
-	if $Enemies.get_child_count() == 0 and looking:
+	if self.name == "Checkpoint":
+		Global.room_completable = true
+	
+	if $Enemies.get_child_count() <= 1 and looking and Global.room_completable:
 		$Door_Top/AnimationPlayer.play("new_animation")
 		looking = false
 		apply()

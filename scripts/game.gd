@@ -16,9 +16,7 @@ const BOSS_LEVEL = preload("res://scenes/rooms/boss_level.tscn")
 @onready var player: Player = $Player
 
 var room_pool = [ROOM_1, ROOM_2, ROOM_3, ROOM_4, ROOM_5]
-
 var room : int
-
 var difficulty_increase = 0
 
 func _ready() -> void:
@@ -26,6 +24,10 @@ func _ready() -> void:
 	$Background_Components/Detection_Areas.next_room.connect(next_room)
 
 func _physics_process(_delta: float) -> void:
+	
+	if Global.player_hp <= 0:
+		Global.player_hp = 0
+	
 	currency_text_unsaved.text = str("+" , Global.unsaved_score)
 	
 	if Global.score >= 99:
@@ -33,9 +35,10 @@ func _physics_process(_delta: float) -> void:
 	else:
 		currency_text.text = str(Global.score)
 	
-	if Global.go_back:
+	if Global.go_back or Global.player_hp <= 0:
 		cycle_finish()
 		Global.go_back = false
+		Global.died = true
 
 func next_room():
 	level_change()
@@ -48,11 +51,9 @@ func next_room():
 	
 	if room != 0:
 		$HUD/Room_Widgets.visible = true
-		
-	var room_y = (room-1)/10
 	
 	if difficulty_increase == 11:
-		Global.enemy_num = randi_range(2,4)
+		Global.enemy_num = randi_range(3,4)
 		Global.enemy_health += 10
 		difficulty_increase = 1
 	
@@ -71,15 +72,23 @@ func boss_level():
 	rooms.add_child(BOSS_LEVEL.instantiate())
 
 func cycle_finish():
+	for node in get_tree().get_nodes_in_group("Bullet"):
+		node.queue_free()
+	
+	Global.player_hp = 100
 	Global.player_moveable = true
+	difficulty_increase = 0
 	level_change()
 	room = 0
 	rooms.add_child(LOBBY.instantiate())
 	$HUD/Room_Widgets.visible = false
 	
-	Global.score += Global.unsaved_score
-	Global.unsaved_score = 0
+	if !Global.died:
+		Global.score += Global.unsaved_score
+	
 	currency_text.text = str(Global.score)
+	Global.unsaved_score = 0
+	Global.died = false
 	
 func level_change():
 	player.position = Vector2(112.0,193.0)

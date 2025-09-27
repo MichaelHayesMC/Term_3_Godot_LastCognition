@@ -1,10 +1,29 @@
 extends Sprite2D
+class_name Bullet
 
 var direction = Vector2.RIGHT
 var speed = 300
 
-func _process(delta: float) -> void:
-	global_translate(direction.normalized() * speed * delta)
+enum type {ALLY, ENEMY}
 
-func _on_area_2d_body_entered(_body: Node2D) -> void:
-	queue_free()
+@export var typing : type
+
+func _process(delta: float) -> void:
+	match typing:
+		type.ALLY:
+			global_translate(direction.normalized() * speed * delta)
+		type.ENEMY:
+			global_translate(direction.normalized() * (int(speed) - 225) * delta)
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	match typing:
+		type.ALLY:
+			if !body.is_in_group("Player"):
+				queue_free()
+		type.ENEMY:
+			if !body.is_in_group("Enemy"):
+				if body.name == "Player" and !Global.player_dodging:
+					Global.player_hp -= 10
+					queue_free()
+				elif body.name != "Player":
+					queue_free()

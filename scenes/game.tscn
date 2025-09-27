@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cvamvkb7citlg"]
+[gd_scene load_steps=27 format=4 uid="uid://cvamvkb7citlg"]
 
 [ext_resource type="Script" uid="uid://bqigh6qehchht" path="res://scripts/detection_areas.gd" id="1_5newe"]
 [ext_resource type="Script" uid="uid://hti4atq0rgw4" path="res://scripts/game.gd" id="1_37s47"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ir6vjndl1scy" path="res://assets/currency.png" id="12_dinhu"]
 [ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="13_kvuet"]
 [ext_resource type="PackedScene" uid="uid://beihl3si44muj" path="res://scenes/power_end.tscn" id="14_ir15t"]
+[ext_resource type="PackedScene" uid="uid://dbvblf2qmnlts" path="res://scenes/tutorial.tscn" id="14_trtic"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gee14"]
 load_path = "res://.godot/imported/spr_tileset_sunnysideworld_16px.png-d8b7971311bcab7a836aec3397b25e97.ctex"
@@ -537,6 +538,8 @@ position = Vector2(247, 31)
 
 [node name="PowerEnd" parent="Components/Power" instance=ExtResource("14_ir15t")]
 position = Vector2(352, 185)
+
+[node name="Tutorial" parent="." instance=ExtResource("14_trtic")]
 
 [connection signal="body_entered" from="Background_Components/Detection_Areas" to="Background_Components/Detection_Areas" method="_on_body_entered"]
 [connection signal="timeout" from="Components/Timer" to="Components" method="_on_timer_timeout"]

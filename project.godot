@@ -45,6 +45,9 @@ folder_colors={
 [global_group]
 
 Module_Border=""
+Player=""
+Enemy=""
+Bullet=""
 
 [input]
 

@@ -1,7 +1,6 @@
 extends Node2D
 
 var _bullet_scene = preload("res://scenes/player/bullet.tscn")
-@onready var power_end: Sprite2D = $Draggables/PowerEnd
 
 var mouse_pos : Vector2
 var idk : int
