@@ -21,7 +21,7 @@ var direction
 var cooldown_done = true
 
 func _ready() -> void:
-	global_position = Vector2(130,130)#Vector2(new_pos_x,new_pos_y)
+	global_position = Vector2(new_pos_x,new_pos_y)
 
 func apply():
 	var tween = get_tree().create_tween()

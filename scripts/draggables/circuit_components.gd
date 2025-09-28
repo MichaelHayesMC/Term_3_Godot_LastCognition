@@ -13,12 +13,12 @@ func turn_on():
 	print("I'm ", name, " and I just got turned on")
 	
 	if self is TextPrinter:
-		if str(self.name)[0] == "L":
+		if self.is_in_group("Lightning"):
 			Global.player_speed += 10
-		if str(self.name)[0] == "A":
+		if self.is_in_group("Attack"):
 			Global.player_attack += 5
-		if str(self.name)[0] == "D":
-			Global.player_hp += 0
+		if self.is_in_group("Defense"):
+			Global.player_max_hp += 10
 	
 func turn_off():
 	if not activated : return
@@ -26,12 +26,12 @@ func turn_off():
 	print("I'm ", name, " and I just got turned off")
 	
 	if self is TextPrinter:
-		if str(self.name)[0] == "L":
+		if self.is_in_group("Lightning"):
 			Global.player_speed -= 10
-		if str(self.name)[0] == "A":
+		if self.is_in_group("Attack"):
 			Global.player_attack -= 5
-		if str(self.name)[0] == "D":
-			Global.player_hp -= 0
+		if self.is_in_group("Defense"):
+			Global.player_max_hp -= 10
 		
 
 func turn_on_effect():

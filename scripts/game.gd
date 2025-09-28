@@ -24,6 +24,12 @@ func _ready() -> void:
 	$Background_Components/Detection_Areas.next_room.connect(next_room)
 
 func _physics_process(_delta: float) -> void:
+	if Global.player_max_hp < Global.player_hp:
+		Global.player_hp = Global.player_max_hp
+	
+	for child in $Rooms.get_children():
+		if child.name == "Lobby":
+			Global.player_hp = Global.player_max_hp
 	
 	if Global.player_hp <= 0:
 		Global.player_hp = 0
@@ -55,6 +61,7 @@ func next_room():
 	if difficulty_increase == 11:
 		Global.enemy_num = randi_range(3,4)
 		Global.enemy_health += 10
+		Global.enemy_damage += 2
 		difficulty_increase = 1
 	
 	if room % 10 == 0:
@@ -74,8 +81,7 @@ func boss_level():
 func cycle_finish():
 	for node in get_tree().get_nodes_in_group("Bullet"):
 		node.queue_free()
-	
-	Global.player_hp = 100
+		
 	Global.player_moveable = true
 	difficulty_increase = 0
 	level_change()

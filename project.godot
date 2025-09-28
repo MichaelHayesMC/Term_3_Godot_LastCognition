@@ -48,6 +48,9 @@ Module_Border=""
 Player=""
 Enemy=""
 Bullet=""
+Defense=""
+Attack=""
+Lightning=""
 
 [input]
 

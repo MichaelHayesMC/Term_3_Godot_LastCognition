@@ -19,7 +19,7 @@ gradient = SubResource("Gradient_ybhjs")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Lightning" type="Node2D"]
+[node name="Lightning" type="Node2D" groups=["Lightning"]]
 script = ExtResource("2_n7g4i")
 
 [node name="Wire_Collision" parent="." instance=ExtResource("3_gpx16")]

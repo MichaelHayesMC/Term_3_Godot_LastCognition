@@ -13,3 +13,11 @@ res://scripts/bullet.gd
 res://scenes/enemy_1.tscn
 res://scripts/enemy_1.gd
 res://scripts/player_stuff/gun.gd
+res://scenes/defense.tscn
+res://scripts/draggables/circuit_components.gd
+res://scenes/player/health.gd
+res://scenes/shop_menu/purchase_menu.tscn
+res://scenes/rooms/lobby/lobby.tscn
+res://scenes/attack.tscn
+res://scenes/lightning.tscn
+res://scripts/room.gd

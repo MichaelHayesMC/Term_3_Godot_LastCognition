@@ -23,7 +23,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		type.ENEMY:
 			if !body.is_in_group("Enemy"):
 				if body.name == "Player" and !Global.player_dodging:
-					Global.player_hp -= 10
+					Global.player_hp -= Global.enemy_damage
 					queue_free()
 				elif body.name != "Player":
 					queue_free()
