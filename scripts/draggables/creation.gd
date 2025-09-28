@@ -55,10 +55,17 @@ func _physics_process(delta: float) -> void:
 		
 	if get_parent().allow_circuits.is_connected(allow_circuits) == false:
 		get_parent().allow_circuits.connect(allow_circuits)
+	
+	if get_child(0).touching_wire or get_child(1).touching_wire:
+		add_to_group("Connected_Wires")
+	else:
+		remove_from_group("Connected_Wires")
+		
+	#print(get_tree().get_nodes_in_group("Connected_Wires"))
 		
 func allow_circuits(condition):
 	if condition:
 		allow_ = true
-	else:
-		allow_ = false
+	#else:
+		#allow_ = false
 		

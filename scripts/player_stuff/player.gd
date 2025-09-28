@@ -4,9 +4,13 @@ class_name Player
 enum states { IDLE, RUN, ATTACK }
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@export var SPEED =	40
+@export var SPEED =	Global.player_speed
+
+var previous_speed
+var finish_cooldown := true
 
 var direction := Vector2.ZERO
+var dash_speed = 700
 
 func state_machine(state):
 	match state:
@@ -44,8 +48,31 @@ func get_input():
 		state_machine(states.RUN)
 	elif not velocity:
 		state_machine(states.IDLE)
+		
+	if Input.is_action_pressed("dodge") and finish_cooldown:
+		Global.player_dodging = true
+		finish_cooldown = false
+		$Dash_CoolDown.start()
+		previous_speed = Global.player_speed
+		var tween = get_tree().create_tween()
+		tween.tween_method(set_shader, previous_speed + 200, 10, 0.3)
+		$DashTimer.start()
+		#Global.player_speed += dash_speed
 
 func _physics_process(_delta: float) -> void:
+	SPEED =	Global.player_speed
+	
 	if Global.player_moveable:
 		get_input()
 		move_and_slide()
+
+func _on_dash_timer_timeout() -> void:
+	Global.player_speed = previous_speed
+	Global.player_dodging = false
+
+func set_shader(new_Value: float):
+	Global.player_speed = new_Value
+
+
+func _on_dash_cool_down_timeout() -> void:
+	finish_cooldown = true

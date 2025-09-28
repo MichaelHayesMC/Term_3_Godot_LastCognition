@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://8mq61ya6c7jl"]
+[gd_scene load_steps=12 format=3 uid="uid://8mq61ya6c7jl"]
 
 [ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_dpn7k"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_wrf3q"]
 [ext_resource type="Texture2D" uid="uid://neb06kpgf3cm" path="res://assets/level_3.png" id="3_apo02"]
+[ext_resource type="PackedScene" uid="uid://cslgx1epwc0eb" path="res://scenes/enemy_load.tscn" id="4_dpn7k"]
 [ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="5_e21yh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjoje"]
@@ -83,7 +84,7 @@ texture = SubResource("GradientTexture2D_6w2ej")
 position = Vector2(112, 112)
 texture = ExtResource("3_apo02")
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Enemies" parent="." instance=ExtResource("4_dpn7k")]
 
 [node name="Enemy1" parent="Enemies" instance=ExtResource("5_e21yh")]
 position = Vector2(113, 95)

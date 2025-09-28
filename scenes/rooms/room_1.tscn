@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_wodat"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_p8nu4"]
 [ext_resource type="Texture2D" uid="uid://cmvaaiikpigj2" path="res://assets/level_1.png" id="3_v1x83"]
-[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="4_aq8op"]
+[ext_resource type="PackedScene" uid="uid://cslgx1epwc0eb" path="res://scenes/enemy_load.tscn" id="4_wodat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oql1"]
 size = Vector2(16, 7)
@@ -83,13 +83,4 @@ texture = SubResource("GradientTexture2D_irjyx")
 position = Vector2(112, 112)
 texture = ExtResource("3_v1x83")
 
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Enemy1" parent="Enemies" instance=ExtResource("4_aq8op")]
-position = Vector2(112, 116)
-
-[node name="Enemy2" parent="Enemies" instance=ExtResource("4_aq8op")]
-position = Vector2(136, 116)
-
-[node name="Enemy3" parent="Enemies" instance=ExtResource("4_aq8op")]
-position = Vector2(87, 116)
+[node name="Enemies" parent="." instance=ExtResource("4_wodat")]

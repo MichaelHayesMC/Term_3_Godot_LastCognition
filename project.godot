@@ -44,8 +44,13 @@ folder_colors={
 
 [global_group]
 
-Powered=""
-End=""
+Module_Border=""
+Player=""
+Enemy=""
+Bullet=""
+Defense=""
+Attack=""
+Lightning=""
 
 [input]
 

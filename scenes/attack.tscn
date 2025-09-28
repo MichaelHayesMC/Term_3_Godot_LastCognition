@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=3 uid="uid://uynyhn1aqqix"]
 
-[ext_resource type="Shader" uid="uid://bnendtxyc1abq" path="res://lightning.gdshader" id="1_6fs0s"]
+[ext_resource type="Shader" uid="uid://bnendtxyc1abq" path="res://greyscale.gdshader" id="1_6fs0s"]
 [ext_resource type="Texture2D" uid="uid://c6ujkbrvh4m2k" path="res://assets/attack.png" id="1_jy1op"]
-[ext_resource type="Script" uid="uid://boa4m0jsn8vqu" path="res://scripts/lightning.gd" id="2_6fs0s"]
+[ext_resource type="Script" uid="uid://boa4m0jsn8vqu" path="res://scripts/draggables/lightbulbs.gd" id="2_6fs0s"]
+[ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="2_c8out"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c8out"]
+resource_local_to_scene = true
 shader = ExtResource("1_6fs0s")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2dum"]
-size = Vector2(24, 32)
+shader_parameter/shader_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_5kvrx"]
 offsets = PackedFloat32Array(0, 0.199029, 0.23301, 0.635922)
@@ -19,25 +19,26 @@ gradient = SubResource("Gradient_5kvrx")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="Attack" type="Sprite2D"]
-material = SubResource("ShaderMaterial_c8out")
-texture = ExtResource("1_jy1op")
+[node name="Attack" type="Node2D" groups=["Attack"]]
+visibility_layer = 2
 script = ExtResource("2_6fs0s")
 
-[node name="Lightning_Collision" type="Area2D" parent="."]
-position = Vector2(0, 9.53674e-07)
-collision_layer = 2
-collision_mask = 2
+[node name="Wire_Collision" parent="." instance=ExtResource("2_c8out")]
+z_index = 2
+scale = Vector2(5, 7)
+priority = -1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lightning_Collision"]
-shape = SubResource("RectangleShape2D_k2dum")
+[node name="Sprite2D" type="Sprite2D" parent="Wire_Collision"]
+visibility_layer = 4
+material = SubResource("ShaderMaterial_c8out")
+scale = Vector2(0.2, 0.142857)
+texture = ExtResource("1_jy1op")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="Wire_Collision"]
 visible = false
-position = Vector2(0, -9)
+position = Vector2(0, -1.28571)
+scale = Vector2(0.2, 0.142857)
 texture = SubResource("GradientTexture2D_k2dum")
 
-[connection signal="area_entered" from="Lightning_Collision" to="." method="_on_lightning_collision_area_entered"]
-[connection signal="area_exited" from="Lightning_Collision" to="." method="_on_lightning_collision_area_exited"]
-[connection signal="mouse_entered" from="Lightning_Collision" to="." method="_on_lightning_collision_mouse_entered"]
-[connection signal="mouse_exited" from="Lightning_Collision" to="." method="_on_lightning_collision_mouse_exited"]
+[connection signal="component_connected" from="Wire_Collision" to="." method="connect_to"]
+[connection signal="component_disconnected" from="Wire_Collision" to="." method="disconnect_from"]
