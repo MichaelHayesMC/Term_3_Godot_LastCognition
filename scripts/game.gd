@@ -69,7 +69,7 @@ func next_room():
 	elif room % 5 == 0:
 		check_point()
 	else:
-		var new_room = randi_room.instantiate()
+		var new_room = BOSS_LEVEL.instantiate() # Change Boss Level to randi_room var when finished testing
 		rooms.add_child(new_room)
 	
 func check_point():

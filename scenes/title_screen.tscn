@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://dye3h5wtv4xj0"]
 
-[ext_resource type="Script" uid="uid://bj0x21i5otywy" path="res://scenes/title_screen.gd" id="1_cs5ya"]
+[ext_resource type="Script" uid="uid://bj0x21i5otywy" path="res://scripts/title_screen.gd" id="1_cs5ya"]
 [ext_resource type="Texture2D" uid="uid://d20aekke7u5uc" path="res://assets/title_screen.png" id="1_dc4i4"]
 [ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/fonts/3x3-Mono.ttf" id="1_fgkus"]
 [ext_resource type="FontFile" uid="uid://bj6f0yfp07duq" path="res://assets/fonts/Color Basic.otf" id="1_s4lrb"]
-[ext_resource type="Script" uid="uid://c2qd2ern8i8y4" path="res://scenes/title.gd" id="2_mgrm8"]
+[ext_resource type="Script" uid="uid://c2qd2ern8i8y4" path="res://scripts/title.gd" id="2_mgrm8"]
 [ext_resource type="Script" uid="uid://jy5xes3bye1a" path="res://scripts/start.gd" id="2_sa3yf"]
 [ext_resource type="Texture2D" uid="uid://mepob8iqajs4" path="res://assets/spotlight.png" id="6_e54dn"]
 [ext_resource type="PackedScene" uid="uid://nbw0ptp4ilr4" path="res://scenes/scene_transition.tscn" id="8_mykxm"]
@@ -63,7 +63,7 @@ offset_bottom = 216.0
 texture = ExtResource("1_dc4i4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(0.252045, 0.378301, 0.832644, 0.321569)
+modulate = Color(0.25098, 0.376471, 0.831373, 0.552941)
 light_mask = 2
 visibility_layer = 2
 z_index = 4

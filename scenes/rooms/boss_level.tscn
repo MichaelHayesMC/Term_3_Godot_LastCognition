@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_wrf3q"]
 [ext_resource type="Texture2D" uid="uid://neb06kpgf3cm" path="res://assets/level_3.png" id="3_apo02"]
 [ext_resource type="PackedScene" uid="uid://cslgx1epwc0eb" path="res://scenes/enemy_load.tscn" id="4_dpn7k"]
-[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="5_e21yh"]
+[ext_resource type="PackedScene" uid="uid://dc4u5jg5oawjf" path="res://scenes/boss.tscn" id="5_dpn7k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjoje"]
 size = Vector2(16, 7)
@@ -57,6 +57,7 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="Boss_Level" type="Node2D"]
 script = ExtResource("1_dpn7k")
+metadata/_edit_horizontal_guides_ = [57.0, 110.0, 168.0]
 
 [node name="Door_Top" type="Sprite2D" parent="."]
 position = Vector2(112, 16)
@@ -86,5 +87,47 @@ texture = ExtResource("3_apo02")
 
 [node name="Enemies" parent="." instance=ExtResource("4_dpn7k")]
 
-[node name="Enemy1" parent="Enemies" instance=ExtResource("5_e21yh")]
-position = Vector2(113, 95)
+[node name="Boss" parent="Enemies" instance=ExtResource("5_dpn7k")]
+position = Vector2(113, 117)
+
+[node name="SpawnPoint1" type="Marker2D" parent="."]
+position = Vector2(0, 57)
+
+[node name="SpawnPoint4" type="Marker2D" parent="."]
+position = Vector2(224, 57)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+offset_left = 8.0
+offset_top = 35.0
+offset_right = 216.0
+offset_bottom = 80.0
+color = Color(1, 0, 0, 0.301961)
+
+[node name="SpawnPoint2" type="Marker2D" parent="."]
+position = Vector2(0, 110)
+
+[node name="SpawnPoint5" type="Marker2D" parent="."]
+position = Vector2(224, 110)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 1
+offset_left = 8.0
+offset_top = 88.0
+offset_right = 216.0
+offset_bottom = 133.0
+color = Color(1, 0, 0, 0.301961)
+
+[node name="SpawnPoint3" type="Marker2D" parent="."]
+position = Vector2(0, 168)
+
+[node name="SpawnPoint6" type="Marker2D" parent="."]
+position = Vector2(224, 168)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+z_index = 1
+offset_left = 8.0
+offset_top = 145.0
+offset_right = 216.0
+offset_bottom = 190.0
+color = Color(1, 0, 0, 0.301961)

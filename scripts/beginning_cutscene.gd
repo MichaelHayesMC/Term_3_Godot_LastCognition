@@ -13,7 +13,7 @@ func _ready() -> void:
 	cutscene_1.visible = true
 	scene_transition.get_parent().get_node("ColorRect").color.a = 255
 	scene_transition.play("fade_out")
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(3).timeout
 	
 	animation_series()
 
@@ -25,12 +25,12 @@ func animation_series():
 			nextscene += 1
 			scene_transition.play("fade_in")
 			scene.visible = true
-			await get_tree().create_timer(5).timeout
+			await get_tree().create_timer(3).timeout
 			scene_transition.play("fade_out")
 			scene.visible = false
 			scenes[nextscene].visible = true
-			await get_tree().create_timer(5).timeout
+			await get_tree().create_timer(3).timeout
 	
 	scene_transition.play("fade_in")
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(3).timeout
 	get_tree().change_scene_to_file(next_scene)
