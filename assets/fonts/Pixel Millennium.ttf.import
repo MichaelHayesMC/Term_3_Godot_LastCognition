@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cxvpdpj0a0tjq"
-path="res://.godot/imported/Wendy-Neue.ttf-b8c6e48d0b68d7d5f1cc9809b7ecaed4.fontdata"
+uid="uid://cjc1cm7l28dxr"
+path="res://.godot/imported/Pixel Millennium.ttf-5988670a8615e49cacd0e45ac20b720e.fontdata"
 
 [deps]
 
-source_file="res://assets/Wendy-Neue.ttf"
-dest_files=["res://.godot/imported/Wendy-Neue.ttf-b8c6e48d0b68d7d5f1cc9809b7ecaed4.fontdata"]
+source_file="res://assets/fonts/Pixel Millennium.ttf"
+dest_files=["res://.godot/imported/Pixel Millennium.ttf-5988670a8615e49cacd0e45ac20b720e.fontdata"]
 
 [params]
 

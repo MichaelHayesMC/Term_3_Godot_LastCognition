@@ -55,7 +55,7 @@ func get_input():
 		$Dash_CoolDown.start()
 		previous_speed = Global.player_speed
 		var tween = get_tree().create_tween()
-		tween.tween_method(set_shader, previous_speed + 200, 10, 0.3)
+		tween.tween_method(set_speed, previous_speed + 200, 10, 0.3)
 		$DashTimer.start()
 		#Global.player_speed += dash_speed
 
@@ -70,7 +70,7 @@ func _on_dash_timer_timeout() -> void:
 	Global.player_speed = previous_speed
 	Global.player_dodging = false
 
-func set_shader(new_Value: float):
+func set_speed(new_Value: float):
 	Global.player_speed = new_Value
 
 

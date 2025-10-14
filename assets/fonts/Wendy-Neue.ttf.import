@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dhcc30ong0m8k"
-path="res://.godot/imported/3x3-Mono.ttf-a0d2a763c65364c0d787dc87a5408993.fontdata"
+uid="uid://cxvpdpj0a0tjq"
+path="res://.godot/imported/Wendy-Neue.ttf-3426b90d80113b1a95983ee5774388c7.fontdata"
 
 [deps]
 
-source_file="res://assets/3x3-Mono.ttf"
-dest_files=["res://.godot/imported/3x3-Mono.ttf-a0d2a763c65364c0d787dc87a5408993.fontdata"]
+source_file="res://assets/fonts/Wendy-Neue.ttf"
+dest_files=["res://.godot/imported/Wendy-Neue.ttf-3426b90d80113b1a95983ee5774388c7.fontdata"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://d1j2vbdtq6yw7"
-path="res://.godot/imported/game over.ttf-7efeb2afb950e60af95074a0319e4d21.fontdata"
+uid="uid://dhcc30ong0m8k"
+path="res://.godot/imported/3x3-Mono.ttf-b69ed810f57f6ec1772b71122a8eb94c.fontdata"
 
 [deps]
 
-source_file="res://assets/game over.ttf"
-dest_files=["res://.godot/imported/game over.ttf-7efeb2afb950e60af95074a0319e4d21.fontdata"]
+source_file="res://assets/fonts/3x3-Mono.ttf"
+dest_files=["res://.godot/imported/3x3-Mono.ttf-b69ed810f57f6ec1772b71122a8eb94c.fontdata"]
 
 [params]
 

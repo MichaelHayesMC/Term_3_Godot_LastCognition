@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bjajsiqsyaflc" path="res://scenes/frame_elements.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://1mhwksbum2wa" path="res://scenes/wire.tscn" id="11_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://ir6vjndl1scy" path="res://assets/currency.png" id="12_dinhu"]
-[ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="13_kvuet"]
+[ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/fonts/3x3-Mono.ttf" id="13_kvuet"]
 [ext_resource type="PackedScene" uid="uid://beihl3si44muj" path="res://scenes/power_end.tscn" id="14_ir15t"]
 [ext_resource type="PackedScene" uid="uid://dbvblf2qmnlts" path="res://scenes/tutorial.tscn" id="14_trtic"]
 
@@ -232,12 +232,12 @@ physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_0tnpc")
 sources/1 = SubResource("TileSetAtlasSource_vtaks")
 
-[sub_resource type="Gradient" id="Gradient_kvpfn"]
+[sub_resource type="Gradient" id="Gradient_trtic"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dinhu"]
-gradient = SubResource("Gradient_kvpfn")
+gradient = SubResource("Gradient_trtic")
 fill_from = Vector2(1, 1)
 fill_to = Vector2(0.991453, 0.952991)
 

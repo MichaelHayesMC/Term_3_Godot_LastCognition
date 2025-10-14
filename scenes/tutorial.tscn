@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbvblf2qmnlts"]
 
-[ext_resource type="Script" uid="uid://biabrlg86qhuf" path="res://scenes/information_button.gd" id="1_4kmhl"]
+[ext_resource type="Script" uid="uid://biabrlg86qhuf" path="res://scripts/information_button.gd" id="1_4kmhl"]
 [ext_resource type="Texture2D" uid="uid://dxohtamv4vtbf" path="res://assets/information.png" id="2_cq4me"]
-[ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="3_6yjpi"]
-[ext_resource type="Script" uid="uid://c0q1km0n3uoj2" path="res://scenes/label.gd" id="4_cq4me"]
+[ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/fonts/3x3-Mono.ttf" id="3_6yjpi"]
+[ext_resource type="Script" uid="uid://c0q1km0n3uoj2" path="res://scripts/label.gd" id="4_cq4me"]
 [ext_resource type="Texture2D" uid="uid://l8y61rh245l3" path="res://assets/tutorial_module.png" id="4_gbqnl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ca42v"]

@@ -1,0 +1,146 @@
+[gd_scene load_steps=15 format=3 uid="uid://dye3h5wtv4xj0"]
+
+[ext_resource type="Script" uid="uid://bj0x21i5otywy" path="res://scenes/title_screen.gd" id="1_cs5ya"]
+[ext_resource type="Texture2D" uid="uid://d20aekke7u5uc" path="res://assets/title_screen.png" id="1_dc4i4"]
+[ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/fonts/3x3-Mono.ttf" id="1_fgkus"]
+[ext_resource type="FontFile" uid="uid://bj6f0yfp07duq" path="res://assets/fonts/Color Basic.otf" id="1_s4lrb"]
+[ext_resource type="Script" uid="uid://c2qd2ern8i8y4" path="res://scenes/title.gd" id="2_mgrm8"]
+[ext_resource type="Script" uid="uid://jy5xes3bye1a" path="res://scripts/start.gd" id="2_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://mepob8iqajs4" path="res://assets/spotlight.png" id="6_e54dn"]
+[ext_resource type="PackedScene" uid="uid://nbw0ptp4ilr4" path="res://scenes/scene_transition.tscn" id="8_mykxm"]
+
+[sub_resource type="Gradient" id="Gradient_trtic"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dc4i4"]
+gradient = SubResource("Gradient_trtic")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0.991453, 0.952991)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fgkus"]
+font = ExtResource("1_s4lrb")
+font_size = 18
+font_color = Color(0.0973179, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sa3yf"]
+font = ExtResource("1_fgkus")
+font_size = 8
+
+[sub_resource type="Gradient" id="Gradient_lvxji"]
+offsets = PackedFloat32Array(0.23301, 0.621359)
+colors = PackedColorArray(0.489688, 0.693191, 0.744392, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e54dn"]
+gradient = SubResource("Gradient_lvxji")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cs5ya")
+
+[node name="Scene_Transition" parent="." instance=ExtResource("8_mykxm")]
+mouse_filter = 2
+
+[node name="Darkness_layer" type="PointLight2D" parent="."]
+position = Vector2(192, 108)
+scale = Vector2(2.06186, 1.15979)
+energy = 0.5
+blend_mode = 1
+texture = SubResource("GradientTexture2D_dc4i4")
+texture_scale = 2.91
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 216.0
+texture = ExtResource("1_dc4i4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.252045, 0.378301, 0.832644, 0.321569)
+light_mask = 2
+visibility_layer = 2
+z_index = 4
+layout_mode = 0
+offset_left = 21.0
+offset_right = 195.0
+offset_bottom = 231.0
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -189.0
+offset_right = 12.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "lAST cOGNITION_"
+label_settings = SubResource("LabelSettings_fgkus")
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("2_mgrm8")
+
+[node name="Timer" type="Timer" parent="Title"]
+wait_time = 0.75
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Title"]
+wait_time = 1.5
+autostart = true
+
+[node name="Start" type="Label" parent="."]
+modulate = Color(0, 0.493211, 0.00585955, 1)
+light_mask = 2
+visibility_layer = 2
+z_index = 4
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -154.0
+offset_top = -113.0
+offset_right = -106.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 0
+text = "Play"
+label_settings = SubResource("LabelSettings_sa3yf")
+vertical_alignment = 1
+script = ExtResource("2_sa3yf")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 1
+position = Vector2(235, -31)
+scale = Vector2(1.71875, 1.57552)
+energy = 1.7
+texture = SubResource("GradientTexture2D_e54dn")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+z_index = 1
+position = Vector2(192, 108)
+energy = 0.45
+texture = ExtResource("6_e54dn")
+
+[connection signal="timeout" from="Title/Timer" to="Title" method="_on_timer_timeout"]
+[connection signal="timeout" from="Title/Timer2" to="Title" method="_on_timer_2_timeout"]
+[connection signal="gui_input" from="Start" to="Start" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Start" to="Start" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Start" to="Start" method="_on_mouse_exited"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://du2sitxwywyeh" path="res://scenes/shop_menu/attack_cell.tscn" id="4_s8rgq"]
 [ext_resource type="PackedScene" uid="uid://buppi36krqdjp" path="res://scenes/shop_menu/defense_cell.tscn" id="5_ma00h"]
 [ext_resource type="PackedScene" uid="uid://g0ohm2loox71" path="res://scenes/shop_menu/wire_cell.tscn" id="6_dxw7q"]
-[ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/3x3-Mono.ttf" id="7_uivpl"]
+[ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/fonts/3x3-Mono.ttf" id="7_uivpl"]
 [ext_resource type="Script" uid="uid://bi8kwqe34a43" path="res://scripts/purchase.gd" id="8_gsnct"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ldoe1"]
