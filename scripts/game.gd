@@ -14,12 +14,15 @@ const BOSS_LEVEL = preload("res://scenes/rooms/boss_level.tscn")
 @onready var currency_text: Label = $HUD/Scrap_Widgets/Currency_Text
 @onready var currency_text_unsaved: Label = $HUD/Scrap_Widgets/Currency_Text_Unsaved
 @onready var player: Player = $Player
+@onready var scene_transition := $Scene_Transition/AnimationPlayer
 
 var room_pool = [ROOM_1, ROOM_2, ROOM_3, ROOM_4, ROOM_5]
 var room : int
 var difficulty_increase = 0
 
 func _ready() -> void:
+	scene_transition.play("fade_out")
+	
 	$HUD/Room_Widgets.visible = false
 	$Background_Components/Detection_Areas.next_room.connect(next_room)
 
@@ -64,12 +67,12 @@ func next_room():
 		Global.enemy_damage += 2
 		difficulty_increase = 1
 	
-	if room % 10 == 0:
+	if room % 20 == 0:
 		boss_level()
-	elif room % 5 == 0:
+	elif room % 5 == 0 or room % 10 == 0:
 		check_point()
 	else:
-		var new_room = BOSS_LEVEL.instantiate() # Change Boss Level to randi_room var when finished testing
+		var new_room = randi_room.instantiate()
 		rooms.add_child(new_room)
 	
 func check_point():

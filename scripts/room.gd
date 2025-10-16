@@ -7,7 +7,9 @@ signal level_complete
 func _ready() -> void:
 	Global.room_completable = false
 	print(self.name)
-
+	
+	#$Enemies/Boss.position = $SpawnPoint1.position
+	
 func _process(_delta: float) -> void:
 	if self.name == "Checkpoint":
 		Global.room_completable = true

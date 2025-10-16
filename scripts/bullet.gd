@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 		type.ALLY:
 			global_translate(direction.normalized() * speed * delta)
 		type.ENEMY:
-			global_translate(direction.normalized() * (int(speed) - 225) * delta)
+			global_translate(direction.normalized() * (int(speed) - 180) * delta)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	match typing:

@@ -230,11 +230,13 @@ scale = Vector2(1.15625, 1.125)
 texture = SubResource("GradientTexture2D_ejytf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -7)
 scale = Vector2(16, 16)
 shape = SubResource("CircleShape2D_ejytf")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -257,12 +259,14 @@ autoplay = "idle_down"
 autostart = true
 
 [node name="Attack_Range" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Range"]
 shape = SubResource("CircleShape2D_d3026")
 
 [node name="Walk_to_Range" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walk_to_Range"]

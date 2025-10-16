@@ -51,7 +51,7 @@ mouse_filter = 2
 [node name="Darkness_layer" type="PointLight2D" parent="."]
 position = Vector2(192, 108)
 scale = Vector2(2.06186, 1.15979)
-energy = 0.5
+energy = 0.3
 blend_mode = 1
 texture = SubResource("GradientTexture2D_dc4i4")
 texture_scale = 2.91
@@ -136,7 +136,7 @@ texture = SubResource("GradientTexture2D_e54dn")
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 z_index = 1
 position = Vector2(192, 108)
-energy = 0.45
+energy = 0.5
 texture = ExtResource("6_e54dn")
 
 [connection signal="timeout" from="Title/Timer" to="Title" method="_on_timer_timeout"]

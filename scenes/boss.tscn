@@ -1,33 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://dc4u5jg5oawjf"]
+[gd_scene load_steps=23 format=3 uid="uid://dc4u5jg5oawjf"]
 
 [ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://Blink.gdshader" id="1_qnbj4"]
 [ext_resource type="Script" uid="uid://s0tdwoo7f5ps" path="res://scripts/boss.gd" id="2_qnbj4"]
 [ext_resource type="Texture2D" uid="uid://bitlhgggyibxn" path="res://assets/l_shadow.png" id="3_qnbj4"]
 [ext_resource type="Texture2D" uid="uid://bpiugp2wy6m1b" path="res://assets/boss.png" id="4_qnbj4"]
+[ext_resource type="Script" uid="uid://s4bwc006fud4" path="res://scripts/finite_state_machine.gd" id="5_2cdgk"]
+[ext_resource type="Script" uid="uid://cv51tddad36k4" path="res://scripts/attack.gd" id="6_2cdgk"]
+[ext_resource type="Script" uid="uid://bdbi6inps63qj" path="res://scripts/idle.gd" id="6_qsl3t"]
+[ext_resource type="Script" uid="uid://cgmof65wlyxwk" path="res://scripts/dash.gd" id="7_2avx2"]
+[ext_resource type="Script" uid="uid://sr3cmbyydcly" path="res://scripts/summon.gd" id="8_qsl3t"]
+[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="9_2avx2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dq62l"]
 shader = ExtResource("1_qnbj4")
 shader_parameter/blink_color = Color(0, 0, 0, 1)
 shader_parameter/blink_intensity = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejytf"]
-resource_local_to_scene = true
-shader = ExtResource("1_qnbj4")
-shader_parameter/blink_color = Color(1, 1, 1, 1)
-shader_parameter/blink_intensity = 0.0
-
-[sub_resource type="Gradient" id="Gradient_ejytf"]
-offsets = PackedFloat32Array(0.0485437, 0.296117, 0.490291, 1)
-colors = PackedColorArray(0.75118, 0.29996, 0.247146, 1, 0.771546, 0.149108, 0.076254, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ejytf"]
-gradient = SubResource("Gradient_ejytf")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnbj4"]
-radius = 0.4375
-height = 2.375
 
 [sub_resource type="Animation" id="Animation_r3bxh"]
 length = 0.001
@@ -56,7 +43,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [3]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"dash_activated"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_wqpjq"]
@@ -71,11 +72,27 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"dash_activated"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_qnbj4"]
-resource_name = "default"
+resource_name = "idle_down"
+length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -83,10 +100,24 @@ tracks/0/path = NodePath("Visual/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"values": [{
+"args": [],
+"method": &"dash_deactivated"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qsl3t"]
@@ -94,14 +125,34 @@ _data = {
 &"RESET": SubResource("Animation_r3bxh"),
 &"dash_left": SubResource("Animation_2cdgk"),
 &"dash_right": SubResource("Animation_wqpjq"),
-&"default": SubResource("Animation_qnbj4")
+&"idle_down": SubResource("Animation_qnbj4")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_d3026"]
-radius = 69.029
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnbj4"]
+radius = 0.4375
+height = 2.375
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l21ug"]
-radius = 104.12
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejytf"]
+resource_local_to_scene = true
+shader = ExtResource("1_qnbj4")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+
+[sub_resource type="Gradient" id="Gradient_ejytf"]
+offsets = PackedFloat32Array(0.0485437, 0.296117, 0.490291, 1)
+colors = PackedColorArray(0.75118, 0.29996, 0.247146, 1, 0.771546, 0.149108, 0.076254, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ejytf"]
+gradient = SubResource("Gradient_ejytf")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d3026"]
+radius = 119.419
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5f346"]
+radius = 11.0
+height = 64.0
 
 [node name="Boss" type="CharacterBody2D" groups=["Enemy"]]
 material = SubResource("ShaderMaterial_dq62l")
@@ -109,7 +160,22 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_qnbj4")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qsl3t")
+}
+autoplay = "idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(16, 16)
+shape = SubResource("CapsuleShape2D_qnbj4")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -2)
+
 [node name="Visual" type="Node2D" parent="."]
+position = Vector2(0, 19)
 
 [node name="LShadow" type="Sprite2D" parent="Visual"]
 position = Vector2(0, -2)
@@ -119,68 +185,51 @@ texture = ExtResource("3_qnbj4")
 material = SubResource("ShaderMaterial_ejytf")
 position = Vector2(1, -20)
 texture = ExtResource("4_qnbj4")
-hframes = 3
+hframes = 4
 
 [node name="PointLight2D" type="PointLight2D" parent="Visual"]
 position = Vector2(0, -18)
 scale = Vector2(1.9375, 1.88514)
 texture = SubResource("GradientTexture2D_ejytf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -18)
-scale = Vector2(16, 16)
-shape = SubResource("CapsuleShape2D_qnbj4")
-
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
-position = Vector2(0, -7)
+position = Vector2(0, 12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -11)
 scale = Vector2(16, 16)
 shape = SubResource("CapsuleShape2D_qnbj4")
 
-[node name="Area2D2" type="Area2D" parent="."]
-visible = false
-position = Vector2(0, -7)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(0, -11)
-scale = Vector2(16, 16)
-shape = SubResource("CapsuleShape2D_qnbj4")
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qsl3t")
-}
-
 [node name="Attack_Range" type="Area2D" parent="."]
-visible = false
-position = Vector2(0, -7)
+position = Vector2(0, 12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Range"]
 shape = SubResource("CircleShape2D_d3026")
 
-[node name="Walk_to_Range" type="Area2D" parent="."]
-visible = false
-position = Vector2(0, -7)
+[node name="Dash_Hitbox" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walk_to_Range"]
-shape = SubResource("CircleShape2D_l21ug")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dash_Hitbox"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_5f346")
 
-[node name="Fire_Intervals" type="Timer" parent="."]
+[node name="FiniteStateMachine" type="Node2D" parent="."]
+script = ExtResource("5_2cdgk")
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -21)
+[node name="Idle" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("6_qsl3t")
 
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Attack_Range" to="." method="_on_attack_range_body_entered"]
-[connection signal="body_exited" from="Attack_Range" to="." method="_on_attack_range_body_exited"]
-[connection signal="body_entered" from="Walk_to_Range" to="." method="_on_walk_to_range_body_entered"]
-[connection signal="body_exited" from="Walk_to_Range" to="." method="_on_walk_to_range_body_exited"]
-[connection signal="timeout" from="Fire_Intervals" to="." method="_on_fire_intervals_timeout"]
+[node name="Attack" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("6_2cdgk")
+
+[node name="Dash" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("7_2avx2")
+
+[node name="Summon" type="Node2D" parent="FiniteStateMachine"]
+script = ExtResource("8_qsl3t")
+enemy_1 = ExtResource("9_2avx2")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Attack_Range" to="FiniteStateMachine/Idle" method="_on_attack_range_body_entered"]
+[connection signal="body_entered" from="Dash_Hitbox" to="." method="_on_dash_hitbox_body_entered"]

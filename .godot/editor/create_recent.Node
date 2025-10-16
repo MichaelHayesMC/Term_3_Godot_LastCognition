@@ -1,14 +1,14 @@
+CollisionShape2D
+Area2D
+Control
 Node2D
 ColorRect
 Marker2D
 AnimationPlayer
 TextureRect
 ReferenceRect
-Control
 PointLight2D
 Timer
 Label
 TextureButton
-CollisionShape2D
-Area2D
 Node
