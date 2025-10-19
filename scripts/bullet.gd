@@ -24,6 +24,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			if !body.is_in_group("Enemy"):
 				if body.name == "Player" and !Global.player_dodging:
 					Global.player_hp -= Global.enemy_damage
+					SoundBoard.get_node("Player_Hit").play()
 					queue_free()
 				elif body.name != "Player":
 					queue_free()

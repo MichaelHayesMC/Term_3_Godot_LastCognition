@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Term 3 - Last Cognition"
-run/main_scene="uid://dye3h5wtv4xj0"
+run/main_scene="uid://cvamvkb7citlg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://scripts/global.gd"
+SoundBoard="*res://scenes/SoundBoard.tscn"
 
 [display]
 
@@ -51,6 +52,7 @@ Bullet=""
 Defense=""
 Attack=""
 Lightning=""
+Power=""
 
 [input]
 

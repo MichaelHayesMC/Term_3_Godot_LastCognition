@@ -1,35 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://n6gllmlwh1xc"]
+[gd_scene load_steps=24 format=3 uid="uid://n6gllmlwh1xc"]
 
 [ext_resource type="Script" uid="uid://dndie06ief0kc" path="res://scripts/enemy_1.gd" id="1_tcmaw"]
 [ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://Blink.gdshader" id="2_a1412"]
 [ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/m_shadow.png" id="3_dq62l"]
 [ext_resource type="Texture2D" uid="uid://c4rdevuawx2vp" path="res://assets/Full_Enemy_Spreadsheet.png" id="3_ejytf"]
+[ext_resource type="AudioStream" uid="uid://cyltayp5p5g62" path="res://assets/sounds/sfx/metal-whoosh-hit-7-201910.mp3" id="6_l21ug"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dq62l"]
 shader = ExtResource("2_a1412")
 shader_parameter/blink_color = Color(0, 0, 0, 1)
 shader_parameter/blink_intensity = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejytf"]
-resource_local_to_scene = true
-shader = ExtResource("2_a1412")
-shader_parameter/blink_color = Color(1, 1, 1, 1)
-shader_parameter/blink_intensity = 0.0
-
-[sub_resource type="Gradient" id="Gradient_ejytf"]
-offsets = PackedFloat32Array(0.0485437, 0.296117, 0.490291, 1)
-colors = PackedColorArray(0.75118, 0.29996, 0.247146, 1, 0.771546, 0.149108, 0.076254, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ejytf"]
-gradient = SubResource("Gradient_ejytf")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ejytf"]
-radius = 0.4375
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dq62l"]
-radius = 7.0
 
 [sub_resource type="Animation" id="Animation_g2els"]
 length = 0.001
@@ -199,6 +179,27 @@ _data = {
 &"run_up": SubResource("Animation_y4r1p")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejytf"]
+radius = 0.4375
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ejytf"]
+resource_local_to_scene = true
+shader = ExtResource("2_a1412")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+
+[sub_resource type="Gradient" id="Gradient_ejytf"]
+offsets = PackedFloat32Array(0.0485437, 0.296117, 0.490291, 1)
+colors = PackedColorArray(0.75118, 0.29996, 0.247146, 1, 0.771546, 0.149108, 0.076254, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ejytf"]
+gradient = SubResource("Gradient_ejytf")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dq62l"]
+radius = 7.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_d3026"]
 radius = 69.029
 
@@ -210,6 +211,26 @@ material = SubResource("ShaderMaterial_dq62l")
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_tcmaw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d2wvv")
+}
+autoplay = "idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -7)
+scale = Vector2(16, 16)
+shape = SubResource("CircleShape2D_ejytf")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -7)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Fire_Intervals" type="Timer" parent="."]
 
 [node name="Visual" type="Node2D" parent="."]
 
@@ -229,12 +250,6 @@ position = Vector2(0, -7)
 scale = Vector2(1.15625, 1.125)
 texture = SubResource("GradientTexture2D_ejytf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -7)
-scale = Vector2(16, 16)
-shape = SubResource("CircleShape2D_ejytf")
-
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
 position = Vector2(0, -7)
@@ -248,15 +263,6 @@ position = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource("CircleShape2D_dq62l")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_d2wvv")
-}
-autoplay = "idle_down"
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [node name="Attack_Range" type="Area2D" parent="."]
 visible = false
@@ -272,16 +278,17 @@ position = Vector2(0, -7)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walk_to_Range"]
 shape = SubResource("CircleShape2D_l21ug")
 
-[node name="Fire_Intervals" type="Timer" parent="."]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_l21ug")
+volume_db = -20.0
+pitch_scale = 1.5
+bus = &"sfx"
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -7)
-
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Fire_Intervals" to="." method="_on_fire_intervals_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Attack_Range" to="." method="_on_attack_range_body_entered"]
 [connection signal="body_exited" from="Attack_Range" to="." method="_on_attack_range_body_exited"]
 [connection signal="body_entered" from="Walk_to_Range" to="." method="_on_walk_to_range_body_entered"]
 [connection signal="body_exited" from="Walk_to_Range" to="." method="_on_walk_to_range_body_exited"]
-[connection signal="timeout" from="Fire_Intervals" to="." method="_on_fire_intervals_timeout"]

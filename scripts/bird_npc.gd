@@ -14,6 +14,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _physics_process(_delta: float) -> void:
 	if $Sprite2D.visible and Input.is_action_just_pressed("interact"):
 		$"../PurchaseMenu".visible = true
+		
+		$Menu_Open.play()
 	
 	var inputs = ["down", "up", "left", "right"]
 	

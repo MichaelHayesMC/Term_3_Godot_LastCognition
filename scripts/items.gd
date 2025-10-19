@@ -1,9 +1,9 @@
 extends Node2D
 
-const LIGHTNING = preload("res://scenes/lightning.tscn")
-const ATTACK = preload("res://scenes/attack.tscn")
-const DEFENSE = preload("res://scenes/defense.tscn")
-const WIRE = preload("res://scenes/wire.tscn")
+const ATTACK = preload("res://scenes/components/attack.tscn")
+const DEFENSE = preload("res://scenes/components/defense.tscn")
+const LIGHTNING = preload("res://scenes/components/lightning.tscn")
+const WIRE = preload("res://scenes/components/wire.tscn")
 
 @onready var place_holder: Control = $"../Place_Holder"
 @onready var speed: Control = $"../Speed"
@@ -61,6 +61,8 @@ func purchase_confirm():
 		
 		Global.score -= prices["Lightning"]
 		
+		SoundBoard.get_node("Money_Collect").play()
+		
 		var _lightning_scene = LIGHTNING.instantiate()
 		var world = get_parent().get_parent().get_parent().get_parent()
 		var container = world.get_node("Components").get_node("Bulbs")
@@ -70,6 +72,8 @@ func purchase_confirm():
 	if current == attack and Global.score >= prices["Attack"]:
 		
 		Global.score -= prices["Attack"]
+		
+		SoundBoard.get_node("Money_Collect").play()
 		
 		var _attack_scene = ATTACK.instantiate()
 		var world = get_parent().get_parent().get_parent().get_parent()
@@ -81,6 +85,8 @@ func purchase_confirm():
 		
 		Global.score -= prices["Defense"]
 		
+		SoundBoard.get_node("Money_Collect").play()
+		
 		var _defense_scene = DEFENSE.instantiate()
 		var world = get_parent().get_parent().get_parent().get_parent()
 		var container = world.get_node("Components").get_node("Bulbs")
@@ -90,6 +96,8 @@ func purchase_confirm():
 	if current == wire and Global.score >= prices["Wire"]:
 		
 		Global.score -= prices["Wire"]
+		
+		SoundBoard.get_node("Money_Collect").play()
 		
 		var _wire_scene = WIRE.instantiate()
 		var world = get_parent().get_parent().get_parent().get_parent()

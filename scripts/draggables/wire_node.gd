@@ -25,11 +25,18 @@ func _process(delta):
 	if Input.is_action_just_pressed("click_left") and hovering and not Global.block_dragging:
 		dragging = true
 		Global.block_dragging = true
+		
+		if get_parent().is_in_group("Power") == false:
+			$AudioStreamPlayer2.play()
 
-	if Input.is_action_just_released("click_left"):
+	if Input.is_action_just_released("click_left") and hovering:
 		dragging = false
 		Global.block_dragging = false
+		
+		if get_parent().is_in_group("Power") == false:
+			$AudioStreamPlayer.play()
 
+	
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Module_Border"):
 		inside = true

@@ -1,10 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://duy8jpg78tkkl"]
+[gd_scene load_steps=23 format=3 uid="uid://duy8jpg78tkkl"]
 
 [ext_resource type="Script" uid="uid://jc056cm4kp3m" path="res://scripts/player_stuff/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/m_shadow.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dtdd42av6pgkk" path="res://assets/Full_Main_Spreadsheet.png" id="3_lvxji"]
 [ext_resource type="PackedScene" uid="uid://dyj81hojync2q" path="res://scenes/player/gun.tscn" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://bsvky0v50hmu2" path="res://scripts/health.gd" id="5_p47bc"]
+[ext_resource type="AudioStream" uid="uid://bcsgocxq6wx21" path="res://assets/sounds/sfx/dash_sfx.mp3" id="6_75vfm"]
+[ext_resource type="AudioStream" uid="uid://cittv6644sbwe" path="res://assets/sounds/sfx/footsteps.mp3" id="7_0owmy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 7.0
@@ -245,6 +247,16 @@ one_shot = true
 [node name="Dash_CoolDown" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="Dash_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_75vfm")
+volume_db = -30.0
+pitch_scale = 0.9
+
+[node name="Footsteps_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0owmy")
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Dash_CoolDown" to="." method="_on_dash_cool_down_timeout"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbf0r1mx5vjrc" path="res://scripts/power_start.gd" id="1_546xu"]
 [ext_resource type="Texture2D" uid="uid://pt7j2n477i7q" path="res://assets/power_start.png" id="2_5kvrx"]
-[ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="3_546xu"]
+[ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/components/wire_node.tscn" id="3_546xu"]
 
 [sub_resource type="Gradient" id="Gradient_5kvrx"]
 offsets = PackedFloat32Array(0, 0.23301, 0.281553, 0.635922)
@@ -13,7 +13,7 @@ gradient = SubResource("Gradient_5kvrx")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="PowerStart" type="Node2D"]
+[node name="PowerStart" type="Node2D" groups=["Power"]]
 z_as_relative = false
 script = ExtResource("1_546xu")
 

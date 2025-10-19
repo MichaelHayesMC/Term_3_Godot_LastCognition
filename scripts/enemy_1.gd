@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const BULLET_ENEMY = preload("res://scenes/bullet_enemy.tscn")
-
+const COIN_SOUND = preload("res://assets/sounds/sfx/money-collect-1-101476.mp3")
 
 @onready var sprite_2d: Sprite2D = $Visual/Sprite2D
 var health = Global.enemy_health
@@ -17,6 +17,7 @@ var should_chase := true
 var speed = 15
 var firing : bool = false
 var direction
+var audio_played = false
 
 var cooldown_done = true
 
@@ -34,7 +35,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "Bullet":
 		apply()
 		health -= Global.player_attack
-		
+		$AudioStreamPlayer2.play()
+
 func _process(delta: float) -> void:
 	if firing and cooldown_done:
 			cooldown_done = false
@@ -42,10 +44,11 @@ func _process(delta: float) -> void:
 			$Fire_Intervals.start()
 		
 	if health <= 0:
-		queue_free()
 		if randi_range(1, 3) == 1:
 			Global.unsaved_score += 1
-			print(Global.unsaved_score)
+			SoundBoard.get_node("Money_Collect").play()
+		
+		queue_free.call_deferred()
 	
 	direction = (player.global_position - global_position).normalized()
 	
@@ -101,6 +104,8 @@ func fire():
 	bullet.position = $Marker2D.global_position
 	bullet.direction = direction
 	get_tree().get_root().add_child(bullet)
+	
+	SoundBoard.get_node("Shoot2").play()
 	
 func _on_area_2d_2_area_entered(area: Area2D) -> void:
 	if area.name == "Area2D2":

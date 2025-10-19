@@ -26,6 +26,8 @@ func fire():
 	bullet.direction = direction
 	if get_tree() != null:
 		get_tree().get_root().add_child(bullet)
+		
+		SoundBoard.get_node("Shoot2").play()
 	
 func transition():
 	if can_transition:

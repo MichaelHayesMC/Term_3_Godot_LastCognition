@@ -11,6 +11,8 @@ func fire():
 	bullet.position = $Marker2D.global_position
 	bullet.direction = $Marker2D.global_position - global_position
 	get_tree().get_root().add_child(bullet)
+	
+	SoundBoard.get_node("Shoot").play()
 
 func _physics_process(_delta: float) -> void:
 	mouse_pos = get_global_mouse_position()

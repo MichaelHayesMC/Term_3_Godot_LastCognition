@@ -1,3 +1,6 @@
+AudioStreamPlayer
+AudioListener2D
+AudioStreamPlayer2D
 CollisionShape2D
 Area2D
 Control
@@ -9,6 +12,3 @@ TextureRect
 ReferenceRect
 PointLight2D
 Timer
-Label
-TextureButton
-Node

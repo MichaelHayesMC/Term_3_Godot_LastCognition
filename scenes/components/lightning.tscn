@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://db5ccklw88mq0"]
+[gd_scene load_steps=9 format=3 uid="uid://db5ccklw88mq0"]
 
 [ext_resource type="Shader" uid="uid://bnendtxyc1abq" path="res://greyscale.gdshader" id="1_gpx16"]
 [ext_resource type="Texture2D" uid="uid://b5sk5kkxoj1cr" path="res://assets/lightning.png" id="1_k2dum"]
 [ext_resource type="Script" uid="uid://boa4m0jsn8vqu" path="res://scripts/draggables/lightbulbs.gd" id="2_n7g4i"]
-[ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/wire_node.tscn" id="3_gpx16"]
+[ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/components/wire_node.tscn" id="3_gpx16"]
+[ext_resource type="AudioStream" uid="uid://cips6x4x7ur8n" path="res://assets/sounds/sfx/lamp-key-sfx-312914.mp3" id="5_207og"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ybhjs"]
 resource_local_to_scene = true
@@ -36,6 +37,11 @@ visible = false
 position = Vector2(0, -1.28571)
 scale = Vector2(0.2, 0.142857)
 texture = SubResource("GradientTexture2D_k2dum")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_207og")
+volume_db = -20.0
+pitch_scale = 3.0
 
 [connection signal="component_connected" from="Wire_Collision" to="." method="connect_to"]
 [connection signal="component_disconnected" from="Wire_Collision" to="." method="disconnect_from"]

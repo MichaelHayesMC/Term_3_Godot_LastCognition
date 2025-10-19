@@ -4,3 +4,4 @@ extends Control
 
 func _ready() -> void:
 	scene_transition.play("fade_out")
+	

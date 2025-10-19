@@ -11,6 +11,7 @@ var finish_cooldown := true
 
 var direction := Vector2.ZERO
 var dash_speed = 700
+var footstep_volume = -20
 
 func state_machine(state):
 	match state:
@@ -37,17 +38,22 @@ func get_input():
 	if Input.is_action_pressed("move_down"):
 		direction = Vector2.DOWN
 		state_machine(states.RUN)
+		$Footsteps_sfx.volume_db = footstep_volume
 	elif Input.is_action_pressed("move_up"):
 		direction = Vector2.UP
 		state_machine(states.RUN)
+		$Footsteps_sfx.volume_db = footstep_volume
 	elif Input.is_action_pressed("move_left"):
 		direction = Vector2.LEFT
 		state_machine(states.RUN)
+		$Footsteps_sfx.volume_db = footstep_volume
 	elif Input.is_action_pressed("move_right"):
 		direction = Vector2.RIGHT
 		state_machine(states.RUN)
+		$Footsteps_sfx.volume_db = footstep_volume
 	elif not velocity:
 		state_machine(states.IDLE)
+		$Footsteps_sfx.volume_db = -80
 		
 	if Input.is_action_pressed("dodge") and finish_cooldown:
 		Global.player_dodging = true
@@ -56,8 +62,8 @@ func get_input():
 		previous_speed = Global.player_speed
 		var tween = get_tree().create_tween()
 		tween.tween_method(set_speed, previous_speed + 200, 10, 0.3)
+		$Dash_sfx.play()
 		$DashTimer.start()
-		#Global.player_speed += dash_speed
 
 func _physics_process(_delta: float) -> void:
 	SPEED =	Global.player_speed

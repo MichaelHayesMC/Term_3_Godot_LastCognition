@@ -14,5 +14,11 @@ func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			scene_transition.play("fade_in")
+			$Button_Sfx.play()
+			
+			var tween = get_tree().create_tween()
+			tween.tween_property($"../Main_Title_Music", "volume_db", -80, 1.5)
+			
+			
 			await get_tree().create_timer(3).timeout
 			get_tree().change_scene_to_file(next_scene)
