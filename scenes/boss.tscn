@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dc4u5jg5oawjf"]
+[gd_scene load_steps=25 format=3 uid="uid://dc4u5jg5oawjf"]
 
 [ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://Blink.gdshader" id="1_qnbj4"]
 [ext_resource type="Script" uid="uid://s0tdwoo7f5ps" path="res://scripts/boss.gd" id="2_qnbj4"]
@@ -9,7 +9,9 @@
 [ext_resource type="Script" uid="uid://bdbi6inps63qj" path="res://scripts/idle.gd" id="6_qsl3t"]
 [ext_resource type="Script" uid="uid://cgmof65wlyxwk" path="res://scripts/dash.gd" id="7_2avx2"]
 [ext_resource type="Script" uid="uid://sr3cmbyydcly" path="res://scripts/summon.gd" id="8_qsl3t"]
+[ext_resource type="AudioStream" uid="uid://c1mlp82x7sx6" path="res://assets/sounds/sfx/clean-whoosh-effect-382719.mp3" id="9_0onds"]
 [ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="9_2avx2"]
+[ext_resource type="AudioStream" uid="uid://cyltayp5p5g62" path="res://assets/sounds/sfx/metal-whoosh-hit-7-201910.mp3" id="12_lfs1x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dq62l"]
 shader = ExtResource("1_qnbj4")
@@ -129,8 +131,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnbj4"]
-radius = 0.4375
-height = 2.375
+radius = 0.5625
+height = 2.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ejytf"]
 resource_local_to_scene = true
@@ -226,9 +228,21 @@ script = ExtResource("6_2cdgk")
 [node name="Dash" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("7_2avx2")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="FiniteStateMachine/Dash"]
+stream = ExtResource("9_0onds")
+volume_db = 7.0
+pitch_scale = 1.3
+bus = &"sfx"
+
 [node name="Summon" type="Node2D" parent="FiniteStateMachine"]
 script = ExtResource("8_qsl3t")
 enemy_1 = ExtResource("9_2avx2")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_lfs1x")
+volume_db = -15.0
+pitch_scale = 1.5
+bus = &"sfx"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Attack_Range" to="FiniteStateMachine/Idle" method="_on_attack_range_body_entered"]

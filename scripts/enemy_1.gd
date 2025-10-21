@@ -18,13 +18,21 @@ var speed = 15
 var firing : bool = false
 var direction
 var audio_played = false
+var can_move = false
 
 var cooldown_done = true
 
 func _ready() -> void:
 	global_position = Vector2(new_pos_x,new_pos_y)
+	
+	var tween = get_tree().create_tween()
+	sprite_2d.material.set_shader_parameter("blink_color", Color(1,0,0,1))
+	tween.tween_method(set_shader, 1.0, 0.0, 1.5)
+	await tween.finished
+	can_move = true
 
 func apply():
+	sprite_2d.material.set_shader_parameter("blink_color", Color(1,1,1,1))
 	var tween = get_tree().create_tween()
 	tween.tween_method(set_shader, 1.0, 0.0, 0.5)
 
@@ -38,13 +46,13 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		$AudioStreamPlayer2.play()
 
 func _process(delta: float) -> void:
-	if firing and cooldown_done:
+	if firing and cooldown_done and can_move:
 			cooldown_done = false
 			fire()
 			$Fire_Intervals.start()
 		
 	if health <= 0:
-		if randi_range(1, 3) == 1:
+		if randi_range(1, 2) == 1:
 			Global.unsaved_score += 1
 			SoundBoard.get_node("Money_Collect").play()
 		
@@ -52,7 +60,7 @@ func _process(delta: float) -> void:
 	
 	direction = (player.global_position - global_position).normalized()
 	
-	if should_chase:
+	if should_chase and can_move:
 		velocity = lerp(velocity, direction * speed, 8.5*delta)
 		move_and_slide()
 		state_machine(states.RUN)

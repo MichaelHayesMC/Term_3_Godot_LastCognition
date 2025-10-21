@@ -14,6 +14,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "Bullet":
 		apply()
 		health -= Global.player_attack
+		$AudioStreamPlayer2.play()
 		
 func _process(delta: float) -> void:
 	if health <= 0:

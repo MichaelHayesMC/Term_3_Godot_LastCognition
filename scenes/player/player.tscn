@@ -186,12 +186,12 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0.160393, 1, 0, 1)
 border_color = Color(1, 1, 1, 1)
 
-[sub_resource type="Gradient" id="Gradient_p47bc"]
+[sub_resource type="Gradient" id="Gradient_0owmy"]
 offsets = PackedFloat32Array(0.23301, 0.325243, 0.621359)
 colors = PackedColorArray(0.394316, 0.561098, 0.3359, 1, 0.291435, 0.442296, 0.221948, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dqkch"]
-gradient = SubResource("Gradient_p47bc")
+gradient = SubResource("Gradient_0owmy")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -245,17 +245,19 @@ wait_time = 0.4
 one_shot = true
 
 [node name="Dash_CoolDown" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 0.8
 one_shot = true
 
 [node name="Dash_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_75vfm")
-volume_db = -30.0
+volume_db = -22.0
 pitch_scale = 0.9
+bus = &"sfx"
 
 [node name="Footsteps_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0owmy")
 autoplay = true
+bus = &"sfx"
 parameters/looping = true
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

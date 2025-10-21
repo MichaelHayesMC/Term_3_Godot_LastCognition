@@ -15,7 +15,8 @@ func _physics_process(_delta: float) -> void:
 	if $Sprite2D.visible and Input.is_action_just_pressed("interact"):
 		$"../PurchaseMenu".visible = true
 		
-		$Menu_Open.play()
+		if Global.player_mvoing == false:
+			$Menu_Open.play()
 	
 	var inputs = ["down", "up", "left", "right"]
 	

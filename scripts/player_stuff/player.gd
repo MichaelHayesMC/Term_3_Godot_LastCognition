@@ -11,7 +11,7 @@ var finish_cooldown := true
 
 var direction := Vector2.ZERO
 var dash_speed = 700
-var footstep_volume = -20
+var footstep_volume = -7
 
 func state_machine(state):
 	match state:
@@ -39,23 +39,30 @@ func get_input():
 		direction = Vector2.DOWN
 		state_machine(states.RUN)
 		$Footsteps_sfx.volume_db = footstep_volume
+		Global.player_mvoing = true
 	elif Input.is_action_pressed("move_up"):
 		direction = Vector2.UP
 		state_machine(states.RUN)
 		$Footsteps_sfx.volume_db = footstep_volume
+		Global.player_mvoing = true
 	elif Input.is_action_pressed("move_left"):
 		direction = Vector2.LEFT
 		state_machine(states.RUN)
 		$Footsteps_sfx.volume_db = footstep_volume
+		Global.player_mvoing = true
 	elif Input.is_action_pressed("move_right"):
 		direction = Vector2.RIGHT
 		state_machine(states.RUN)
 		$Footsteps_sfx.volume_db = footstep_volume
+		Global.player_mvoing = true
 	elif not velocity:
 		state_machine(states.IDLE)
 		$Footsteps_sfx.volume_db = -80
+		Global.player_mvoing = false
 		
 	if Input.is_action_pressed("dodge") and finish_cooldown:
+		$Sprite2D.modulate = Color(1,1,1,0.5)
+		
 		Global.player_dodging = true
 		finish_cooldown = false
 		$Dash_CoolDown.start()
@@ -75,10 +82,10 @@ func _physics_process(_delta: float) -> void:
 func _on_dash_timer_timeout() -> void:
 	Global.player_speed = previous_speed
 	Global.player_dodging = false
+	$Sprite2D.modulate = Color(1,1,1,1)
 
 func set_speed(new_Value: float):
 	Global.player_speed = new_Value
-
 
 func _on_dash_cool_down_timeout() -> void:
 	finish_cooldown = true

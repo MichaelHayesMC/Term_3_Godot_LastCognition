@@ -13,7 +13,7 @@ func enter():
 	if get_tree() != null:	
 		await get_tree().create_timer(2).timeout
 	super.enter()
-	for i in range(100):
+	for i in range(70):
 		direction = (player.global_position - global_position).normalized()
 		fire()
 		if get_tree() != null:

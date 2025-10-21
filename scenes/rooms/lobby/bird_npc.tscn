@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bm6k25sqimdfc"]
+[gd_scene load_steps=25 format=3 uid="uid://bm6k25sqimdfc"]
 
 [ext_resource type="Script" uid="uid://1xuxgoaaj3fw" path="res://scripts/bird_npc.gd" id="1_im5bs"]
 [ext_resource type="Texture2D" uid="uid://bac6a012pavbq" path="res://assets/dialogue_prompt.png" id="2_rloqc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/m_shadow.png" id="4_u7a38"]
 [ext_resource type="Texture2D" uid="uid://c1arwu0w5lbr6" path="res://assets/birb.png" id="5_g8xyv"]
 [ext_resource type="Texture2D" uid="uid://bumwg17lvmygl" path="res://assets/stick.png" id="6_3yewc"]
+[ext_resource type="AudioStream" uid="uid://dhequooybrqsv" path="res://assets/sounds/sfx/Untitled song (5).mp3" id="7_rloqc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06ctt"]
 atlas = ExtResource("2_rloqc")
@@ -185,6 +186,8 @@ texture = SubResource("GradientTexture2D_v7twi")
 shape = SubResource("RectangleShape2D_pkgqk")
 
 [node name="Menu_Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rloqc")
+volume_db = -10.0
 bus = &"sfx"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

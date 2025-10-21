@@ -6,6 +6,7 @@ var unsaved_score = 0
 var player_moveable : bool = true
 var player_speed : int = 35
 var player_attack : int = 3
+var player_mvoing : bool = false
 
 var player_hp : int = 100
 var player_max_hp : int = 100

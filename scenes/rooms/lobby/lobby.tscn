@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://fu3y0xl7n331" path="res://assets/move_text.png" id="7_5urum"]
 [ext_resource type="Texture2D" uid="uid://bwfnpm62n21ea" path="res://assets/fire_text.png" id="8_8dskr"]
 [ext_resource type="PackedScene" uid="uid://d25kmqbtnjdkn" path="res://scenes/shop_menu/purchase_menu.tscn" id="9_rfcmn"]
-[ext_resource type="AudioStream" uid="uid://brirg6cyqpcj4" path="res://assets/sounds/music/after-all-ambience-244271.mp3" id="10_m6wsn"]
+[ext_resource type="AudioStream" uid="uid://bxr5v57n1fqx0" path="res://assets/sounds/music/lobby.mp3" id="10_m6wsn"]
 
 [node name="Lobby" type="Node2D"]
 
@@ -53,6 +53,8 @@ visible = false
 
 [node name="Default_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_m6wsn")
-volume_db = -15.0
+volume_db = -17.0
+pitch_scale = 0.7
 autoplay = true
 bus = &"Music"
+parameters/looping = true

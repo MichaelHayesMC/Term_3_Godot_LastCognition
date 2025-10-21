@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfe1g5w21cky5"]
+[gd_scene load_steps=13 format=3 uid="uid://dfe1g5w21cky5"]
 
 [ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_u8vhm"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_4ssin"]
 [ext_resource type="Texture2D" uid="uid://pfs1xpnumkua" path="res://assets/level_4.png" id="3_nvm38"]
 [ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="4_tfhis"]
 [ext_resource type="PackedScene" uid="uid://cslgx1epwc0eb" path="res://scenes/enemy_load.tscn" id="5_nvm38"]
+[ext_resource type="AudioStream" uid="uid://bfm3eq01qaxmy" path="res://assets/sounds/music/soundtrack-01-combat-challenge-205097.mp3" id="6_nvm38"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccapj"]
 size = Vector2(16, 7)
@@ -94,3 +95,10 @@ position = Vector2(35, 63)
 position = Vector2(35, 82)
 
 [node name="Enemies" parent="." instance=ExtResource("5_nvm38")]
+
+[node name="Default_Music2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_nvm38")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true

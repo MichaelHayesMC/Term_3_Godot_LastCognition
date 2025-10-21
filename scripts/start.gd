@@ -1,6 +1,6 @@
 extends Label
 
-@onready var scene_transition: = $"../Scene_Transition/AnimationPlayer"
+@onready var scene_transition: = $"../../Scene_Transition/AnimationPlayer"
 
 const next_scene = "res://scenes/beginning_cutscene.tscn"
 

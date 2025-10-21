@@ -36,6 +36,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if Global.player_hp <= 0:
 		Global.player_hp = 0
+		Global.died = true
 	
 	currency_text_unsaved.text = str("+" , Global.unsaved_score)
 	
@@ -44,10 +45,15 @@ func _physics_process(_delta: float) -> void:
 	else:
 		currency_text.text = str(Global.score)
 	
-	if Global.go_back or Global.player_hp <= 0:
+	if Global.player_hp <= 0:
 		cycle_finish()
 		Global.go_back = false
 		Global.died = true
+	elif Global.go_back:
+		Global.score += Global.unsaved_score
+		print(Global.score)
+		cycle_finish()
+		Global.go_back = false
 
 func next_room():
 	level_change()
@@ -92,8 +98,9 @@ func cycle_finish():
 	rooms.add_child(LOBBY.instantiate())
 	$HUD/Room_Widgets.visible = false
 	
-	if !Global.died:
-		Global.score += Global.unsaved_score
+	#if !Global.died:
+		#Global.score += Global.unsaved_score
+		#print(Global.score)
 	
 	currency_text.text = str(Global.score)
 	Global.unsaved_score = 0

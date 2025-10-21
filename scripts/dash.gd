@@ -55,6 +55,8 @@ func dash_randomisation(mark1, mark2):
 	
 	var level_reference = get_parent().get_parent().get_parent().get_parent()
 	
+	$AudioStreamPlayer.play()
+	
 	var tween = create_tween()
 	owner.position = level_reference.get_node(mark1).position
 	tween.tween_property(owner, "position", level_reference.get_node(mark2).position, 0.6)

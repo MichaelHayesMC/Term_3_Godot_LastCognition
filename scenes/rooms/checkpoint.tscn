@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://blv60b6g0tme4"]
+[gd_scene load_steps=29 format=3 uid="uid://blv60b6g0tme4"]
 
 [ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_hnu1l"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/door.png" id="2_l7ksh"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://dhcc30ong0m8k" path="res://assets/fonts/3x3-Mono.ttf" id="9_iiqs0"]
 [ext_resource type="Script" uid="uid://ckg2b5xqs2jom" path="res://scripts/continue.gd" id="10_8130p"]
 [ext_resource type="Script" uid="uid://c7x3m06c07242" path="res://scripts/return.gd" id="11_d6c3c"]
+[ext_resource type="AudioStream" uid="uid://bxr5v57n1fqx0" path="res://assets/sounds/music/lobby.mp3" id="12_sqg0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnd4n"]
 size = Vector2(16, 7)
@@ -264,6 +265,14 @@ label_settings = SubResource("LabelSettings_iiqs0")
 vertical_alignment = 1
 autowrap_mode = 3
 script = ExtResource("11_d6c3c")
+
+[node name="Default_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_sqg0h")
+volume_db = -15.0
+pitch_scale = 0.7
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="body_entered" from="Vent/PointLight2D2/Area2D" to="Vent" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Vent/PointLight2D2/Area2D" to="Vent" method="_on_area_2d_body_exited"]
