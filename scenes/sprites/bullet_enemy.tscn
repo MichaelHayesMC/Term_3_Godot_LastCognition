@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d1ynthtjuqnyr"]
 
-[ext_resource type="Script" uid="uid://dqljxvejhik1a" path="res://scripts/bullet.gd" id="1_alonw"]
+[ext_resource type="Script" uid="uid://dqljxvejhik1a" path="res://scripts/sprites/bullet.gd" id="1_yq3i7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_h1aey"]
 
@@ -19,7 +19,7 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Bullet_Enemy" type="Sprite2D" groups=["Bullet"]]
 scale = Vector2(4, 4)
 texture = SubResource("CanvasTexture_h1aey")
-script = ExtResource("1_alonw")
+script = ExtResource("1_yq3i7")
 typing = 1
 
 [node name="Bullet_Enemy" type="Area2D" parent="."]

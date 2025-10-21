@@ -1,10 +1,10 @@
 [gd_scene load_steps=23 format=3 uid="uid://n6gllmlwh1xc"]
 
-[ext_resource type="Script" uid="uid://dndie06ief0kc" path="res://scripts/enemy_1.gd" id="1_tcmaw"]
-[ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://Blink.gdshader" id="2_a1412"]
-[ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/spritesheets/m_shadow.png" id="3_dq62l"]
-[ext_resource type="Texture2D" uid="uid://c4rdevuawx2vp" path="res://assets/spritesheets/Full_Enemy_Spreadsheet.png" id="3_ejytf"]
-[ext_resource type="AudioStream" uid="uid://cyltayp5p5g62" path="res://assets/sounds/sfx/metal-whoosh-hit-7-201910.mp3" id="6_l21ug"]
+[ext_resource type="Script" uid="uid://dndie06ief0kc" path="res://scripts/sprites/enemy_1.gd" id="1_cki1u"]
+[ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/spritesheets/m_shadow.png" id="2_e5xps"]
+[ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://shaders/Blink.gdshader" id="3_s8nle"]
+[ext_resource type="Texture2D" uid="uid://c4rdevuawx2vp" path="res://assets/spritesheets/Full_Enemy_Spreadsheet.png" id="4_4j0ix"]
+[ext_resource type="AudioStream" uid="uid://cyltayp5p5g62" path="res://assets/sounds/sfx/metal-whoosh-hit-7-201910.mp3" id="5_tokj2"]
 
 [sub_resource type="Animation" id="Animation_g2els"]
 length = 0.001
@@ -179,7 +179,7 @@ radius = 0.4375
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ejytf"]
 resource_local_to_scene = true
-shader = ExtResource("2_a1412")
+shader = ExtResource("3_s8nle")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/blink_intensity = 0.0
 
@@ -204,7 +204,7 @@ radius = 104.12
 [node name="Enemy1" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_tcmaw")
+script = ExtResource("1_cki1u")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -230,12 +230,12 @@ autostart = true
 
 [node name="MShadow" type="Sprite2D" parent="Visual"]
 position = Vector2(0, -2)
-texture = ExtResource("3_dq62l")
+texture = ExtResource("2_e5xps")
 
 [node name="Sprite2D" type="Sprite2D" parent="Visual"]
 material = SubResource("ShaderMaterial_ejytf")
 position = Vector2(1, -7)
-texture = ExtResource("3_ejytf")
+texture = ExtResource("4_4j0ix")
 hframes = 8
 vframes = 9
 
@@ -273,7 +273,7 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_l21ug")
 
 [node name="Hit_sfx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_l21ug")
+stream = ExtResource("5_tokj2")
 volume_db = -20.0
 pitch_scale = 1.5
 bus = &"sfx"

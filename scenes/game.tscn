@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=4 uid="uid://cvamvkb7citlg"]
 
-[ext_resource type="Script" uid="uid://bqigh6qehchht" path="res://scripts/detection_areas.gd" id="1_5newe"]
+[ext_resource type="Script" uid="uid://bqigh6qehchht" path="res://scripts/main_game/detection_areas.gd" id="1_5newe"]
 [ext_resource type="Script" uid="uid://hti4atq0rgw4" path="res://scripts/game.gd" id="1_37s47"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/rooms/door.png" id="3_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://duy01gi0bwih2" path="res://scenes/rooms/lobby/lobby.tscn" id="3_rysoc"]

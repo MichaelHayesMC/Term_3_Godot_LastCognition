@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://8mq61ya6c7jl"]
 
-[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_dpn7k"]
+[ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/main_game/room.gd" id="1_dpn7k"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/rooms/door.png" id="2_wrf3q"]
 [ext_resource type="Texture2D" uid="uid://neb06kpgf3cm" path="res://assets/rooms/level_3.png" id="3_apo02"]
 [ext_resource type="PackedScene" uid="uid://cslgx1epwc0eb" path="res://scenes/rooms/enemy_load.tscn" id="4_dpn7k"]

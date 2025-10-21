@@ -40,7 +40,8 @@ project/assembly_name="Term 3 Game Project"
 folder_colors={
 "res://assets/": "orange",
 "res://scenes/": "green",
-"res://scripts/": "blue"
+"res://scripts/": "blue",
+"res://shaders/": "purple"
 }
 
 [global_group]

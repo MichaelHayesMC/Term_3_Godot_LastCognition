@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vrxqbxwsphfq"]
 
 [ext_resource type="Texture2D" uid="uid://c7uou8ygbfnt8" path="res://assets/shop_components/lightning_cell.png" id="1_lhu6a"]
-[ext_resource type="Script" uid="uid://bdpb8k08dkyud" path="res://scripts/lightning_cell.gd" id="2_pfcj5"]
+[ext_resource type="Script" uid="uid://bdpb8k08dkyud" path="res://scripts/shop/lightning_cell.gd" id="2_pfcj5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l16yi"]
 size = Vector2(22, 22)

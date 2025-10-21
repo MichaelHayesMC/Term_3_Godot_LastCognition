@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bpuav2tw3r05p"]
 
-[ext_resource type="Script" uid="uid://dqljxvejhik1a" path="res://scripts/bullet.gd" id="1_mkf8s"]
+[ext_resource type="Script" uid="uid://dqljxvejhik1a" path="res://scripts/sprites/bullet.gd" id="1_mkf8s"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_h1aey"]
 
