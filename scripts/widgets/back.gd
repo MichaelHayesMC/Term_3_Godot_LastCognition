@@ -1,14 +1,21 @@
-extends Label
+extends TitleScreenButtons
 
-func _on_mouse_entered() -> void:
-	modulate = Color.GREEN
+# References to make visible or invisible
+@onready var main_page: Control = $"../../Main_Page"
+@onready var credits_page: Control = $".."
 
-func _on_mouse_exited() -> void:
-	modulate = Color(0, .49, 0, 1)
 
+# PLays when given a click input from left mouse click
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			$Button_Sfx.play()
-			$"..".visible = false
-			$"../../Main_Page".visible = true
+	
+			# Play Button Clicked Sound effect
+			SoundBoard.get_node("Button_Sfx").play()
+
+			visibility_change()
+
+# Make current nodes invisible and next nodes visible for transition
+func visibility_change():
+	main_page.visible = true
+	credits_page.visible = false

@@ -1,5 +1,7 @@
 extends Label
 
+
+# Following plays the animation of the main title label removing and adding the underscore
 func _ready() -> void:
 	text = "lAST cOGNITION"
 

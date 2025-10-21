@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dye3h5wtv4xj0"]
+[gd_scene load_steps=20 format=3 uid="uid://dye3h5wtv4xj0"]
 
 [ext_resource type="Script" uid="uid://bj0x21i5otywy" path="res://scripts/widgets/title_screen.gd" id="1_cs5ya"]
 [ext_resource type="Texture2D" uid="uid://d20aekke7u5uc" path="res://assets/title/title_screen.png" id="1_dc4i4"]
@@ -8,20 +8,10 @@
 [ext_resource type="Script" uid="uid://jy5xes3bye1a" path="res://scripts/widgets/start.gd" id="2_sa3yf"]
 [ext_resource type="Texture2D" uid="uid://mepob8iqajs4" path="res://assets/title/spotlight.png" id="6_e54dn"]
 [ext_resource type="PackedScene" uid="uid://nbw0ptp4ilr4" path="res://scenes/Title-Cutscenes/scene_transition.tscn" id="8_mykxm"]
-[ext_resource type="AudioStream" uid="uid://2skjrxb5erij" path="res://assets/sounds/sfx/button_press.mp3" id="8_tklts"]
-[ext_resource type="Script" uid="uid://bh5hk1undq431" path="res://scripts/widgets/credits_button.gd" id="9_ib7db"]
+[ext_resource type="Script" uid="uid://cjuk0fgffrbc8" path="res://scripts/widgets/credits_button.gd" id="9_ib7db"]
 [ext_resource type="AudioStream" uid="uid://fao46hfsjtej" path="res://assets/sounds/music/main_title_ost.mp3" id="9_mykxm"]
-[ext_resource type="Script" uid="uid://dev3ve5sf8oyx" path="res://scripts/widgets/back.gd" id="11_frs5l"]
+[ext_resource type="Script" uid="uid://dpg6o52ol2mix" path="res://scripts/widgets/back.gd" id="11_frs5l"]
 [ext_resource type="PackedScene" uid="uid://c4hsk2211ftew" path="res://scenes/Title-Cutscenes/credits.tscn" id="11_u26n3"]
-
-[sub_resource type="Gradient" id="Gradient_trtic"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dc4i4"]
-gradient = SubResource("Gradient_trtic")
-fill_from = Vector2(1, 1)
-fill_to = Vector2(0.991453, 0.952991)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fgkus"]
 font = ExtResource("1_s4lrb")
@@ -35,6 +25,15 @@ font_size = 8
 [sub_resource type="LabelSettings" id="LabelSettings_mynnq"]
 font = ExtResource("1_fgkus")
 font_size = 4
+
+[sub_resource type="Gradient" id="Gradient_trtic"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dc4i4"]
+gradient = SubResource("Gradient_trtic")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0.991453, 0.952991)
 
 [sub_resource type="Gradient" id="Gradient_lvxji"]
 offsets = PackedFloat32Array(0.23301, 0.621359)
@@ -58,15 +57,7 @@ script = ExtResource("1_cs5ya")
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Darkness_layer" type="PointLight2D" parent="."]
-position = Vector2(192, 108)
-scale = Vector2(2.06186, 1.15979)
-energy = 0.5
-blend_mode = 1
-texture = SubResource("GradientTexture2D_dc4i4")
-texture_scale = 2.91
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Backdrop" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 384.0
 offset_bottom = 216.0
@@ -141,11 +132,6 @@ label_settings = SubResource("LabelSettings_sa3yf")
 vertical_alignment = 1
 script = ExtResource("2_sa3yf")
 
-[node name="Button_Sfx" type="AudioStreamPlayer" parent="Main_Page/Start_Button"]
-stream = ExtResource("8_tklts")
-volume_db = -20.0
-bus = &"sfx"
-
 [node name="Credits_Button" type="Label" parent="Main_Page"]
 modulate = Color(0, 0.493211, 0.00585955, 1)
 light_mask = 2
@@ -168,11 +154,6 @@ text = "Credits"
 label_settings = SubResource("LabelSettings_sa3yf")
 vertical_alignment = 1
 script = ExtResource("9_ib7db")
-
-[node name="Button_Sfx" type="AudioStreamPlayer" parent="Main_Page/Credits_Button"]
-stream = ExtResource("8_tklts")
-volume_db = -20.0
-bus = &"sfx"
 
 [node name="Credits_Page" type="Control" parent="."]
 visible = false
@@ -217,19 +198,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("11_frs5l")
 
-[node name="Button_Sfx" type="AudioStreamPlayer" parent="Credits_Page/Back"]
-stream = ExtResource("8_tklts")
-volume_db = -20.0
-bus = &"sfx"
+[node name="Darkness_layer" type="PointLight2D" parent="."]
+position = Vector2(192, 108)
+scale = Vector2(2.06186, 1.15979)
+energy = 0.5
+blend_mode = 1
+texture = SubResource("GradientTexture2D_dc4i4")
+texture_scale = 2.91
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="Spotlight_Beginning" type="PointLight2D" parent="."]
 z_index = 1
 position = Vector2(235, -31)
 scale = Vector2(1.71875, 1.57552)
 energy = 1.7
 texture = SubResource("GradientTexture2D_e54dn")
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
+[node name="Spotlight" type="PointLight2D" parent="."]
 z_index = 1
 position = Vector2(192, 108)
 energy = 0.5

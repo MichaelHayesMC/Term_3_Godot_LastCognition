@@ -1,18 +1,21 @@
-extends Label
+extends TitleScreenButtons
 
-@onready var scene_transition: = $"../Scene_Transition/AnimationPlayer"
+# References to make visible or invisible
+@onready var main_page: Control = $".."
+@onready var credits_page: Control = $"../../Credits_Page"
 
-const next_scene = "res://scenes/beginning_cutscene.tscn"
 
-func _on_mouse_entered() -> void:
-	modulate = Color.GREEN
-
-func _on_mouse_exited() -> void:
-	modulate = Color(0, .49, 0, 1)
-
+# PLays when given a click input from left mouse click
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			$Button_Sfx.play()	
-			$"..".visible = false
-			$"../../Credits_Page".visible = true
+	
+			# Play Button Clicked Sound effect
+			SoundBoard.get_node("Button_Sfx").play()
+
+			visibility_change()
+
+# Make current nodes invisible and next nodes visible for transition
+func visibility_change():
+	main_page.visible = false
+	credits_page.visible = true
