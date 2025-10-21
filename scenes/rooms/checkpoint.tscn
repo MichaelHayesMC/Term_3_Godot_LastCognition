@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_hnu1l"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/rooms/door.png" id="2_l7ksh"]
 [ext_resource type="Texture2D" uid="uid://dq5cbpwmqbca6" path="res://assets/rooms/checkpoint.png" id="3_c6tov"]
-[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="4_wdpoa"]
+[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/rooms/stasis_tube.tscn" id="4_wdpoa"]
 [ext_resource type="Texture2D" uid="uid://bys1aaljc6bvh" path="res://assets/rooms/vent.png" id="5_hnu1l"]
 [ext_resource type="Texture2D" uid="uid://bac6a012pavbq" path="res://assets/gui/dialogue_prompt.png" id="6_vsn7m"]
 [ext_resource type="Script" uid="uid://js1jmx3562dq" path="res://scripts/vent.gd" id="6_wdpoa"]

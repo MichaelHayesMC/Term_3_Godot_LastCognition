@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c4qj0f5oue72y" path="res://assets/rooms/lobby.png" id="1_kn58n"]
 [ext_resource type="PackedScene" uid="uid://s617p21avgyy" path="res://scenes/rooms/lobby/campfire.tscn" id="2_m6wsn"]
 [ext_resource type="PackedScene" uid="uid://dwx7e4d6c3v2c" path="res://scenes/rooms/lobby/tent.tscn" id="3_0bcik"]
-[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="4_lcod2"]
+[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/rooms/stasis_tube.tscn" id="4_lcod2"]
 [ext_resource type="PackedScene" uid="uid://cgixkp7xwwikq" path="res://scenes/rooms/lobby/lantern.tscn" id="5_qx57j"]
 [ext_resource type="PackedScene" uid="uid://bm6k25sqimdfc" path="res://scenes/rooms/lobby/bird_npc.tscn" id="6_mjhe8"]
 [ext_resource type="Texture2D" uid="uid://fu3y0xl7n331" path="res://assets/rooms/move_text.png" id="7_5urum"]

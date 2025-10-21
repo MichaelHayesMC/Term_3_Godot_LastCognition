@@ -1,20 +1,20 @@
 [gd_scene load_steps=25 format=3 uid="uid://dc4u5jg5oawjf"]
 
-[ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://Blink.gdshader" id="1_qnbj4"]
-[ext_resource type="Script" uid="uid://s0tdwoo7f5ps" path="res://scripts/boss.gd" id="2_qnbj4"]
-[ext_resource type="Texture2D" uid="uid://bitlhgggyibxn" path="res://assets/spritesheets/l_shadow.png" id="3_qnbj4"]
-[ext_resource type="Texture2D" uid="uid://bpiugp2wy6m1b" path="res://assets/spritesheets/boss.png" id="4_qnbj4"]
-[ext_resource type="Script" uid="uid://s4bwc006fud4" path="res://scripts/finite_state_machine.gd" id="5_2cdgk"]
-[ext_resource type="Script" uid="uid://cv51tddad36k4" path="res://scripts/attack.gd" id="6_2cdgk"]
-[ext_resource type="Script" uid="uid://bdbi6inps63qj" path="res://scripts/idle.gd" id="6_qsl3t"]
-[ext_resource type="Script" uid="uid://cgmof65wlyxwk" path="res://scripts/dash.gd" id="7_2avx2"]
-[ext_resource type="Script" uid="uid://sr3cmbyydcly" path="res://scripts/summon.gd" id="8_qsl3t"]
-[ext_resource type="AudioStream" uid="uid://c1mlp82x7sx6" path="res://assets/sounds/sfx/clean-whoosh-effect-382719.mp3" id="9_0onds"]
-[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/enemy_1.tscn" id="9_2avx2"]
-[ext_resource type="AudioStream" uid="uid://cyltayp5p5g62" path="res://assets/sounds/sfx/metal-whoosh-hit-7-201910.mp3" id="12_lfs1x"]
+[ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://Blink.gdshader" id="1_rbwnv"]
+[ext_resource type="Script" uid="uid://s0tdwoo7f5ps" path="res://scripts/boss.gd" id="2_7ymjk"]
+[ext_resource type="Texture2D" uid="uid://bitlhgggyibxn" path="res://assets/spritesheets/l_shadow.png" id="3_sw4a1"]
+[ext_resource type="Texture2D" uid="uid://bpiugp2wy6m1b" path="res://assets/spritesheets/boss.png" id="4_7jxvu"]
+[ext_resource type="Script" uid="uid://s4bwc006fud4" path="res://scripts/finite_state_machine.gd" id="5_nwhtm"]
+[ext_resource type="Script" uid="uid://bdbi6inps63qj" path="res://scripts/idle.gd" id="6_mxgid"]
+[ext_resource type="Script" uid="uid://cv51tddad36k4" path="res://scripts/attack.gd" id="7_182si"]
+[ext_resource type="Script" uid="uid://cgmof65wlyxwk" path="res://scripts/dash.gd" id="8_esg0t"]
+[ext_resource type="AudioStream" uid="uid://c1mlp82x7sx6" path="res://assets/sounds/sfx/clean-whoosh-effect-382719.mp3" id="9_5j8kn"]
+[ext_resource type="Script" uid="uid://sr3cmbyydcly" path="res://scripts/summon.gd" id="10_l6mgg"]
+[ext_resource type="PackedScene" uid="uid://n6gllmlwh1xc" path="res://scenes/sprites/enemy_1.tscn" id="11_u4lc1"]
+[ext_resource type="AudioStream" uid="uid://cyltayp5p5g62" path="res://assets/sounds/sfx/metal-whoosh-hit-7-201910.mp3" id="12_ypdpw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dq62l"]
-shader = ExtResource("1_qnbj4")
+shader = ExtResource("1_rbwnv")
 shader_parameter/blink_color = Color(0, 0, 0, 1)
 shader_parameter/blink_intensity = 0.0
 
@@ -136,7 +136,7 @@ height = 2.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ejytf"]
 resource_local_to_scene = true
-shader = ExtResource("1_qnbj4")
+shader = ExtResource("1_rbwnv")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/blink_intensity = 0.0
 
@@ -160,7 +160,7 @@ height = 64.0
 material = SubResource("ShaderMaterial_dq62l")
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("2_qnbj4")
+script = ExtResource("2_7ymjk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -181,12 +181,12 @@ position = Vector2(0, 19)
 
 [node name="LShadow" type="Sprite2D" parent="Visual"]
 position = Vector2(0, -2)
-texture = ExtResource("3_qnbj4")
+texture = ExtResource("3_sw4a1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Visual"]
 material = SubResource("ShaderMaterial_ejytf")
 position = Vector2(1, -20)
-texture = ExtResource("4_qnbj4")
+texture = ExtResource("4_7jxvu")
 hframes = 4
 
 [node name="PointLight2D" type="PointLight2D" parent="Visual"]
@@ -217,29 +217,29 @@ rotation = 1.57079
 shape = SubResource("CapsuleShape2D_5f346")
 
 [node name="FiniteStateMachine" type="Node2D" parent="."]
-script = ExtResource("5_2cdgk")
+script = ExtResource("5_nwhtm")
 
 [node name="Idle" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("6_qsl3t")
+script = ExtResource("6_mxgid")
 
 [node name="Attack" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("6_2cdgk")
+script = ExtResource("7_182si")
 
 [node name="Dash" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("7_2avx2")
+script = ExtResource("8_esg0t")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="FiniteStateMachine/Dash"]
-stream = ExtResource("9_0onds")
+stream = ExtResource("9_5j8kn")
 volume_db = 7.0
 pitch_scale = 1.3
 bus = &"sfx"
 
 [node name="Summon" type="Node2D" parent="FiniteStateMachine"]
-script = ExtResource("8_qsl3t")
-enemy_1 = ExtResource("9_2avx2")
+script = ExtResource("10_l6mgg")
+enemy_1 = ExtResource("11_u4lc1")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_lfs1x")
+stream = ExtResource("12_ypdpw")
 volume_db = -20.0
 pitch_scale = 1.5
 bus = &"sfx"

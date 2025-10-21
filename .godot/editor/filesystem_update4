@@ -33,3 +33,7 @@ res://scenes/components/wire.tscn
 res://scenes/components/lightning.tscn
 res://scenes/components/wire_node.tscn
 res://scripts/room.gd
+res://scenes/sprites/boss.tscn
+res://scenes/enemy_load.tscn
+res://scenes/Title/title_screen.tscn
+res://scenes/Title/beginning_cutscene.tscn

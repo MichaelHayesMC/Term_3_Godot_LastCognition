@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_u8vhm"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/rooms/door.png" id="2_4ssin"]
 [ext_resource type="Texture2D" uid="uid://pfs1xpnumkua" path="res://assets/rooms/level_4.png" id="3_nvm38"]
-[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/stasis_tube.tscn" id="4_tfhis"]
-[ext_resource type="PackedScene" uid="uid://cslgx1epwc0eb" path="res://scenes/enemy_load.tscn" id="5_nvm38"]
+[ext_resource type="PackedScene" uid="uid://dewf7ag47aa6d" path="res://scenes/rooms/stasis_tube.tscn" id="4_tfhis"]
+[ext_resource type="PackedScene" uid="uid://cslgx1epwc0eb" path="res://scenes/rooms/enemy_load.tscn" id="5_nvm38"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccapj"]
 size = Vector2(16, 7)

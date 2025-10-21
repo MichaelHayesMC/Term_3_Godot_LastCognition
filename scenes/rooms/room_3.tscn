@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cncotykl74o0m" path="res://scripts/room.gd" id="1_ahsqd"]
 [ext_resource type="Texture2D" uid="uid://dkyeni6w8qkkr" path="res://assets/rooms/door.png" id="2_hfp1j"]
 [ext_resource type="Texture2D" uid="uid://neb06kpgf3cm" path="res://assets/rooms/level_3.png" id="3_d8ufh"]
-[ext_resource type="PackedScene" uid="uid://cslgx1epwc0eb" path="res://scenes/enemy_load.tscn" id="4_hfp1j"]
+[ext_resource type="PackedScene" uid="uid://cslgx1epwc0eb" path="res://scenes/rooms/enemy_load.tscn" id="4_hfp1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjoje"]
 size = Vector2(16, 7)
