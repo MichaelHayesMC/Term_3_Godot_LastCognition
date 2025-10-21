@@ -4,13 +4,13 @@ const BULLET_ENEMY = preload("res://scenes/bullet_enemy.tscn")
 const COIN_SOUND = preload("res://assets/sounds/sfx/money-collect-1-101476.mp3")
 
 @onready var sprite_2d: Sprite2D = $Visual/Sprite2D
-var health = Global.enemy_health
-
 @onready var player = get_parent().get_parent().get_parent().get_parent().get_node("Player")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var hit_sfx: AudioStreamPlayer = $Hit_sfx
 
 enum states { IDLE, RUN }
 
+var health = Global.enemy_health
 var new_pos_x = randf_range(40,185)
 var new_pos_y = randf_range(40,130)
 var should_chase := true
@@ -19,7 +19,6 @@ var firing : bool = false
 var direction
 var audio_played = false
 var can_move = false
-
 var cooldown_done = true
 
 func _ready() -> void:
@@ -43,7 +42,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "Bullet":
 		apply()
 		health -= Global.player_attack
-		$AudioStreamPlayer2.play()
+		hit_sfx.play()
 
 func _process(delta: float) -> void:
 	if firing and cooldown_done and can_move:

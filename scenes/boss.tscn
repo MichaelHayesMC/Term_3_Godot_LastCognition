@@ -2,8 +2,8 @@
 
 [ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://Blink.gdshader" id="1_qnbj4"]
 [ext_resource type="Script" uid="uid://s0tdwoo7f5ps" path="res://scripts/boss.gd" id="2_qnbj4"]
-[ext_resource type="Texture2D" uid="uid://bitlhgggyibxn" path="res://assets/l_shadow.png" id="3_qnbj4"]
-[ext_resource type="Texture2D" uid="uid://bpiugp2wy6m1b" path="res://assets/boss.png" id="4_qnbj4"]
+[ext_resource type="Texture2D" uid="uid://bitlhgggyibxn" path="res://assets/spritesheets/l_shadow.png" id="3_qnbj4"]
+[ext_resource type="Texture2D" uid="uid://bpiugp2wy6m1b" path="res://assets/spritesheets/boss.png" id="4_qnbj4"]
 [ext_resource type="Script" uid="uid://s4bwc006fud4" path="res://scripts/finite_state_machine.gd" id="5_2cdgk"]
 [ext_resource type="Script" uid="uid://cv51tddad36k4" path="res://scripts/attack.gd" id="6_2cdgk"]
 [ext_resource type="Script" uid="uid://bdbi6inps63qj" path="res://scripts/idle.gd" id="6_qsl3t"]
@@ -240,7 +240,7 @@ enemy_1 = ExtResource("9_2avx2")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_lfs1x")
-volume_db = -15.0
+volume_db = -20.0
 pitch_scale = 1.5
 bus = &"sfx"
 

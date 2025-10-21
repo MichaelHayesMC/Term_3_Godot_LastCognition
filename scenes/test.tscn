@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcwfymy1p1f0r"]
 
 [ext_resource type="Script" uid="uid://qvqdb4cj60dq" path="res://scripts/draggables/line_2d.gd" id="1_bl13t"]
-[ext_resource type="Texture2D" uid="uid://ctu7k2jo4l104" path="res://assets/wire.png" id="1_iyx0m"]
+[ext_resource type="Texture2D" uid="uid://ctu7k2jo4l104" path="res://assets/components/wire.png" id="1_iyx0m"]
 
 [node name="Line2D" type="Line2D"]
 top_level = true

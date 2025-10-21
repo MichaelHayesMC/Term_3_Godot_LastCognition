@@ -78,7 +78,7 @@ func next_room():
 	elif room % 5 == 0 or room % 10 == 0:
 		check_point()
 	else:
-		var new_room = BOSS_LEVEL.instantiate() ##
+		var new_room = randi_room.instantiate() ##
 		rooms.add_child(new_room)
 	
 func check_point():

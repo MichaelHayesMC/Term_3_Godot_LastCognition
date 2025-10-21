@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://s617p21avgyy"]
 
-[ext_resource type="Texture2D" uid="uid://dt7pghuklx1g" path="res://assets/cc.png" id="1_54scn"]
-[ext_resource type="Texture2D" uid="uid://cc2xlca7wik70" path="res://assets/FireTest.png" id="1_m47ar"]
-[ext_resource type="Texture2D" uid="uid://bitlhgggyibxn" path="res://assets/l_shadow.png" id="1_yfrnb"]
+[ext_resource type="Texture2D" uid="uid://dt7pghuklx1g" path="res://assets/rooms/cc.png" id="1_54scn"]
+[ext_resource type="Texture2D" uid="uid://cc2xlca7wik70" path="res://assets/rooms/FireTest.png" id="1_m47ar"]
+[ext_resource type="Texture2D" uid="uid://bitlhgggyibxn" path="res://assets/spritesheets/l_shadow.png" id="1_yfrnb"]
 [ext_resource type="AudioStream" uid="uid://dimnk5w6v2qgg" path="res://assets/sounds/sfx/fire-cracklingwav-14834.mp3" id="4_y0bk6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_54scn"]

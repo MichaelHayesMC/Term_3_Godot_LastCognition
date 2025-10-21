@@ -14,12 +14,12 @@ script = ExtResource("1_sk0wb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_00ly7")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Drop_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ck4ie")
 volume_db = -25.0
 pitch_scale = 0.8
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+[node name="Pickup_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ck4ie")
 volume_db = -30.0
 pitch_scale = 3.0

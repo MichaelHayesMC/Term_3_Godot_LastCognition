@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dndie06ief0kc" path="res://scripts/enemy_1.gd" id="1_tcmaw"]
 [ext_resource type="Shader" uid="uid://d0mfg3ekdayor" path="res://Blink.gdshader" id="2_a1412"]
-[ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/m_shadow.png" id="3_dq62l"]
-[ext_resource type="Texture2D" uid="uid://c4rdevuawx2vp" path="res://assets/Full_Enemy_Spreadsheet.png" id="3_ejytf"]
+[ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/spritesheets/m_shadow.png" id="3_dq62l"]
+[ext_resource type="Texture2D" uid="uid://c4rdevuawx2vp" path="res://assets/spritesheets/Full_Enemy_Spreadsheet.png" id="3_ejytf"]
 [ext_resource type="AudioStream" uid="uid://cyltayp5p5g62" path="res://assets/sounds/sfx/metal-whoosh-hit-7-201910.mp3" id="6_l21ug"]
 
 [sub_resource type="Animation" id="Animation_g2els"]
@@ -272,7 +272,7 @@ position = Vector2(0, -7)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walk_to_Range"]
 shape = SubResource("CircleShape2D_l21ug")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+[node name="Hit_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_l21ug")
 volume_db = -20.0
 pitch_scale = 1.5

@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://beihl3si44muj"]
+[gd_scene load_steps=9 format=3 uid="uid://beihl3si44muj"]
 
-[ext_resource type="Texture2D" uid="uid://dp1kref0xla" path="res://assets/power_end.png" id="1_vyld4"]
+[ext_resource type="Texture2D" uid="uid://dp1kref0xla" path="res://assets/components/power_end.png" id="1_vyld4"]
 [ext_resource type="Script" uid="uid://8cujayk01slc" path="res://scripts/draggables/power_end.gd" id="2_d3pxd"]
 [ext_resource type="PackedScene" uid="uid://cwojt257qqims" path="res://scenes/components/wire_node.tscn" id="2_k0axk"]
-[ext_resource type="Texture2D" uid="uid://dvlr7faikeox0" path="res://assets/power_start2.png" id="3_d3pxd"]
-[ext_resource type="AudioStream" uid="uid://cips6x4x7ur8n" path="res://assets/sounds/sfx/lamp-key-sfx-312914.mp3" id="5_0fmet"]
+[ext_resource type="Texture2D" uid="uid://dvlr7faikeox0" path="res://assets/components/power_start2.png" id="3_d3pxd"]
 
 [sub_resource type="Gradient" id="Gradient_d3pxd"]
 offsets = PackedFloat32Array(0, 0.349515, 0.61165)
@@ -53,11 +52,6 @@ texture = ExtResource("1_vyld4")
 [node name="Off_light" type="PointLight2D" parent="Wire_Collision/Off"]
 scale = Vector2(1.09375, 1.09375)
 texture = SubResource("GradientTexture2D_5kvrx")
-
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_0fmet")
-volume_db = -20.0
-pitch_scale = 3.0
 
 [connection signal="component_connected" from="Wire_Collision" to="." method="connect_to"]
 [connection signal="component_disconnected" from="Wire_Collision" to="." method="disconnect_from"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://g0ohm2loox71"]
 
-[ext_resource type="Texture2D" uid="uid://blejan2tkpyrs" path="res://assets/wire_cell.png" id="1_obbnl"]
+[ext_resource type="Texture2D" uid="uid://blejan2tkpyrs" path="res://assets/shop_components/wire_cell.png" id="1_obbnl"]
 [ext_resource type="Script" uid="uid://duubwrupwydnd" path="res://scripts/wire_cell.gd" id="2_yvrea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l16yi"]

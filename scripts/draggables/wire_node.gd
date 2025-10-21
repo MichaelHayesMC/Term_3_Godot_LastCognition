@@ -4,6 +4,9 @@ class_name ConnectionPoint
 signal component_connected(component : CircuitComponent)
 signal component_disconnected(component : CircuitComponent)
 
+@onready var drop_sfx: AudioStreamPlayer = $Drop_sfx
+@onready var pickup_sfx: AudioStreamPlayer = $Pickup_sfx
+
 @export var draggable : bool = true
 
 var hovering : bool = false
@@ -27,14 +30,14 @@ func _process(delta):
 		Global.block_dragging = true
 		
 		if get_parent().is_in_group("Power") == false:
-			$AudioStreamPlayer2.play()
+			pickup_sfx.play()
 
 	if Input.is_action_just_released("click_left") and hovering:
 		dragging = false
 		Global.block_dragging = false
 		
 		if get_parent().is_in_group("Power") == false:
-			$AudioStreamPlayer.play()
+			drop_sfx.play()
 
 	
 func _on_area_entered(area: Area2D) -> void:

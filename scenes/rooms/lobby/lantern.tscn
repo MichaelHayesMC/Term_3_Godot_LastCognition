@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgixkp7xwwikq"]
 
-[ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/m_shadow.png" id="1_bkfv2"]
-[ext_resource type="Texture2D" uid="uid://bn1qpsxhgdcs8" path="res://assets/lantern.png" id="2_04ydc"]
+[ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/spritesheets/m_shadow.png" id="1_bkfv2"]
+[ext_resource type="Texture2D" uid="uid://bn1qpsxhgdcs8" path="res://assets/rooms/lantern.png" id="2_04ydc"]
 
 [sub_resource type="Gradient" id="Gradient_54scn"]
 offsets = PackedFloat32Array(0.092233, 0.199029, 0.601942)

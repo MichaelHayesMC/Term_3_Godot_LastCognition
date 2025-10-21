@@ -13,7 +13,7 @@ func turn_on_effect():
 	
 	if sound_play == true:
 		sound_play = false
-		$AudioStreamPlayer3.play()
+		SoundBoard.get_node("Lightbulb_click").play()
 	
 
 func turn_off_effect():

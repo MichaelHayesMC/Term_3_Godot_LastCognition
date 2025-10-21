@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj05ify3sef1c"]
+[gd_scene load_steps=6 format=3 uid="uid://dj05ify3sef1c"]
 
 [ext_resource type="AudioStream" uid="uid://bva2hn1fd8nr7" path="res://assets/sounds/sfx/money-collect-1-101476.mp3" id="1_bwhyo"]
 [ext_resource type="AudioStream" uid="uid://x8bc1wi5l0ht" path="res://assets/sounds/sfx/shoot.mp3" id="2_8jd3i"]
 [ext_resource type="AudioStream" uid="uid://cyltayp5p5g62" path="res://assets/sounds/sfx/metal-whoosh-hit-7-201910.mp3" id="3_r524k"]
+[ext_resource type="AudioStream" uid="uid://cips6x4x7ur8n" path="res://assets/sounds/sfx/lamp-key-sfx-312914.mp3" id="4_8jd3i"]
+[ext_resource type="AudioStream" uid="uid://bfm3eq01qaxmy" path="res://assets/sounds/music/soundtrack-01-combat-challenge-205097.mp3" id="5_r524k"]
 
 [node name="SoundBoard" type="Node"]
 
@@ -13,13 +15,13 @@ bus = &"sfx"
 
 [node name="Shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_8jd3i")
-volume_db = -30.0
+volume_db = -18.0
 pitch_scale = 2.0
 bus = &"sfx"
 
 [node name="Shoot2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_8jd3i")
-volume_db = -30.0
+volume_db = -23.0
 bus = &"sfx"
 
 [node name="Player_Hit" type="AudioStreamPlayer" parent="."]
@@ -27,3 +29,14 @@ stream = ExtResource("3_r524k")
 volume_db = -20.0
 pitch_scale = 1.2
 bus = &"sfx"
+
+[node name="Lightbulb_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8jd3i")
+volume_db = -20.0
+pitch_scale = 3.0
+
+[node name="Fighting_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_r524k")
+volume_db = -15.0
+bus = &"Music"
+parameters/looping = true

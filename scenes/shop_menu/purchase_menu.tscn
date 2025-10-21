@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://d25kmqbtnjdkn"]
 
-[ext_resource type="Texture2D" uid="uid://cvjblhxhcy5fu" path="res://assets/purchase_menu.png" id="1_yf43s"]
+[ext_resource type="Texture2D" uid="uid://cvjblhxhcy5fu" path="res://assets/shop_components/purchase_menu.png" id="1_yf43s"]
 [ext_resource type="Script" uid="uid://cvn8sdv8iwjbe" path="res://scripts/items.gd" id="2_x40em"]
 [ext_resource type="PackedScene" uid="uid://vrxqbxwsphfq" path="res://scenes/shop_menu/lightning_cell.tscn" id="3_u7btq"]
 [ext_resource type="PackedScene" uid="uid://du2sitxwywyeh" path="res://scenes/shop_menu/attack_cell.tscn" id="4_s8rgq"]
