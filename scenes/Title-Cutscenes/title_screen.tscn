@@ -54,7 +54,6 @@ grow_vertical = 2
 script = ExtResource("1_cs5ya")
 
 [node name="Scene_Transition" parent="." instance=ExtResource("8_mykxm")]
-mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Backdrop" type="TextureRect" parent="."]
