@@ -17,15 +17,15 @@ font_size = 4
 font = ExtResource("7_uivpl")
 font_size = 4
 
-[sub_resource type="LabelSettings" id="LabelSettings_ghj3b"]
-font = ExtResource("7_uivpl")
-font_size = 4
-font_color = Color(0.286275, 0.117647, 0.0823529, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_g180p"]
 font = ExtResource("7_uivpl")
 font_size = 8
 font_color = Color(0.301961, 0.133333, 0.0941176, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ghj3b"]
+font = ExtResource("7_uivpl")
+font_size = 4
+font_color = Color(0.286275, 0.117647, 0.0823529, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qn88i"]
 font = ExtResource("7_uivpl")
@@ -46,8 +46,9 @@ font_color = Color(0, 0.752941, 0.94902, 1)
 font = ExtResource("7_uivpl")
 font_size = 8
 
-[node name="Node2D" type="Node2D"]
+[node name="PurchaseMenu" type="Node2D"]
 modulate = Color(1, 1, 1, 0.941176)
+z_index = 2
 
 [node name="PurchaseMenu" type="Sprite2D" parent="."]
 light_mask = 2
@@ -59,12 +60,11 @@ texture = ExtResource("1_yf43s")
 script = ExtResource("2_x40em")
 
 [node name="Purchase" type="Label" parent="Items"]
-visible = false
 modulate = Color(0.227451, 0.0784314, 0.0901961, 1)
 top_level = true
 light_mask = 2
 visibility_layer = 2
-z_index = 2
+z_index = 10
 offset_left = 37.0
 offset_top = 90.0
 offset_right = 77.0
@@ -140,7 +140,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Defense_Cost2" type="Label" parent="."]
+[node name="Wire_Cost" type="Label" parent="."]
 light_mask = 2
 visibility_layer = 2
 z_index = 2
@@ -160,6 +160,20 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Title" type="Label" parent="Place_Holder"]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+layout_mode = 0
+offset_left = 35.0
+offset_top = 71.0
+offset_right = 80.0
+offset_bottom = 94.0
+text = "Name"
+label_settings = SubResource("LabelSettings_g180p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Description" type="Label" parent="Place_Holder"]
 light_mask = 2
 visibility_layer = 2
@@ -175,7 +189,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Title" type="Label" parent="Place_Holder"]
+[node name="Speed" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Speed"]
 light_mask = 2
 visibility_layer = 2
 z_index = 1
@@ -184,17 +205,10 @@ offset_left = 35.0
 offset_top = 71.0
 offset_right = 80.0
 offset_bottom = 94.0
-text = "Name"
-label_settings = SubResource("LabelSettings_g180p")
+text = "Speed"
+label_settings = SubResource("LabelSettings_qn88i")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Speed" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Description" type="Label" parent="Speed"]
 light_mask = 2
@@ -211,26 +225,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Title" type="Label" parent="Speed"]
-light_mask = 2
-visibility_layer = 2
-z_index = 1
-layout_mode = 0
-offset_left = 35.0
-offset_top = 71.0
-offset_right = 80.0
-offset_bottom = 94.0
-text = "Speed"
-label_settings = SubResource("LabelSettings_qn88i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Attack" type="Control" parent="."]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Attack"]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+layout_mode = 0
+offset_left = 34.0
+offset_top = 71.0
+offset_right = 82.0
+offset_bottom = 94.0
+text = "Attack"
+label_settings = SubResource("LabelSettings_x2o3h")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Description" type="Label" parent="Attack"]
 light_mask = 2
@@ -247,7 +261,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Title" type="Label" parent="Attack"]
+[node name="Defense" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Defense"]
 light_mask = 2
 visibility_layer = 2
 z_index = 1
@@ -256,17 +277,10 @@ offset_left = 34.0
 offset_top = 71.0
 offset_right = 82.0
 offset_bottom = 94.0
-text = "Attack"
-label_settings = SubResource("LabelSettings_x2o3h")
+text = "Shield"
+label_settings = SubResource("LabelSettings_4hu27")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Defense" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Description" type="Label" parent="Defense"]
 light_mask = 2
@@ -283,7 +297,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Title" type="Label" parent="Defense"]
+[node name="Wire" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Wire"]
 light_mask = 2
 visibility_layer = 2
 z_index = 1
@@ -292,17 +313,10 @@ offset_left = 34.0
 offset_top = 71.0
 offset_right = 82.0
 offset_bottom = 94.0
-text = "Shield"
-label_settings = SubResource("LabelSettings_4hu27")
+text = "Wire"
+label_settings = SubResource("LabelSettings_0sfp3")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Wire" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Description" type="Label" parent="Wire"]
 light_mask = 2
@@ -318,20 +332,6 @@ label_settings = SubResource("LabelSettings_ghj3b")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-
-[node name="Title" type="Label" parent="Wire"]
-light_mask = 2
-visibility_layer = 2
-z_index = 1
-layout_mode = 0
-offset_left = 34.0
-offset_top = 71.0
-offset_right = 82.0
-offset_bottom = 94.0
-text = "Wire"
-label_settings = SubResource("LabelSettings_0sfp3")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="gui_input" from="Items/Purchase" to="Items/Purchase" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Items/Purchase" to="Items/Purchase" method="_on_mouse_entered"]

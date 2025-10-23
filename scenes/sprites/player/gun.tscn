@@ -7,7 +7,7 @@
 [node name="Gun" type="Node2D"]
 script = ExtResource("1_x77fm")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="GunTexture" type="Sprite2D" parent="."]
 position = Vector2(0.0213204, -7.15256e-07)
 rotation = 1.5708
 scale = Vector2(2.42701, 10.0675)
@@ -20,9 +20,9 @@ rotation = 1.5708
 scale = Vector2(2, 9)
 gizmo_extents = 2.7
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Shoot_CD" type="Timer" parent="."]
 process_callback = 0
 wait_time = 0.5
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Shoot_CD" to="." method="_on_timer_timeout"]

@@ -49,7 +49,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("InteractPromptTexture:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -66,7 +66,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath("InteractPromptTexture:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -143,12 +143,12 @@ sprite_frames = SubResource("SpriteFrames_qqw3h")
 autoplay = "default"
 frame_progress = 0.0789023
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="InteractPromptTexture" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1, -13)
 texture = ExtResource("3_2n4no")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InteractPromptTexture"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_pkgqk")

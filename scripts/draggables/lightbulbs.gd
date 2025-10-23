@@ -6,14 +6,19 @@ extends CircuitComponent
 
 var sound_play = true
 
+
+# Indicate that the lightbulbs are now powered
 func turn_on_effect():
 	point_light_2d.visible = true
 	sprite_2d.material.set_shader_parameter("shader_enabled", false)
 	
+	# Play Powered Sound
 	if sound_play == true:
 		sound_play = false
 		SoundBoard.get_node("Lightbulb_click").play()
-	
+
+
+# Indicate that the lightbulbs are now unpowered
 func turn_off_effect():
 	point_light_2d.visible = false
 	sprite_2d.material.set_shader_parameter("shader_enabled", true)

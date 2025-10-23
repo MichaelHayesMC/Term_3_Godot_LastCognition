@@ -47,12 +47,12 @@ _data = {
 &"new_animation": SubResource("Animation_xhekj")
 }
 
-[sub_resource type="Gradient" id="Gradient_bg4i0"]
+[sub_resource type="Gradient" id="Gradient_wrf3q"]
 offsets = PackedFloat32Array(0.0873786, 0.325243, 0.490291, 0.621359)
 colors = PackedColorArray(0.812278, 0.812278, 0.812278, 1, 0.221948, 0.442296, 0.247924, 1, 0.0254693, 0.0507551, 0.0284501, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_6w2ej"]
-gradient = SubResource("Gradient_bg4i0")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_78ct2"]
+gradient = SubResource("Gradient_wrf3q")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -77,10 +77,11 @@ libraries = {
 }
 movie_quit_on_finish = true
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="DoorLight" type="PointLight2D" parent="."]
+z_index = 3
 position = Vector2(112, 17)
 color = Color(1, 1, 1, 0)
-texture = SubResource("GradientTexture2D_6w2ej")
+texture = SubResource("GradientTexture2D_78ct2")
 
 [node name="Room_Tilemap" type="Sprite2D" parent="."]
 position = Vector2(112, 112)
@@ -145,6 +146,7 @@ color = Color(1, 0, 0, 0.380392)
 
 [node name="Boss_Theme_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_wrf3q")
-volume_db = -17.0
+volume_db = -23.0
 autoplay = true
 bus = &"Music"
+parameters/looping = true

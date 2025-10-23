@@ -10,13 +10,13 @@ var player_entered : bool = false:
 		# Will wait when ready to change the state of the collision to look for player true or false depending on the state of the player_entered
 		collision.set_deferred("disabled", value)
 
+
 # Will play once idl state is activated
 func transition():
 	# Will Randomise to choose a new state for the boss to fight against the player with a 1/3 chance	
 	var randomise = randi_range(1, 4)
 	
 	if player_entered:
-		get_tree().create_timer(2).timeout
 		if randomise == 1:
 			get_parent().change_state("Attack")
 		elif randomise == 2 or randomise == 3:
@@ -24,5 +24,7 @@ func transition():
 		elif randomise == 4: 
 			get_parent().change_state("Dash")
 
-func _on_attack_range_body_entered(body: Node2D) -> void:
+
+# Allows if the boss should start attacking the player or not
+func _on_attack_range_body_entered(_body: Node2D) -> void:
 	player_entered = true

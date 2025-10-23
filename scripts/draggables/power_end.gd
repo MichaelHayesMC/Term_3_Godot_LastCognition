@@ -6,16 +6,20 @@ extends CircuitComponent
 
 var sound_play = true
 
+
+# Display that the PowerEnd is powered
 func turn_on_effect():
 	on.visible = true
 	off.visible = false
 	Global.circuit_complete = true
 	
+	# Play Powered Sound
 	if sound_play == true:
 		sound_play = false
 		SoundBoard.get_node("Lightbulb_click").play()
-	
 
+
+# Display that the PowerEnd is unpowered
 func turn_off_effect():
 	on.visible = false
 	off.visible = true

@@ -15,6 +15,7 @@ func _on_gui_input(event: InputEvent) -> void:
 
 			visibility_change()
 
+
 # Make current nodes invisible and next nodes visible for transition
 func visibility_change():
 	main_page.visible = true

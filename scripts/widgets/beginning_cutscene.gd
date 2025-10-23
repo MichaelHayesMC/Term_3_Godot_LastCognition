@@ -15,14 +15,16 @@ extends Control
 @onready var campfire_sfx: AudioStreamPlayer = $Campfire_sfx
 
 # The next scene reference of main game
-@export var GAME = PackedScene
+const GAME = "res://scenes/game.tscn"
 
 # Record of current scene playlist undergone
 var nextscene = 0
 
+
 func _ready() -> void:
-	on_load()
+	await on_load()
 	animation_series()
+
 
 # Responsable for the fade in transition and first cutscene effects when the scene loads
 func on_load():
@@ -32,6 +34,7 @@ func on_load():
 	# First Cutscene sound effect and delay to play next scene in series
 	bubbles_sfx.play()
 	await get_tree().create_timer(4).timeout
+
 
 # Playlist of cutscene
 func animation_series():

@@ -60,6 +60,7 @@ visibility_layer = 2
 z_index = 100
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

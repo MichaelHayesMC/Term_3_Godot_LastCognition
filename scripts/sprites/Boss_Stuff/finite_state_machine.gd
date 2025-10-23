@@ -10,6 +10,7 @@ func _ready() -> void:
 	previous_state = current_state
 	current_state.enter()
 
+
 # Use a reference for following scripts to know which state is the one being changed from and to
 func change_state(state):
 	# Will find the state that is being called and undergo the actions based in the enter function of the dervided code from each script

@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://duy8jpg78tkkl"]
+[gd_scene load_steps=24 format=3 uid="uid://duy8jpg78tkkl"]
 
 [ext_resource type="Script" uid="uid://jc056cm4kp3m" path="res://scripts/sprites/player_stuff/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://ckcwdclc223qp" path="res://assets/spritesheets/m_shadow.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dtdd42av6pgkk" path="res://assets/spritesheets/Full_Main_Spreadsheet.png" id="3_lvxji"]
 [ext_resource type="PackedScene" uid="uid://dyj81hojync2q" path="res://scenes/sprites/player/gun.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://bpuav2tw3r05p" path="res://scenes/sprites/player/bullet.tscn" id="3_qrq63"]
 [ext_resource type="Script" uid="uid://bsvky0v50hmu2" path="res://scripts/sprites/player_stuff/health.gd" id="5_p47bc"]
 [ext_resource type="AudioStream" uid="uid://bcsgocxq6wx21" path="res://assets/sounds/sfx/dash_sfx.mp3" id="6_75vfm"]
 [ext_resource type="AudioStream" uid="uid://cittv6644sbwe" path="res://assets/sounds/sfx/footsteps.mp3" id="7_0owmy"]
@@ -16,7 +17,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Visual/PlayerTexture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -34,7 +35,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Visual/PlayerTexture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -52,7 +53,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Visual/PlayerTexture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -70,7 +71,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Visual/PlayerTexture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -88,7 +89,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Visual/PlayerTexture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -105,7 +106,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Visual/PlayerTexture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -122,7 +123,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Visual/PlayerTexture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -139,7 +140,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Visual/PlayerTexture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -156,7 +157,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Visual/PlayerTexture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -208,22 +209,25 @@ libraries = {
 }
 autoplay = "idle_up"
 
-[node name="MShadow" type="Sprite2D" parent="."]
+[node name="Gun" parent="." instance=ExtResource("3_qhqgy")]
+position = Vector2(0, -7)
+_bullet_scene = ExtResource("3_qrq63")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="MShadow" type="Sprite2D" parent="Visual"]
 position = Vector2(-1, -2)
 texture = ExtResource("2_dqkch")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlayerTexture" type="Sprite2D" parent="Visual"]
 position = Vector2(0, -7)
 texture = ExtResource("3_lvxji")
 hframes = 8
 vframes = 9
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="Visual"]
 position = Vector2(0, -7)
 texture = SubResource("GradientTexture2D_dqkch")
-
-[node name="Gun" parent="." instance=ExtResource("3_qhqgy")]
-position = Vector2(0, -7)
 
 [node name="Health" type="ProgressBar" parent="."]
 texture_filter = 1
